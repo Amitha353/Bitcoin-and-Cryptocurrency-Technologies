@@ -1,0 +1,25 @@
+Introduction to Crypto and Cryptocurrencies
+---------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------
+
+1.1 Cryptographic Hash Functions
+---------------------------------
+* Cryptographic Hash function - mathematical function and takes three attributes:
+  a. takes any string as input;
+  b. fixed-size output (could be 256 bits - like bitcoins);
+  c. efficiently computable (within a reasonable length of time it needs to be computed);
+
+* Hash functions need to be cryptographically secure (Security properties):
+  a. Collision-free
+  -------------------
+    It can be assumed that the hash function is collision free, since collision occurence is infinitesimal.
+    If x != y , then we can assume H(x) != H(Y);
+    In case H(X) = H(Y), then assume X = Y;(message digest);
+    In Reality (Input) # (X | Y) is much greater than (Output) # Hash function - It means there is a chance for collision to occur, but it occurs when 2^130 or more possibilities are taken into consideration and computation effort is a lot.
+    Therefore it is safe to assume that hash-functions are collision free.
+    
+  b. Hiding  
+  ------------
+  
+  c. Puzzle-friendly 
+  -------------------

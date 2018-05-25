@@ -10,16 +10,108 @@ Introduction to Crypto and Cryptocurrencies
   c. efficiently computable (within a reasonable length of time it needs to be computed);
 
 * Hash functions need to be cryptographically secure (Security properties):
-  a. Collision-free
+a. Collision-free
+b. Hiding 
+c. Puzzle-friendly 
+
+a. Collision-free
   -------------------
-    It can be assumed that the hash function is collision free, since collision occurence is infinitesimal.
-    If x != y , then we can assume H(x) != H(Y);
-    In case H(X) = H(Y), then assume X = Y;(message digest);
-    In Reality (Input) # (X | Y) is much greater than (Output) # Hash function - It means there is a chance for collision to occur, but it occurs when 2^130 or more possibilities are taken into consideration and computation effort is a lot.
-    Therefore it is safe to assume that hash-functions are collision free.
+    - It can be assumed that the hash function is collision free, since collision occurence is infinitesimal.
+    - If x != y , then we can assume H(x) != H(Y);
+    - In case H(X) = H(Y), then assume X = Y;(message digest);
+    - In Reality (Input) # (X) is much greater than (Output) # Hash function (Y or H(X))- It means there is a chance for collision to occur, but it occurs when 2^130 or more possibilities are taken into consideration and computation effort is a lot.
+    - Therefore it is safe to assume that hash-functions are collision free.
     
-  b. Hiding  
+ b. Hiding  
   ------------
+     - Given H(x), it must be infeasible to find x.
+     - But in case of a coin-flip, there are only two possiblities -> H("head") or H("tails") where x can be either "head" or "tail"; Here computing the hash of "head" or "tail" can fetch the answer - easy to compute x;
+     - Better solution - for common value x; Take x and concatenate it with a value r (r is choosen from a distribution thats really spread out).
+     - If r is chosen from a probability distribution that has high min-entropy(distribution is very spread-out), then given H(r | x), it is infeasible to find x.
+     - Application : Commitment - Commit to a value , reveal it later.
+    *  Commitment API
+    ------------------
+    -> 2 things
+        i. Commit to a message and that returns two values - "commitment" and a "key";
+           - commitment - envelope put on the table;
+           - key - secret key for unlocking the envelope; 
+        ii. Allow someone else to verify, given the commitment and key so that the message is as expected.     
+        
+     (com, key) := commit(msg)
+     match := verify(com, key, msg)
+        
+     * To seal msg in envelope:
+     (com, key) := commit(msg)  -- then publish
+          
+     * To open envelope:
+     publish key, msg
+     anyone can use verify() to check validity
+    
+    * Security
+      - Hiding : Given com, infeasible to find msg.
+      - Binding : Infeasible to find msg != msg' => verify(commit(msg), msg') == true (not possible);
+    ----------------------------------------------------------------------------------------
+    * Implementation of commitments - Inorder to implement commitment to a message
+      - Generate a random 256-bit value "key";
+      - commit(msg) := (H(key, msg), key) where key is a random 256-bit value;
+      - verify(com, key, msg) := ( H(key | msg) == com)
+      
+      - Security properties
+      ----------------------
+       + Hiding : Given H(key | msg), infeasible to find msg.
+       + Binding : Infeasible to find msg != msg' such that H(key | msg) == H(key | msg')
+      
+ c. Puzzle-friendly 
+ -------------------
+For every possible output value y, if k is chosen from a distribution with high min-entropy(widely spread out distribution), then it is infeasible to find x such that H(k | x) = y; (In case someone is targetting the hash function - and they chose a known value of k it will still be difficult to find the value of x to retrieve the respective y value).
+
+  Application : Search puzzle
+  ----------------------------
+  Given a "puzzle id"(k) (high distribution), and a target set Y:
+  Try to find a "solution" x such that H(id | x) = Y
+  - Puzzle-friendly property implies that no solving strategy is much better than trying random values of x.
   
-  c. Puzzle-friendly 
-  -------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+There are a lot of HASH function, but the one used and bitcoin uses is the SHA-256 hash function;
+
+* SHA-256 hash function
+-------------------------
+- Takes the message (256 bits) being hashed and breaks it into blocks of 512 bits long;
+- Since the message is not necessarily gonna be a multiple of the block-size some padding needs to be appended.
+- The padding is gonna consist of 
+    * at the end - 64 bit length field - length of the message in bits;
+    * before that 1 bit
+    * followed by some 0 bits; (until it is 512 message block)
+    * Once it is 512 bit long it is chopped off;
+    
+                 (512 bits)          (512 bits)         (512 bits)       
+                 Message             Message             Message
+                 Block - I           Block - II          Block - III
+                    |                   |                  |
+                    |                   |                  |
+                   \ /                 \ /                \ / 
+                  -----  256-bits   -------              ------
+    IV --------> |  C  | ---------->|  C  | ------------>|  C  |------>  Hash 
+    (256)         -----             -------              -------         (256)
+    bits                                                                  bits
+    
+    * c is a compressor;
+    Theorem - If c is collision-free, then SHA-256 is collision-free;
+    
+               (512 bits)          (512 bits)         (512 bits)       
+                 Message             Message             Message
+                 Block - I           Block - II   ...    Block - n
+                    |                   |                  |
+                    |                   |                  |
+                   \ /                 \ /                \ / 
+                  -----  256-bits   -------              ------
+    IV --------> |  C  | ---------->|  C  | ------------>|  C  |------>  Hash 
+    (256)         -----             -------              -------         (256)
+    bits  
+    
+    256     256+512       256        256+512  256                        256               
+    
+* No collison has been ever found with SHA-256 hash function.    
+ -------------------------------------------------------------------------------------------------------------------------------------   
+   
+  

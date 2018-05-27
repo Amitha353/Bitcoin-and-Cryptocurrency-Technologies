@@ -113,6 +113,7 @@ There are a lot of HASH function, but the one used and bitcoin uses is the SHA-2
     
 * No collison has been ever found with SHA-256 hash function.    
 -------------------------------------------------------------------------------------------------------------------------------------   
+-------------------------------------------------------------------------------------------------------------------------------------   
 1.2 Hash Pointers and Data Structures
 -------------------------------------
 * Hash Pointer - Data structure - pointer to where information is stored and with pointer we can store a cryptographic hash of the information.
@@ -127,15 +128,26 @@ There are a lot of HASH function, but the one used and bitcoin uses is the SHA-2
 |           | 
 |___________| 
  
- * Hash pointers can be used to build various kinds of data structurers. E.g - Linked list, binary search trees, etc implement it as  ahash pointers rather than pointers.
+ * Hash pointers can be used to build various kinds of data structurers. E.g - Linked list, binary search trees, etc implement it as  a hash pointers rather than pointers.
  
- * Linked -list as a Hash pointer
- ---------------------------------
-  ____________                     ____________ 
-  |   --------|--                 |   --------|--
-  |   |prev:H(|)|                 |   |prev:H(|)|
-  |   -----------                 |   -----------
-  |   |         |                 |   |         |
-<-|   |   DATA  | <---------------|   |   DATA  |
-      |         |                     |         |
-      |_________|                     |_________|       
+ * Linked-list as a Hash pointer - Datastructure can be called a block chain
+ ---------------------------------------------------------------------------
+                                                                                                                    H(   )
+  ____________                     ____________                ____________                     ____________           |
+  |   --------|--                 |   --------|--              |   --------|--                 |   --------|--         |
+  |   |prev:H(|)|                 |   |prev:H(|)|              |   |prev:H(|)|                 |   |prev:H(|)|         |
+  |   -----------                 |   -----------              |   -----------                 |   -----------         |
+  |   |         |                 |   |         |              |   |         |                 |   |         |<---------
+<-|   |   DATA  | <---------------|   |   DATA  | <------------|   |   DATA  | <---------------|   |   DATA  |
+      |         |                     |         |                  |         |                     |         |
+      |_________|                     |_________|                  |_________|                     |_________|  
+
+In a regular linked-list - there are a series of blocks and each block has data as well as a pointer to the previous block in the list, in this case the previous block pointer will be replaced with a hash pointer.
+The Hash pointer gives, where it is and wehat the value of the previous block is.
+
+* Application  -> Detecting Tampering - tamper-evident log
+To build a log adta structure that stores a bunch of data so that data can be appended into the log, but if somebody tampers with that data that is earlier in the log then we can detect it.
+-------------------------------------------------------
+Block-chain - Evidence tamper property
+--------------------------------------
+If the adversary wants to tamper with data anywhere in the entire chain , inorder to keep consistency all the hash pointers need to be tampered all the way to the beginning of thechain and ultimatley gonna run into the road block because the head of the list cannot be tampered with.

@@ -180,4 +180,38 @@ ______\ /________        ________\ /____                       _______\ /_______
 |        |  |       |    |        |  |       |                |         |   |        |                      |        |   |        |
 |________|  |_______|    |________|  |_______|                |_________|   |________|                      |________|   |________|
     
-    
+- From a bunch of data blocks at the bottom, consecutive pais of the data blocks are taken;
+- For these two data blocks a data structure with two hash functions is built, so on till the root of the tree.
+- We can traverse down through the hash pointers to any point in the list and ensure that the data has not been tampered with.
+- If an adversary tampers with the data, then the hash pointer will be tampered with and so on, one -level upwards, eventually the aversary won't be able to tamper with the hash pointer at the head that we have remembered.
+
+* Proving the membership in a merkel tree
+-------------------------------------------
+                                                    |                  show O(log n) items
+                                               ____\ /______
+                                              | H( )   H( ) |
+                                              |___|_________|
+                                                  |    
+                  ________________________________|    
+                 |            
+          ______\ /_________  
+          |  H( )     H( )  | 
+          |____|____________| 
+               |    
+       ________|    
+       |            
+______\ /________   
+| H( )      H( )|   
+|___|___________|   
+    |     
+    |     
+   \ /    
+ --------   
+|        |
+|  DATA  |
+|        |
+|________|
+
+We remember the root, and someone wants to convince us that the data block belongs to the merkel tree, then they need to show the data block and verify that the hash matches along all levels;
+This takes (log n) items to be shown and therefore (log n) time to verify;
+

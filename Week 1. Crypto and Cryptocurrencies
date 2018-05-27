@@ -151,3 +151,33 @@ To build a log adta structure that stores a bunch of data so that data can be ap
 Block-chain - Evidence tamper property
 --------------------------------------
 If the adversary wants to tamper with data anywhere in the entire chain , inorder to keep consistency all the hash pointers need to be tampered all the way to the beginning of thechain and ultimatley gonna run into the road block because the head of the list cannot be tampered with.
+
+* Binary tree with Hash Pointers = "Merkle tree"
+-------------------------------------------------
+
+                                                            |
+                                                       ____\ /______
+                                                      | H( )   H( ) |
+                                                      |___|______|__|
+                                                          |      | 
+                  ________________________________________|
+                 |
+          ______\ /_________                                                            
+          |  H( )     H( )  |                                               
+          |____|________|___|                                                   
+               |        |                                     
+       ________|        |__________                                     
+       |                          |                            
+______\ /________        ________\ /____
+| H( )      H( )|       | H( )    H( ) |
+|___|_________|_|       |___|_______|__| 
+    |         |             |         |
+    |         |             |         | 
+   \ /       \ /           \ /       \ /
+ --------   ---------    --------   ---------
+|        |  |       |    |        |  |       |
+|  DATA  |  |  DATA |    |  DATA  |  |  DATA | 
+|        |  |       |    |        |  |       |  
+|________|  |_______|    |________|  |_______|
+    
+    

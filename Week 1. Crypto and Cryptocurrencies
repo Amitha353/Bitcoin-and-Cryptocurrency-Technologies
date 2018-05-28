@@ -235,10 +235,51 @@ a. Generate keys -> provide the input keysize and this generates two keys sk and
     sig := sign(sk, message)
   
   c. Verify Operation - Takes something that claims to be a valid signature and verifies if it is correct. 
-    It takes the public key of the signer, message which bears the signature, and takes the supposed signature, then checks for its validity.
+    It takes the public key of the signer, message which bears the signature, and takes the supposed signature, then checks for its validity. The public key is required to verify the signature.
     
     isValid := verify(pk, message, sig)
 ------------------------------------------------------------------------------    
     (sk, pk) := generateKeys(keysize)   -> randomized algorithm
     sig := sign(sk, message)            -> randomized algorithm
     isValid := verify(pk, message, sig) -> deterministic algorithm
+------------------------------------------------------------------------------
+
+* Requirements for signatures
+------------------------------
+a. valid signatures verify : verify(pk, message, sign(sk, message)) == true
+b. can't forge signatures : If someone knows pk, gets the signature on messages of choice, can't produce a verifiable signature on another message.
+
+* Signing a hash pointer - signature covers the whole structure.Signing the hash pointer at the end of the block chain, then the result would be that you'll be digitally signing the entire contents of the block chain.
+---------------------------------------------------------------------------------------------------------------------------------------
+* Bitcoin uses ECDSA standard
+- ECDSA - Elliptic Curve Digital Signature Algorithm (US govt standard);
+- Good randomness is essential, if bad randomness is used to generatekeys, or in the sign operation - probably the private key could be leaked.
+---------------------------------------------------------------------------------------------------------------------------------------
+1.4 Public Keys as Identities
+------------------------------
+* If isValid := verify(pk, message, sig) := true, then pk -> "public name"/ identity from sk (secret key);
+* Create new randomized key-pair (sk, pk)
+  - pk - public "name" (usually better to use Hash(pk) - cause of the size - 256 bits);
+  - sk - secret key - letsyou "speak for" the identity.
+* You can control the identity since only you know sk and if pk looks random nobody needs to know eho you are.
+------------------------------------------------------------
+* Decentralized Identity Management
+------------------------------------
+-> Anybody can make a new identity at any time , make as many as you want!
+-> No central point of coordination. (No central authority);
+-> These identities are called "addresses" in Bitcoin.
+-> Address - public key / hash of a public key;
+------------------------------------------------------------
+* Privacy
+---------
+-> Addresses not directly connected to real-world identity.
+-> But, observer can link together an address's activity over time, and make inferences.
+------------------------------------------------------------
+Question
+
+If you generate numerous identities(public keys) for yourself and interact online using those identities, what might happen?
+
+a. Others might be able to take over your identities if your randomness is bad. (True)
+b. Others may be able to link your identities because public keys generated on the same computer look similar. (False)
+c. 
+

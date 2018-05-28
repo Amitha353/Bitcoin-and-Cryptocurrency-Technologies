@@ -214,4 +214,31 @@ ______\ /________
 
 We remember the root, and someone wants to convince us that the data block belongs to the merkel tree, then they need to show the data block and verify that the hash matches along all levels;
 This takes (log n) items to be shown and therefore (log n) time to verify;
+---------------------------------------------------------------------------------------------------------------------------------------
+1.3 Digital Signatures
+-----------------------
+* Requirements from the signature
+a. Only you can sigh, but anyone can verify.
+b. Signature is tied to a particular document (can't be cut-and-paste to another document).
 
+API for digital signatures
+--------------------------
+Three operations to be performed
+a. Generate keys -> provide the input keysize and this generates two keys sk and pk.
+    sk : secret signing key (Information kept secret and only for making signature)
+    pk: public verification key (Everybody is given access, and anyone can verify the signature)
+
+  (sk, pk) := generateKeys(keysize)
+
+  b. Sign Operation - Take the secret message key and some message that you want to put your signature on. This returns a sig (signature) - string of bits that represents the signature;
+    
+    sig := sign(sk, message)
+  
+  c. Verify Operation - Takes something that claims to be a valid signature and verifies if it is correct. 
+    It takes the public key of the signer, message which bears the signature, and takes the supposed signature, then checks for its validity.
+    
+    isValid := verify(pk, message, sig)
+------------------------------------------------------------------------------    
+    (sk, pk) := generateKeys(keysize)   -> randomized algorithm
+    sig := sign(sk, message)            -> randomized algorithm
+    isValid := verify(pk, message, sig) -> deterministic algorithm

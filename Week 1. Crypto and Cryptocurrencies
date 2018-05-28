@@ -281,5 +281,54 @@ If you generate numerous identities(public keys) for yourself and interact onlin
 
 a. Others might be able to take over your identities if your randomness is bad. (True)
 b. Others may be able to link your identities because public keys generated on the same computer look similar. (False)
-c. 
+c. Others may be able to de-anonymize you by analyzing your activity pattern. (True)
+---------------------------------------------------------------------------------------------------------------------------------------
+1.5 A Simple Cryptocurrency
+----------------------------
+* GoofyCoin -> simplest cryptocurrency engine we can imagine.
 
+* Rules on GoofyCoin
+---------------------
+1. Goofy can create new coins
+  a. New coins belong to me (Goofy).
+  b. Created coin data structure -> CreateCoin operation and a unique coin id that Goofy generated; Then there is a digital signature put on it by Goofy, which anyone can verify.
+    _____________________________
+    |  Signed by pk(goofy)      |
+    |___________________________|
+    | CreateCoin [uniqueCoinId] |
+    |___________________________|
+ 
+ 2. A coin's owner can spend it
+    - Whoever owns a coin can pass it on to someone else.
+    
+    _____________________________
+    |  Signed by pk(goofy)      |
+    |___________________________|
+    | Pay to pk(Alice): H( | )  |  (Goofy pays to Alice) (Alice owns the coin)
+    |______________________|____|
+                           |
+    ______________________\ /____
+    |  Signed by pk(goofy)      |
+    |___________________________|  (Goofy owns the coin)
+    | CreateCoin [uniqueCoinId] |
+    |___________________________|
+    
+    - The recipient can pass on the coin again.
+    
+    _____________________________
+    |  Signed by pk(Alice)      |
+    |___________________________|
+    | Pay to pk(Bob) :  H( | )  |  (Alice pays to Bob) (Bob owns the coin)
+    |______________________|____|
+                           |
+    ______________________\ /____
+    |  Signed by pk(goofy)      |
+    |___________________________|
+    | Pay to pk(Alice): H( | )  |  (Goofy pays to Alice) (Alice owns the coin)
+    |______________________|____|
+                           |
+    ______________________\ /____
+    |  Signed by pk(goofy)      |
+    |___________________________|  (Goofy owns the coin)
+    | CreateCoin [uniqueCoinId] |
+    |___________________________|

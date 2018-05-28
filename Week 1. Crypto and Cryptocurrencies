@@ -332,3 +332,24 @@ c. Others may be able to de-anonymize you by analyzing your activity pattern. (T
     |___________________________|  (Goofy owns the coin)
     | CreateCoin [uniqueCoinId] |
     |___________________________|
+------------------------------------------------------------
+* Security problem with GoofyCoin
+---------------------------------
+-> Double spending attack - Alice give a valid coin to both Bob and Chuck
+     _____________________________                    _____________________________
+    |  Signed by pk(Alice)      |                     |  Signed by pk(Alice)      |
+    |___________________________|                     |___________________________|
+    | Pay to pk(Bob) :  H( | )  |                     | Pay to pk(Chuck) :  H( | )|  
+    |______________________|____|                     |______________________|____|
+                           |                                                 |
+    ______________________\ /____                                            |
+    |  Signed by pk(goofy)      |<--------------------------------------------
+    |___________________________|
+    | Pay to pk(Alice): H( | )  |  
+    |______________________|____|
+                           |
+    ______________________\ /____
+    |  Signed by pk(goofy)      |
+    |___________________________|  
+    | CreateCoin [uniqueCoinId] |
+    |___________________________|

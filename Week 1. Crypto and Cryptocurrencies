@@ -368,13 +368,83 @@ Scrooge publishes a history of all transactions (a block-chain , digitally signe
       |__________|                 |___________|                 |__________|                  |__________|  
 
 * optimization : put multiple transactions in the same block as bit coin does.
-- Scoorge publishes the history;
-* The history allows us to detect double-spending, assume Alice owns a coin and she pays it to Bob and later on opays it to Chuck.
-* Chuck will be able to notice something is wrong as he will be able to look into the history and see that Alice has already paid that coin to Bob. (Everyone can see that is a double spend) - reject;
+* Scoorge publishes the history;
+* The history allows us to detect double-spending:
+    - assume Alice owns a coin and she pays it to Bob and later on opays it to Chuck.
+    - Chuck will be able to notice something is wrong as he will be able to look into the history and see that Alice has already paid that coin to Bob. (Everyone can see that is a double spend) - hence it will be rejected;
 
+* ScroogeCoin - Two kinds of Transactions
+-------------------------------------------
+1. CreateCoins Transaction:
+- each coin is worth a number of scrooge coins.
+* Creates new coin
+- multiple coins can be created in one transaction.
+* It is a valid coin since Scoorge has created it.
+_____________________________________
+| transID: 72        type:CreateCoin |
+|____________________________________|
+ ____________________________________
+|          coins created             |
+|____________________________________|
+|    num   |   value   |   recipient |
+|__________|___________|_____________|
+|     0    |    3.2    |    0x...    |    <----  coinID 72(0)
+|     1    |    1.4    |    0x...    |    <----  coinID 72(1)
+|     2    |    7.1    |    0x...    |    <----  coinID 72(2) 
+--------------------------------------
+--------------------------------------
+    
+2. PayCoins transaction:
+* PayCoins transaction consumes (and destroys) some coins, and creates new coins of the same total value (the coins might belong to different people).
+_____________________________________
+| transID: 72          type:PayCoins |
+|____________________________________|
+ ____________________________________
+|          consumed coinIDs:         |
+|          68(1), 42(0), 72(3)       |  <- All these coins are being consumed and destroyed by this PayCoins transactions.
+|____________________________________|
+|            coins created           |
+|____________________________________|
+|    num   |   value   |   recipient |
+|__________|___________|_____________|
+|     0    |    3.2    |    0x...    |    
+|     1    |    1.4    |    0x...    |    
+|     2    |    7.1    |    0x...    |    
+--------------------------------------
+|              signatures            |
+--------------------------------------
+* the new coins created have to add up to the same value as those consumed in the transaction.
+* At the bottom there is a set of digital signatures - this transaction needs to be signed by everyone who's paying in a coin. So if you are the owner of one of the coins in the transaction then you need to digitally sign the transaction.
+    
+* The Rules of ScroogeCoin PayCoins transaction is valid if:
+------------------------------------------------------------
+1. consumed coins are valid - (the coins were created in previous transactions);
+2. consumed coins were not already consumed in some previous transactions (double spend attack);
+3. total values of the coins out of the transaction is same as the total coins that went into the transaction. (total value out = total value in);
+4. the transaction is signed by all the owners of the consmed coins.
+------------------------------------------------------------------------------------------------------------------------
+* Coins are Immutable : (There exists flexibility)
+------------------------
+- Coins are immutables (not changed, subdivivded, combined);
+- Coins are created in one transaction and later consumed in some other transaction.
+- Subdivision of coins by using transactions:
+  a. create a new transaction  (coin - value 10 created)
+  b. consume your coin (consumed - value 10 coin)
+  c. pay out two new coins to yourself (pay out two value 5 coins);
+  
+ * Similarly you can combine or pass on a coin by creating a chain of transactions.
+ * Each of which passes the value on in a form of a nw coin to someone else.
+ -----------------------------------------------------------------------------------
+* The problem above is Scrooge has the authority, but can we decentralize it?
+- How everyone can agree upon a single published block chain - history of transactions that have happened?
+- How to verify which transactions have occured and are valid?
+- How IDs can be assigned to things in a decentralized way?
+------------------------------------------------------------------------------------------------------------------------
+Question 
+In ScroogeCoin, you have ten coins each of value 3.0. You’d like to transfer coins of value 5.0 to your friend. This requires:
 
+a. One transaction, one new coin created, and one signature
+b. One transaction, two new coins created, and two signatures   - Correct 
+c. Two transactions, two new coins created, and four signatures
+d. Two transactions, one new coin created, and two signatures
 
-    
-    
-    
-    

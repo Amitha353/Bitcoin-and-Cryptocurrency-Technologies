@@ -340,10 +340,10 @@ c. Others may be able to de-anonymize you by analyzing your activity pattern. (T
     |  Signed by pk(Alice)      |                     |  Signed by pk(Alice)      |
     |___________________________|                     |___________________________|
     | Pay to pk(Bob) :  H( | )  |                     | Pay to pk(Chuck) :  H( | )|  
-    |______________________|____|                     |______________________|____|
-                           |                                                 |
-    ______________________\ /____                                            |
-    |  Signed by pk(goofy)      |<--------------------------------------------
+    |______________________|____|                     |________________________|__|
+                           |                                                   |
+    ______________________\ /____                                              |
+    |  Signed by pk(goofy)      |<----------------------------------------------
     |___________________________|
     | Pay to pk(Alice): H( | )  |  
     |______________________|____|
@@ -353,3 +353,28 @@ c. Others may be able to de-anonymize you by analyzing your activity pattern. (T
     |___________________________|  
     | CreateCoin [uniqueCoinId] |
     |___________________________|
+------------------------------------------------------------
+* ScroogeCoin
+--------------
+Scrooge publishes a history of all transactions (a block-chain , digitally signed by Scoorge).
+                                                                                                               H( | )
+  ____________                   ___________                 ____________                  ____________           |
+  |   --------|---              |   -------|----             |   --------|---              |   --------|---       |
+  |   |prev:H(|) |              |  |prev:H(|)  |             |   |prev:H(|) |              |   |prev:H(|) |       |
+  |   ------------              |   ------------             |   ------------              |   ------------       |
+  |   |transID:71|              |  |transID:72 |             |   |transID:73|              |   |transID:74|<-------
+<-|   |----------| <------------|  |-----------| <-----------|   |----------| <------------|   |----------|
+      |   TRANS  |                 |   TRANS   |                 |  TRANS   |                  |  TRANS   |
+      |__________|                 |___________|                 |__________|                  |__________|  
+
+* optimization : put multiple transactions in the same block as bit coin does.
+- Scoorge publishes the history;
+* The history allows us to detect double-spending, assume Alice owns a coin and she pays it to Bob and later on opays it to Chuck.
+* Chuck will be able to notice something is wrong as he will be able to look into the history and see that Alice has already paid that coin to Bob. (Everyone can see that is a double spend) - reject;
+
+
+
+    
+    
+    
+    

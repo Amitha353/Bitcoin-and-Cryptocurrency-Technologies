@@ -1,5 +1,6 @@
 2.1 Centralization vs Decentralization
----------------------------------------
+----------------------------------------------------
+----------------------------------------------------
 - Almost no system is purely decentralized or centralized.
 - Example : Email - follows the SMTP (Simple Mail transfer Protocol) - decentralized protocol, but dominated by centralized webmail services.
 
@@ -26,5 +27,91 @@
     (Coenceptually anybody can look into the specifications and develop their own bitcoin node, but practically doesn't work so.)
     - Core developers trusted by the community work on the softwares;
     - Developers have great power;
+
+2.2 Distributed consensus
+----------------------------------------------------
+----------------------------------------------------
+- A challenge to solve inorder to build a distributed e-cash system is called distributed consensus. (how to decentralize ScroogeCoin);
+- Traditional Motivation - Distributed Systems
+Big companies have thousands or millions of servers that form a massive distributed database and any action performed by users will be stored multiple databases. When a new comment, post, etc comes in then in the massive backend there might be multiple copies of this action. The server must ensure that all copies are saved in the respective databases or none are saved otherwise it could cause inconsistency in the database data.
+- Distributed consensus protocol - (maps arbitrary keys to arbitrary values) it will enable multiple applications.
+    1. DNS (Domain Name System) - Distributed Domain Name System - mapping between human-understandable domain names io IP addresses.
+    2. Public key directory - Mapping between user email addresses and to their public keys.
+    3. Stock trades - who's transfered what units of which stock to whom.
+    4. Altcoins - (Altcoins are systems built on Bitcoin like principles to achieve different goals, currency systems, not-currency systems (DNS, PKD, stock trades));
     
+* Technical definition of Distributed Consensus:
+    - Imagine there is a fixed number n, of nodes or processes, each of these nodes has some input value and then a consensus protocol happens, and the two requirements on this consensus protocol are:
+    a. The protocol should terminate and all correct nodes decide/agree on the same value.
+    b. This value must have been proposed by some correct node.
+    
+* Distributed consensus can work in bit-coin  
+--------------------------------------------
+-> Bitcoin is a peer-to-peer system.
+-----------------------------------
+- When Alice wants to pay Bob: she broadcasts the transaction to all Bitcoin nodes.
+        ____________________
+Alice  | signed by Alice    | --------->
+       |--------------------| --------->           Nodes .....
+       | Pay to pk(bob): H()| --------->
+       |--------------------| --------->
+       
+* Structure of transaction (Similar to GoofyCoin) - 
+    - Signed by Alice(This is required by the other nodes to verify it has actually come from Alcie), and 
+    - has Bob public key (Address at which Bob wants to receive the bitcoin).
+    - Hash (way for Alice to link together this transaction/coin to her receipt of this coin from someone else previously).
+
+* In case Bob's computer is not in the picture of the nodes, then if he wants to be notified that this transaction did occur and he got paid, he might have to run a bitcoin node that is in one of these peer-to-peer nodes, in order to listen in on the network and be sure that he received the transaction.
+
+* How consensus could work in Bitcoin
+-------------------------------------
+- All nodes have a sequences of blocks of transactions they've reached consensus on.
+- Each node has a set of outstanding transactions it's heard about.
+
+- Could have a sequence of blocks that everybody has agreed upon. (Block - A sequence of transactions);
+
+___________    ____________     ___________         
+|    Tx   |    |    Tx    |    |    Tx    |   
+-----------    ------------    ------------
+|    Tx   |    |    Tx    |    |    Tx    | 
+-----------    ------------    ------------
+|   ...   |    |    ...   |    |    ...   |
+-----------    ------------    ------------
+|    Tx   |    |    Tx    |    |    Tx    |
+-----------    ------------    ------------
+
+- Consider there are 3 nodes in the system - Each of whom proposes
+                   A
+               ____________          
+               |    Tx    |     
+               ------------    
+               |    Tx    |    
+               ------------    
+               |    ...   |    
+               ------------    
+               |    Tx    |    
+              ------------   
+          /\              /\
+          /                \
+        /                    \
+      /       Consensus        \  
+    /          protocol          \
+   \/  B   <------------->       \/  C
+___________                  ___________         
+|    Tx   |                 |    Tx    |   
+-----------                 ------------
+|    Tx   |                 |    Tx    | 
+-----------                 ------------
+|   ...   |                 |    ...   |
+-----------                  ------------
+|    Tx   |                 |    Tx    |
+-----------                 ------------
+
+
+
+
+
+
+
+
     

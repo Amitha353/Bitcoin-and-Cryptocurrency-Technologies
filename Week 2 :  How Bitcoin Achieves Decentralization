@@ -1,0 +1,30 @@
+2.1 Centralization vs Decentralization
+---------------------------------------
+- Almost no system is purely decentralized or centralized.
+- Example : Email - follows the SMTP (Simple Mail transfer Protocol) - decentralized protocol, but dominated by centralized webmail services.
+
+* Aspects of decentralization in Bitcoin:
+1. Who maintains the ledger?
+2. Who has authority over which transactions are valid?
+3. Who creates new bitcoins?
+4. Who determines how the rules of the system change?
+5. How do bitcoins acquire exchange value?
+
+* Beyond the protocol : exchanges, wallet softwares, service providers, etc
+
+* Three aspects of bitcoins and where they fal on the centralization and decentralization spectrum:
+1. Peer-to-peer network : (closest to decentralization) 
+    - open to anyone, 
+    - low barrier entry. 
+    - Anybody can run a bitcoin node - download the software and run it.
+2. Mining : (Not very decentralized)
+    - open to anyone.
+    - but requires a very high capital cost
+    - inevitable concentration of power
+    - undesirable;
+ 3. Updates to softwares: (Not purely decentralized)
+    (Coenceptually anybody can look into the specifications and develop their own bitcoin node, but practically doesn't work so.)
+    - Core developers trusted by the community work on the softwares;
+    - Developers have great power;
+    
+    

@@ -80,7 +80,8 @@ ___________    ____________     ___________
 |    Tx   |    |    Tx    |    |    Tx    |
 -----------    ------------    ------------
 
-- Consider there are 3 nodes in the system - Each of whom proposes
+- Consider there are 3 nodes in the system - Each of whom proposes, has a input , a set of tranactions it has heard about.
+- They execute together some consensus protocol and for the consensus protocol to succeed, you can select any valid block, even if it is a valid block propsed by only one node.  
                    A
                ____________          
                |    Tx    |     
@@ -90,7 +91,7 @@ ___________    ____________     ___________
                |    ...   |    
                ------------    
                |    Tx    |    
-              ------------   
+               ------------   
           /\              /\
           /                \
         /                    \
@@ -107,9 +108,19 @@ ___________                  ___________
 |    Tx   |                 |    Tx    |
 -----------                 ------------
 
+- For a block to be valid, all of these transactions must have the right crypto signatures, etc. 
+- Maybe the A block gets selected and gets added to the ceonsensus block chain and so forth.
 
-
-
+                                                        A
+___________    ____________     ___________          ___________         
+|    Tx   |    |    Tx    |    |    Tx    |         |    Tx    |     
+-----------    ------------    ------------         ------------
+|    Tx   |    |    Tx    |    |    Tx    |         |    Tx    | 
+-----------    ------------    ------------         ------------
+|   ...   |    |    ...   |    |    ...   |         |    ...   |
+-----------    ------------    ------------         ------------
+|    Tx   |    |    Tx    |    |    Tx    |         |    Tx    |
+-----------    ------------    ------------         ------------ 
 
 
 

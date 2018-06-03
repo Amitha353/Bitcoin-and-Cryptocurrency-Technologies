@@ -174,5 +174,41 @@ b. Only small groups of nodes have to reach consensus rather than the network ha
 c. The order of blocks doesn’t matter for consensus - wrong
 d. Consensus only has to be reached over long time scales - Correct 
 ----------------------------------------------------------------------------------------------------------------------------------------
+2.3 Consensus without identity : the block chain 
+----------------------------------------------------------------------------------------------------------------------------------------
+-> Nodes don't have persistent long term identities.
 
-    
+* Why identity?
+----------------
+a. Pragmatic : some protocols need node IDs.
+b. Security : assumes less than 50% of the nodes are malicious.
+
+* Why don't bitcoin nodes have identities?
+--------------------------------------------
+a. Identity is hard in a  P2P (peer-to-peer) system (decentralized) (no central authority to assign and verify node creation)- Sybil attack (Sybil are just copies of nodes that a malicious adversary can create at will - pseudo participants).
+b. Pseudonymity is a goal of Bitcoin. (You are not forced to put your identity inorder participate in the transaction).
+
+* Weaker assumption : select a random node
+----------------------
+-> Analogy : lottery or raffle -> When tracking and verifying identities is hard, we give people tokens, tickets, etc.
+-> Now we can pick a random ID and select the node.
+
+* Key Idea: implicit consensus
+---------------
+-> In each round (multiple rounds - different block in the block-chain), random node is picked.
+-> This node proposes the next block in the chain.
+-> Others nodes implicitly accept/reject this block.
+    - by either extending it.
+    - or ignoring it and extending the chain from earlier block.
+-> Every block contains the hash of the block it is extending.
+
+* Consensus algorithm - Bitcoin (simplified - since assuming that the node is selected  magically/ramndomly)
+------------------------
+1. New transactions are broadcast to all nodes.
+2. Each node collects new transactions into a block.
+3. In each round a random node gets to broadcast its block.
+4. Other nodes accept the block only if all the transactions in it are valid (unspent, valid crypto signatures, double spend);
+5. Nodes express their acceptance of the block by including the hash in the next block they create.
+
+
+

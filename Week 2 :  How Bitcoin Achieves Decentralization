@@ -1,5 +1,5 @@
 2.1 Centralization vs Decentralization
-----------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------
 - Almost no system is purely decentralized or centralized.
 - Example : Email - follows the SMTP (Simple Mail transfer Protocol) - decentralized protocol, but dominated by centralized webmail services.
@@ -28,8 +28,9 @@
     - Core developers trusted by the community work on the softwares;
     - Developers have great power;
 
+----------------------------------------------------------------------------------------------------------------------------------------
 2.2 Distributed consensus
-----------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------
 - A challenge to solve inorder to build a distributed e-cash system is called distributed consensus. (how to decentralize ScroogeCoin);
 - Traditional Motivation - Distributed Systems
@@ -130,7 +131,48 @@ ___________    ____________     ___________          ___________
 -> Network is imperfect
 a. Not all pairs of nodes are connected.
 b. Faults in network.
-c. Latency (Happens over the )
+c. Latency (Happens over the Internet) - no notion of global time (not all nodes can agree to a common ordering of events based on observing timestamps)
 
+* Many impossible results (Due to the above issues)
+--------------------------
+a. Byzantine generals problem
+b. Fischer-Lynch-Paterson (deterministic nodes): consensus impossible with a single faulty node.
+
+* Some well-known protocols
+---------------------------
+-> Paxos - Never produces inconsistent result, but can (rarely) get stuck.
+
+* Understanding impossibility results (consensus model)
+-------------------------------------------------------
+-> These results say more about the model than about the problem.
+-> The models were developed to study systems like distributed databases.
+[Bitcoin violates a lot of the assumptions that go into the models, therefore consensus in bitcoins work better in theory and practice];
+
+* Bitcoin consensus: theory & practice
+-----------------------------------------
+-> Bitcoin consensus work better in practice than theory. Theory important to help predict unforseen attacks.
+
+* Things Bitcoin does differently
+----------------------------------
+a. Introduces incentives:
+    - possible only because it's a currency.
+b. Embraces randomness:
+    - Does away with the notion of a specific end-point (start-point, end-point);
+    - Consensus happend over long time scales - about 1 hour. (Even after that time, you are not sure if the transaction/block you are interested in has made it into the consensus block chain). (Instead as time goes on, the probability that it has made it goes higher and higher, and the probability of you making an assumption about the transaction reduces exponentially).
+----------------------------------    
+Question 1: Which of these factors make distribution consensus hard?
+
+a. Nodes may crash - Correct 
+b. Nodes may be taken over by malware - Correct 
+c. Encrypted messages may be intercepted and decrypted - Wrong
+d. There is latency on the network - Correct 
+----------------------------------
+Question 2:Why is Bitcoin able to reach consensus in practice despite this being a generally difficult problem? 
+
+a. Financial incentives cause participants to work together - Correct 
+b. Only small groups of nodes have to reach consensus rather than the network having to globally reach consensus - Wrong
+c. The order of blocks doesn’t matter for consensus - wrong
+d. Consensus only has to be reached over long time scales - Correct 
+----------------------------------------------------------------------------------------------------------------------------------------
 
     

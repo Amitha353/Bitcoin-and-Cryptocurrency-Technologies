@@ -122,7 +122,15 @@ ___________    ____________     ___________          ___________
 |    Tx   |    |    Tx    |    |    Tx    |         |    Tx    |
 -----------    ------------    ------------         ------------ 
 
+* Why consensus is hard
+------------------------
+1. Nodes may crash
+2. Nodes may be malicious
 
+-> Network is imperfect
+a. Not all pairs of nodes are connected.
+b. Faults in network.
+c. Latency (Happens over the )
 
 
     

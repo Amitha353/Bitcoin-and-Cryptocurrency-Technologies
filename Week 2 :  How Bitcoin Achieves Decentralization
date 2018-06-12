@@ -306,7 +306,30 @@ ___________    ____________     ___________          ___________                
 How can a merchant(Bob) protect himself from this attack?
 ---------------------------
 
+___________    ____________     ___________    |    ______________   |
+|    Tx   |    |    Tx    |    |    Tx    |    |   |             |   | 
+-----------    ------------    ------------    |    -------------    |
+|    Tx   |    |    Tx    |    |    Tx    |    |   |             |   | ..... 6 confirmations
+-----------    ------------    ------------    |    -------------    |
+|   ...   |<---|    ...   |<---|    ...   |    |   | C(A) -> B   |   |
+-----------    ------------    ------------    |    -------------    |
+|    Tx   |    |    Tx    |    |    Tx    |    |   |             |   |
+-----------    ------------    ------------    |    -------------    |
+                                               |                     |  
+                                               |                     |
+                            Hear about C(A) -> B transaction     Confirmation 1
+                            peer-to-peer n/w (0 confirmation)
 
+-> Double spend probability decreases exponentially with the number of confirmations.
+-> Most common heuristics : 6 confirmations.
 
+* Summary
+-----
+i. Protection againsr invalid transactions is cryptographic but enforced by consensus.
+ii. Protection against double spending is purely by consensus.
+iii. Never sure if the transaction is in the consensus block.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------
 
 

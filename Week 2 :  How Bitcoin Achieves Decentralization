@@ -210,5 +210,29 @@ b. Pseudonymity is a goal of Bitcoin. (You are not forced to put your identity i
 4. Other nodes accept the block only if all the transactions in it are valid (unspent, valid crypto signatures, double spend);
 5. Nodes express their acceptance of the block by including the hash in the next block they create.
 
+* Why the Consensus algorithm works? What can a malicious node do?
+--------------------------------------------------------------------
+-> Consider a couple of blocks in the chain, assume that it extends to the left all the way back to the genesis block. 
+-> The pointer (<---) a block referring to what is the previous block that it extends by including the hash of the previous block within its own contents.
+___________    ____________     ___________          ___________         
+|    Tx   |    |    Tx    |    |    Tx    |         |    Tx    |     
+-----------    ------------    ------------         ------------
+|    Tx   |    |    Tx    |    |    Tx    |         |    Tx    | 
+-----------    ------------    ------------         ------------
+|   ...   |<---|    ...   |<---|    ...   | <-----  |    ...   |
+-----------    ------------    ------------         ------------
+|    Tx   |    |    Tx    |    |    Tx    |         |    Tx    |
+-----------    ------------    ------------         ------------ 
+
+-> Consider a malicious attacker Alice attempts
+------------------------------------------------
+1. Can she steal Bitcoins belonging to another user at a different address that she doesn't control? 
+    (Nope, even if she can propose the next valid node, she cannot steal Bitcoins belonging to another user - since she cannot forge their signatures);
+2. Can she prevent blocks of transactions from certain users into the valid block-chain - Deny service to Bob? 
+    (Not really, if Bob's block doesn't make it into the next block that Alice proposes, then he can wait for another block until an honest node gets a chance to propose a block and then his transaction will be appended to the block-chain)
+3. Double-Spending Attack
+- Consider Alice is a customer of some online merchant/website run by Bob who provides services in exchange for payment in Bitcoins.
+- Alice goes to Bob's website and decides to buy an item, and pays for it in Bitcoins - Bitcoin transaction from her address to Bob's address 
+
 
 

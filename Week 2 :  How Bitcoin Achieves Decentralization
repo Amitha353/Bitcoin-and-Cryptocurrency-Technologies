@@ -214,25 +214,99 @@ b. Pseudonymity is a goal of Bitcoin. (You are not forced to put your identity i
 --------------------------------------------------------------------
 -> Consider a couple of blocks in the chain, assume that it extends to the left all the way back to the genesis block. 
 -> The pointer (<---) a block referring to what is the previous block that it extends by including the hash of the previous block within its own contents.
-___________    ____________     ___________          ___________         
-|    Tx   |    |    Tx    |    |    Tx    |         |    Tx    |     
------------    ------------    ------------         ------------
-|    Tx   |    |    Tx    |    |    Tx    |         |    Tx    | 
------------    ------------    ------------         ------------
-|   ...   |<---|    ...   |<---|    ...   | <-----  |    ...   |
------------    ------------    ------------         ------------
-|    Tx   |    |    Tx    |    |    Tx    |         |    Tx    |
------------    ------------    ------------         ------------ 
+___________    ____________     ___________         
+|    Tx   |    |    Tx    |    |    Tx    |         
+-----------    ------------    ------------         
+|    Tx   |    |    Tx    |    |    Tx    |         
+-----------    ------------    ------------         
+|   ...   |<---|    ...   |<---|    ...   | 
+-----------    ------------    ------------         
+|    Tx   |    |    Tx    |    |    Tx    |         
+-----------    ------------    ------------         
 
 -> Consider a malicious attacker Alice attempts
-------------------------------------------------
+--------------------------
 1. Can she steal Bitcoins belonging to another user at a different address that she doesn't control? 
     (Nope, even if she can propose the next valid node, she cannot steal Bitcoins belonging to another user - since she cannot forge their signatures);
 2. Can she prevent blocks of transactions from certain users into the valid block-chain - Deny service to Bob? 
     (Not really, if Bob's block doesn't make it into the next block that Alice proposes, then he can wait for another block until an honest node gets a chance to propose a block and then his transaction will be appended to the block-chain)
 3. Double-Spending Attack
-- Consider Alice is a customer of some online merchant/website run by Bob who provides services in exchange for payment in Bitcoins.
-- Alice goes to Bob's website and decides to buy an item, and pays for it in Bitcoins - Bitcoin transaction from her address to Bob's address 
+i. Consider Alice is a customer of some online merchant/website run by Bob who provides services in exchange for payment in Bitcoins.
+ii. Alice goes to Bob's website and decides to buy an item, and pays for it in Bitcoins - Bitcoin transaction from her address to Bob's address and broadcasts it to the network.
+iii. An honest node creates the next block, listens to this transaction(Alice -> Bob) and includes it in that block.
+
+C(A) - coin belonging to Alice; B - Bob's address;
+Transaction is a datastructure that contains Alice's signature, an instruction to pay to Bob's public key and also hash(pointer to transaction where Alice received it from somebody ... start of the block chain);
+     ------------------------------------------------------------------------------------
+    |                                                                                   |
+   \ /                                                                                  |
+___________    ____________     ___________          ___________                        |
+|    Tx   |    |    Tx    |    |    Tx    |         |    Tx    |                        |
+-----------    ------------    ------------         ------------                        |
+|    Tx   |    |    Tx    |    |    Tx    |         |    Tx    |     -------------------|--
+-----------    ------------    ------------         ------------/ -- |    signed by A   |  |
+|   ...   |<---|    ...   |<---|    ...   | <-----  | C(A)-> B |     -------------------|--
+-----------    ------------    ------------         ------------\ -- | Pay to pk(B) : H(|) |
+|    Tx   |    |    Tx    |    |    Tx    |         |    Tx    |     ----------------------
+-----------    ------------    ------------         ------------ 
+
+iv. Consider a malicious node controller by Alice, she proposes the next block, ignores the current valid block and instead contains a pointer to the previous block - This is going to contain a transaction of coins rfom Alices to another address controller by Alice (A').
+- This is a double spend - Alice creates a new transaction that transfers the coins to another address owned by her rather than to Bobs's address. (From the figure below, two completly different signatures and pointing to the same hash function.)
+
+     ------------------------------------------------------------------------------------
+    |                                                                                   |
+   \ /                                                                                  |
+___________    ____________     ___________          ___________                        |
+| / \ Tx  |    |    Tx    |    |    Tx    |         |    Tx    |                        |
+---|-------    ------------    ------------         ------------                        |
+|  | Tx   |    |    Tx    |    |    Tx    |         |    Tx    |     -------------------|--
+---|-------    ------------    ------------         ------------/ -- |    signed by A   |  |
+|  |...   |<---|    ...   |<---|    ...   | <-----  | C(A)-> B |     -------------------|--
+---|-------    ------------    ------------ / \     ------------\ -- | Pay to pk(B) : H(|) |
+|  | Tx   |    |    Tx    |    |    Tx    |  |      |    Tx    |     ----------------------
+---|-------    ------------    ------------  |       ------------ 
+   |                                          |   
+   |                                          |      ------------- 
+   |__________________________________        |     |             |
+                                     |       |       -------------
+                   ------------------|---    |------|             |
+                  |  signed by A     |  |  -------\ --------------
+                   ------------------|---           |  C(A) -> A' |
+                  | Pay to pk(A'): H(|) |  -------/ --------------
+                   ----------------------           |             |
+                                                     --------------
+How do we know if the double spend is successful?
+---------------------------------
+- Depends on which transaction block ends up in the consensus chain.
+- That is based on the fact the honest blocks are always extending the longest valid branch. (It is not easy to say - technically < - for other nodes to identify between valid or double-spend);
+- If the double-spend block is successful it gets extended.
+
+     ------------------------------------------------------------------------------------
+    |                                                                                   |
+   \ /                                                                                  |
+___________    ____________     ___________          ___________                        |
+| / \ Tx  |    |    Tx    |    |    Tx    |         |    Tx    |                        |
+---|-------    ------------    ------------         ------------                        |
+|  | Tx   |    |    Tx    |    |    Tx    |         |    Tx    |     -------------------|--
+---|-------    ------------    ------------         ------------/ -- |    signed by A   |  |
+|  |...   |<---|    ...   |<---|    ...   | <-----  | C(A)-> B |     -------------------|--
+---|-------    ------------    ------------ / \     ------------\ -- | Pay to pk(B) : H(|) |
+|  | Tx   |    |    Tx    |    |    Tx    |  |      |    Tx    |     ----------------------
+---|-------    ------------    ------------  |       ------------ 
+   |                                          |   
+   |                                          |      -------------        -------------
+   |__________________________________        |     |             |      |             |
+                                     |       |       -------------       --------------
+                   ------------------|---    |------|             |      |             |
+                  |  signed by A     |  |  -------\ --------------        -------------
+                   ------------------|---           |  C(A) -> A' |<---- |             |
+                  | Pay to pk(A'): H(|) |  -------/ --------------        -------------
+                   ----------------------           |             |      |             |
+                                                     --------------       -------------
+How can a merchant(Bob) protect himself from this attack?
+---------------------------
+
+
 
 
 

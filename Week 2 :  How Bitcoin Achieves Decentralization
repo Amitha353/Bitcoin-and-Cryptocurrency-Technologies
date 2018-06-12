@@ -328,6 +328,14 @@ ___________    ____________     ___________    |    ______________   |
 i. Protection againsr invalid transactions is cryptographic but enforced by consensus.
 ii. Protection against double spending is purely by consensus.
 iii. Never sure if the transaction is in the consensus block.
+
+* Question
+----------
+What can a malicious node do?
+Create valid transactions originating from someone else’s address - false
+Prevent a valid transaction from getting any confirmations - false
+Ignore the longest valid branch rule when proposing a new block - true
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------------------------------------

@@ -514,11 +514,34 @@ d. miners can extebded other blocks.
  Orphan block - blocks not a part of the consensus chain - due to double spend, network latency, invalid bliock, etc;
 5. Hash Puzzles and Mining - Miners are special type of nodes that compete for creating new blocks and are rewarded for their efforts in terms of Bitcoins.
 
+* Bitcoin has three types of consensus
+---------
+a. Value
+b. State - record of which transactions are valid or occured.
+c. Rules
 
+* Bitcoin is bootstrapped
+------------------
 
+                Security of block chain
+              /\                  \
+              /                     \ 
+             /                       \ 
+            /                        \/
+    health of mining                 value of
+      ecosystem                      currency
+            / \                          |
+             |___________________________|
 
+* What can a "51% attacker" do?
+----------------------
+1. Steal coins from existing address ? (No cannot change the cryptography / digital signatures of underlying transaction in invalid blocks created by the attackers -> as these blocks will not be accepted into the consensus chain by honest nodes);
 
+2. Suppress some transactions?
+a. From the block chain -> yes, a block creator can subvert certain transactions into the block created by them
+b. From the P2P network -> No, sinec P2P network cannot wholly be controlled by an adversary, eventually a certain honest node will pick up the valid tramnsaction block.
 
+3. Change the block reward? - No cannot change the bit-coin reward installed the software of other valid nodes. (w.r.t changing the rules);
 
-
-
+4. Destroy the confidence in Bitcoin? -> Yes;
+----------------------------------------------------------------------------------------------------------------------------------------

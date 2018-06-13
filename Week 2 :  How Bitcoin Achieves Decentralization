@@ -337,7 +337,103 @@ Prevent a valid transaction from getting any confirmations - false
 Ignore the longest valid branch rule when proposing a new block - true
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-
+2.4 Incentives and proof of work
 ----------------------------------------------------------------------------------------------------------------------------------------
+-> Assumptions of nodes to be honest and not an adversary is problematic.
+-> Can nodes that are honest be given some incentives?
+-> Can we penalize nodes for creating adversay block-transactions into the chain?
+
+     ------------------------------------------------------------------------------------
+    |                                                                                   |
+   \ /                                                                                  |
+___________    ____________     ___________          ___________                        |
+| / \ Tx  |    |    Tx    |    |    Tx    |         |    Tx    |  <---------------------|-Can we reward nodes that created these blocks?
+---|-------    ------------    ------------         ------------                        | (No since nodes don't have identities)
+|  | Tx   |    |    Tx    |    |    Tx    |         |    Tx    |     -------------------|-- (Decentralized approached needed to)
+---|-------    ------------    ------------         ------------/ -- |    signed by A   |  | (incentivize nodes with units of currency);
+|  |...   |<---|    ...   |<---|    ...   | <-----  | C(A)-> B |     -------------------|--
+---|-------    ------------    ------------ / \     ------------\ -- | Pay to pk(B) : H(|) |
+|  | Tx   |    |    Tx    |    |    Tx    |  |      |    Tx    |     ----------------------
+---|-------    ------------    ------------  |       ------------ 
+   |                                          |   
+   |                                          |      ------------- 
+   |__________________________________        |     |             |
+                                     |       |       -------------
+                   ------------------|---    |------|             |
+                  |  signed by A     |  |  -------\ --------------
+                   ------------------|---           |  C(A) -> A' |  <---- Can we penalize the node that created this block?
+                  | Pay to pk(A'): H(|) |  -------/ --------------     (Problematic - since nodes don't have identities)
+                   ----------------------           |             |
+                                                     --------------
+-> Everything so far is just a distributed consensus protocol. But now we utilize that currency has value.
+* 2 sperate Incentive methods in Bitcoin
+------------------------------------------
+Incentive 1 : block reward
+-------------------------
+Node that creates a block gets to
+a. include special coin-creation transactions in the block.
+b. chooses recipient address of this transaction. (the node can chooses it's own address and thereby paying itself);
+-> Value is fixed: currently 25 BTC, halves every 4 years. (2nr period - previously 50BTC);
+-> Block creator gets to "collect" the reward only if the block ends up on long-term consensus branch!
+
+In this incentive method: There's a finite supply of bitcoins
+-> if every 4 years in halves (BTC value)-> geometric series then:
+# Total supply : 21 millions.
+# Block reward is how bitcoins are created.
+# Run out in 2140. No new bitcoins unless rules change.
+
+Incentive 2 : transaction fees
+--------------------------------
+-> Creator of transactions (not nodes , transaction) can choose to make output value less than input value.
+-> Remainder is a transaction fee and goes to the block creator.
+-> Currently purely voluntary, but eventually can get mandatory.
+
+* Remaining problems to know - to get to decentralization in Bitcoins
+---------------------------------------------------
+1. How to pick a random node?
+2. How to avoid a free-for-all due to rewards?
+3. How to prevent Sybil attack? (An adversary might try to create a number of sybil nodes - malicious nodes - subvert the consensus chain);
+
+-> Same solution for all the above 3 -> "Proof of Work".
+
+* Proof of Work
+----------------
+-> Instead of picking a node we can approximate selecting a random node: 
+    Select nodes in proportion to a resource that no one can monopolize (hope);
+   a. In proportion to computing power : proof-of-work (Allowing nodes to compete with each other by using their computing power and that will result in nodes being automatically being picked in that proportion).
+   b. In proportion to ownership (of currency) : proof of-stake
+   
+-> Equivalent views of proof of work
+--------------
+1. Select nodes in proportion to computing power.
+2. Let nodes compete for the right to create blocks.
+3. Make it hard to create new identities. (Helful against sybil attack - adbersary attempting to create malicious blocks);
+
+* Hash puzzles
+----------------
+-> So far blocks were considered to just contain transactions, but consisder each block has a "nonce", "previous hash" -> points to the previous block, list of transactions.
+-> For a node to successfully create a block it must create a hash output that matches that target size and this demands high computation power and is not very easy. In this manner picking a node for creating a block is random and decentralized.
+
+-> To create a block , find nonce s.t.
+H(nonce || prev_hash || tx || ... || tx) is very small
+            -------------
+            |   nonce   |
+            -------------
+       <----|-- prev_h  |
+            -------------
+            |    Tx     |
+            -------------
+            |    Tx     |
+            -------------
+ <-------------------------------------- Output space of hash ---------------------------------------------------->
+ ------------------------------------------------------------------------------------------------------------------
+ |*********|\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|
+ ------------------------------------------------------------------------------------------------------------------
+ <-------->
+ Target space
+ 
+ -> If hash function is secure: only way to succeed is too try enough nonces until you get lucky.
+ -> This is the fundamental problem that a node faces when it needs to create a block.
+ -> Node are independently and always competing to solve hash puzzles and when one of then gets lucky and will find a random nonce that satisy the target zise prpoerty (hash small) -  then that node gets to propse the next block. - "Decentralized".
 
 

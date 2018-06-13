@@ -493,3 +493,32 @@ a. More than 50T% - true
 b. Lesss than 50% - false
 c. Exactly 50% - false
 ----------------------------------------------------------------------------------------------------------------------------------------
+2.5 Summary
+----------------------------------------------------------------------------------------------------------------------------------------
+* Mining Economics
+--------------------
+If mining reward (block reward + Tx fees) >   Hardware + Electricity cost  -> Profit
+ 
+Complications:
+a. fixed vs variable costs. (hardware - fixed cost, electricity -  variable - incurred over time);
+b. rewards depends on gloabl hash rate. (miners - gets block -> global power)
+c. pay - dollars, payed - bitcoins; exchange rate matters;
+d. miners can extebded other blocks.
+
+* Terminology
+--------------
+1. Identities - No identities needed, any user can create a pseudonymous key pair at any moment , and any number of them.
+2. Transactions - Messages that are broadcast to the Bitcoin peer-to-peer network - instructions to transfer a coin rfom one address to another.
+3. P2P network - propagates all new transactions/blocks to all the Bitcoin peer nodes.
+4. Block-chain & Consensus -  security . transaction in the block-chain only after confirmations (>6) - part of the consensus chain;
+ Orphan block - blocks not a part of the consensus chain - due to double spend, network latency, invalid bliock, etc;
+5. Hash Puzzles and Mining - Miners are special type of nodes that compete for creating new blocks and are rewarded for their efforts in terms of Bitcoins.
+
+
+
+
+
+
+
+
+

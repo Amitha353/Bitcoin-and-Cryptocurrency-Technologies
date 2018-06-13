@@ -544,4 +544,22 @@ b. From the P2P network -> No, sinec P2P network cannot wholly be controlled by 
 3. Change the block reward? - No cannot change the bit-coin reward installed the software of other valid nodes. (w.r.t changing the rules);
 
 4. Destroy the confidence in Bitcoin? -> Yes;
+
+Question 1:
+A 51% attacker can potentially: (check all that apply)
+
+a. Steal coins from an existing address - false
+b. Make it unprofitable for other miners to mine - true
+c. Change the block reward - false
+d. Suppress transactions from the block chain - true
+
+Question 2:
+Which of the following are true? (check all that apply)
+
+a.51% attacks are difficult because an adversary would need to control more than half of the nodes on the Bitcoin network - false
+
+b.Proof-of-work is essential for preventing sybil attacks on the Bitcoin blockchain - true [proof-of-work - decentralizing the selectioon of node - compete for computation power]
+
+c.As a transaction gets buried deeper in the blockchain, it becomes less and less likely that it will ever be undone because the work required to make a longer alternate branch becomes more and more difficult - true.
+
 ----------------------------------------------------------------------------------------------------------------------------------------

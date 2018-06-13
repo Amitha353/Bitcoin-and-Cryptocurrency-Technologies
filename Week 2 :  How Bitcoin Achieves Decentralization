@@ -436,4 +436,60 @@ H(nonce || prev_hash || tx || ... || tx) is very small
  -> This is the fundamental problem that a node faces when it needs to create a block.
  -> Node are independently and always competing to solve hash puzzles and when one of then gets lucky and will find a random nonce that satisy the target zise prpoerty (hash small) -  then that node gets to propse the next block. - "Decentralized".
 
+* Three properties PoW (Proof of Work)
+---------------------------------------
+i.PoW property 1 :  difficult to compute
+  - As of August : about 10^20 hashes/block; (target space - 1 / 10^20 of the output space);
+  - Only some nodes bother to compete - miners. (Bitcoin mining - process of repeatedly trying and solving hash puzzles);
 
+ii. PoW property 2 : parametrizable cost
+    - Nodes on the peer-to-peer network will automatically re-calculate the target (target space as a fraction of the output space) every two-weeks.
+    - Goal : average time between blocks = 10 minutes (10 mintes needed , inorder to put the a lot of transactions in a block)
+    - Prob(alice wins the next block) =  fraction of global hash power she controls.
+    - If Alice has minimg hardware that's about 0.1% of the total hash power, she will computer roughly one in every thousand blocks.
+ 
+ * Key security assumption -> 
+ ------
+ Attack infeasible if majority of miners "weighted by hash power" (computation power) follow the protocol.
+
+* Solving hash puzzles is probabilistic
+------
+- Nobody can predict which nonce is used (instead trail and error) - Bernoulli trails.
+- poisson process - distribution to find the next block.
+- If a block is find now, then the next block will be found soon and there is a small probability that it will take a long time to find the next block.
+
+p    |   10 minutes
+r    |\     |
+o D  | \    |
+b e  |  \   |
+a n  |   \  |
+b s  |    \ | 
+i i  |     \|
+l t  |      | \  
+i y  |      |  \__  
+t    |      |     --- __________
+y    |------|-----------------------------------------
+        Time to next block (entire network)  
+
+# For an individual miner
+ # Mean time to find a block = 10 minutes / fraction of hash power;
+ -> Consider Alice has 0.1% of the hash power
+ -> Alice's chance to find the next block =  10 / 0.1%  = 10 / 1 / 1000 = 10 * 1000 = 10000 minutes (several days); 
+ 
+ iii. PoW propert 3 : trivial to verify -> gets rid of the centalization property
+    - Nonce must be published as part of block.
+    - Other miners simply verify that
+    H(nonce || prev_hash || tx || ... || tx) < target
+ 
+Question 1: 
+Proof of work is a way to:
+a. Select nodes in proportion to computing power (true)
+b. Let nodes compete for the "right" to create blocks (true)
+c. Make it impossible for one miner to act like many different miners (false)
+
+Question 2:
+A block in the block chain was found at time t. What is the probability that the next block was found at or before time t+10 minutes? Assume that the total hash power of the network stays constant.
+a. More than 50T% - true
+b. Lesss than 50% - false
+c. Exactly 50% - false
+----------------------------------------------------------------------------------------------------------------------------------------

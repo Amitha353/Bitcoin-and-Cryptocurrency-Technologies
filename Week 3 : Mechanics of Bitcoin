@@ -252,10 +252,72 @@ vi. OP_EQUALVERIFY - consumes <pubkeyhash> and <pubkeyhash?>
  
  vii. OP_CHECKSIG - > checks the transaction signature. -> pops the commands from the stack, public key is already verified.
  
- 
- 
- 
- 
+* Bitcoin script instructions
+------------------------------
+* Small -> 256 opcodes total (15 disable, 75 reserved)
+       * Arithmetic
+       * If/then
+       * Logic/data handling
+       * Crypto!
+              * Hashes
+              * Signature Vwerifications
+              * Multi-signature verification -> Instruction -> OP_CHECKMULTISIG
+
+* OP_CHECKMULTISIG
+--------------------
+-> Built-in support for joint signatures
+-> Specify n public keys
+-> Specify t (threshold)
+-> Verifications requires t signatures (t of n signatures need to be valid);
+# Bug: Extra data-value popped off and ignored;
+
+* Bitcoin scripts in practice (2014 ->)
+-------------------------------
+1. Most nodes whitelist known scripts.
+2. 99.9% - simple signature check.
+3. ~0.01% are MULTISIG
+4. ~0.01% are Pay-to-Script-Hash
+6. Remainder are error, proof-of-burn scripts.
+
+* Proof-of-burn script
+---------------------
+-> It can never be redeemed , those coins have been destroyed and can't be used again.
+-> OP_RETURN
+-> Used for:
+    a. <arbitrary data> -> (stays forever) timestamp, write something in exchange for a little loss of Bitcoins.
+    b. use alternative coin to bitcoin.
+    
+* Pay-to-Script-Hash script
+-----------------------------
+ * Rather than the sender having to send a script as an address they just send a hash of the script.
+ * Eventaully added to BITCOIN.
+              
+              STEP 1                                    STEP 2
+       (redemption script has right hash)    (redemption script-desearalized - actual signture check)
+            ----------------------------         ----------------------------
+              
+Recipient   <signature>                          <signature>
+            <<pubkey> OP_CHECKSIG>                   
+                 
+            -----------------------------        ----------------------------
+              
+             OP_HASH160
+ Sender      <hash of redemption script>            <pubkey>       
+             OP_EQUAL                              OP_CHECKSIG
+             
+             -----------------------------       ----------------------------
+
+Q. Bitcoin’s script supports instructions whose effect is: (check all that apply)
+
+a. Adding two numbers                  - true
+b. Conditional execution (if/then)     - true
+c. Looping                             - false
+d. Recursion                           - false   
+e. Hashing                             - true
+--------------------------------------------------------------------------------------------------------------------------------------
+3.3 Applications of Bitcoin scripts
+--------------------------------------------------------------------------------------------------------------------------------------
+
  
  
  

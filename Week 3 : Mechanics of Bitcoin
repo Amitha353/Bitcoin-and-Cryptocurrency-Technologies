@@ -1,0 +1,45 @@
+--------------------------------------------------------------------------------------------------------------------------------------
+3.1 Bitcoin Transactions
+--------------------------------------------------------------------------------------------------------------------------------------
+Recap : Bitcoin consensus
+
+Bitcoin consensus gives us:
+1. Append-only ledger - datastructure that we can only write to and once data is there , it's forever.
+2. Decentralized consensus - decentralized protocol for establishing the value of that ledger.
+3. Miners to validate transactions. (no double spends);
+
+I. An account-based ledger (not Bitcoin)
+------------------
+(Simplification : only one transaction per block)
+       ---------------------------------------------------------
+ |    |Create 25 coins and credit to Alice (Asserted by Miners) |
+ |    -----------------------------------------------------------
+ |    | Transfer 17 coins from Alice to Bob (Signed by Alice)   |
+ |    -----------------------------------------------------------
+ |    | Transfer 8 coins from Bob to Carol (Signed by Bob)      |
+ |    -----------------------------------------------------------
+ |    | Transfer 5 coins from Carol to Alice (Signed by Bob)    |
+ |    -----------------------------------------------------------
+ |    | Transfer 15 coins from Alice to David (Signed by Alice) |  <- Is this valid? Requires to know the data in each members account
+ |    -----------------------------------------------------------      Need to go back to the history(account, genesis to keep track)
+\ /  
+
+It is an infinite backward scan, because of the need to keep track of transactions - and add them up tally the transaction - Bitcoin doen't follow an account-based ledger;
+Bitcoin uses a ledger that keeps track of transactions.
+
+II. A transaction-based ledger (Bitcoin)
+-----------------------------------------'
+
+|   -----------------------------------------------
+|   |1
+|   |   Input: 
+|   |
+|
+|
+|
+|
+|
+|
+|
+|
+|

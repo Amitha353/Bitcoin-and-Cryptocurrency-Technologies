@@ -147,5 +147,116 @@ c. There is one signature that covers all the output  - false
 d. Each output contains a signature                   - false
 
 --------------------------------------------------------------------------------------------------------------------------------------
-3.2
+3.2 Bitcoin Scripts
 --------------------------------------------------------------------------------------------------------------------------------------
+-> Each transaction output key scpecifies and script.
+
+"out": [
+              {
+                     "value": "10.235969544",                    <-- Each output can have value.sum(output) < sum(input)
+                     "scriptPubKey": "OP_DUP_OP_HASH89324..568   <---- Script - with public key      
+                     OP_EQUALVERIFY OP_CHECKSIG"
+              },
+              ...
+       ]
+       
+ * Inorder to redeem a previous transaction by signing with the correct public key 
+ -> Input "address" and output "address" are both scripts, they are concatenated together and run, if successful it is a valid. transaction.
+            ----------------------------
+              
+scriptSig   304521245522...
+            45344gsjdui9...                   input
+                 
+            -----------------------------
+              
+             OP_DUP
+scriptPubKey OP_HASH160
+             69efrfg18..                     output
+             OP_EQUALVERIFY OP_CHECKSIG
+             
+             -----------------------------
+             
+* Bitcoin scripting language ("Script")
+------------------
+Design goals
+ 1. Built for Bitcoin (inspired by Forth)
+ 2. Simple, compact
+ 3. Support for cryptography (hash functions, compute signatures, verify signatures, etc)
+ 4. Stack-based language
+ 5. Limits on time / memory
+ 6. No looping
+ 
+Bitcoin script execution example
+------------
+-> If data is seen it's pushed onto the stack.
+-> Here - write data into the memory (stack);
+
+<sig> <pubkey> OP_DUP OP_HASH160 <pubKeyHash?> OP_EQUALVERIFY OP_CHECKSIG
+
+# OP_DUP -> take value on top of the stack, pop off, and write two copies back to stack. 
+# OP_HASH160 -> Take the value on top of stack and compute cryptographic hash of it.
+# OP_EQUALVERIFY -> Check if the two values at the top of stack equal.
+# OP_CHECKSIG -> Verify the signatures
+
+* Stack structure -> command by command
+------
+<sig> <pubkey> OP_DUP OP_HASH160 <pubKeyHash?> OP_EQUALVERIFY OP_CHECKSIG
+i.   <sig>
+  ----------
+ | <sig>    |
+  ----------
+ii. <pubkey>
+
+ ------------
+ | <pubkey> |
+  ------- ---
+ | <sig>    |
+  -----------
+iii. OP_DUP
+
+ ------------
+ | <pubkey> |
+ ------------
+ | <pubkey> |
+  ------- ---
+ | <sig>    |
+  -----------
+iv. OP_HASH160
+
+ -------------
+ |<pubkeyhash>|
+ --------------
+ | <pubkey>   |
+  ------- ---- 
+ | <sig>      |
+  -------------
+
+v. <pubKeyHash?>
+  -------------
+ |<pubKeyHash?>| <--sender
+ -------------- 
+ |<pubkeyhash> | <- recipient
+ --------------
+ | <pubkey>    |
+  ------------- 
+ | <sig>       |
+  -------------
+ 
+vi. OP_EQUALVERIFY - consumes <pubkeyhash> and <pubkeyhash?>
+ 
+ --------------
+ | <pubkey>    |
+  ------------- 
+ | <sig>       |
+  -------------
+ 
+ vii. OP_CHECKSIG - > checks the transaction signature. -> pops the commands from the stack, public key is already verified.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

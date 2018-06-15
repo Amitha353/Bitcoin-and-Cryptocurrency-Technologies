@@ -102,3 +102,50 @@ E|   |                            (Signed by Alice)|
  |   -----------------------------------------------
  |
 \ /
+
+The real deal : A Bitcoin transaction
+--------------------
+-> It's actually a compact binary format of the data shown that it gets compiled into.
+-> Data structure - 3 parts - Metadata, inputs, outputs.
+
+1. Metadata
+              {
+transaction hash -> "hash" : "5a57fdg93....2443",
+                    "ver":1,
+housekeeping        "vin_sz":2,
+                    "vout_sz":1,
+                    "lock_time":0, **
+                    "size":404,
+                     ....
+              }             
+2. Input
+       "in": [
+              {
+              "prev_out": {
+                     "hash": "3be4...89gfh",    <----- Previous transactions
+                     "n":0
+              },
+              "scriptSig": "3f3we46",   <----- Signatures
+              },
+              ....
+            ],
+ 3. Output
+       "out": [
+              {
+                     "value": "10.235969544",                    <-- Each output can have value.sum(output) < sum(input)
+                     "scriptPubKey": "OP_DUP_OP_HASH89324..568   <---- Script - with public key      
+                     OP_EQUALVERIFY OP_CHECKSIG"
+              },
+              ...
+       ]
+ 
+ Q . In a typical transaction
+
+a. There is one signature that covers all the inputc  - false
+b. Each input contains a signature                    - true 
+c. There is one signature that covers all the output  - false
+d. Each output contains a signature                   - false
+
+--------------------------------------------------------------------------------------------------------------------------------------
+3.2
+--------------------------------------------------------------------------------------------------------------------------------------

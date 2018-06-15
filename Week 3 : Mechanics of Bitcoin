@@ -14,10 +14,10 @@ I. An account-based ledger (not Bitcoin)
        ---------------------------------------------------------
  |    |Create 25 coins and credit to Alice (Asserted by Miners) |
  |    -----------------------------------------------------------
- |    | Transfer 17 coins from Alice to Bob (Signed by Alice)   |
- |    -----------------------------------------------------------
- |    | Transfer 8 coins from Bob to Carol (Signed by Bob)      |
- |    -----------------------------------------------------------
+t|    | Transfer 17 coins from Alice to Bob (Signed by Alice)   |
+i|    -----------------------------------------------------------
+m|    | Transfer 8 coins from Bob to Carol (Signed by Bob)      |
+e|    -----------------------------------------------------------
  |    | Transfer 5 coins from Carol to Alice (Signed by Bob)    |
  |    -----------------------------------------------------------
  |    | Transfer 15 coins from Alice to David (Signed by Alice) |  <- Is this valid? Requires to know the data in each members account
@@ -29,17 +29,76 @@ Bitcoin uses a ledger that keeps track of transactions.
 
 II. A transaction-based ledger (Bitcoin)
 -----------------------------------------'
+(Simplification : only one transaction per block)
+ |   -----------------------------------------------
+ |   |1                                            |
+ |   |   Inputs: ∅                                 |   (First transaction)
+ |   |   Outputs: 25.0 -> Alice                    |      
+ |   |                                             |          
+ |   -----------------------------------------------
+T|   |2                                            |
+I|   |   Inputs: 1[0]                              |      
+M|   |   Outputs: 17.0->Bob, 8.0->Alice            |      
+E|   |                            (Signed by Alice)|          
+ |   -----------------------------------------------
+ |   |3                                            |
+ |   |   Inputs: 2[0]                              |      
+ |   |   Outputs: 8.0->Carol, 7.0->Bob             |      
+ |   |                              (Signed by Bob)|          
+ |   -----------------------------------------------
+ |   |4                                            |
+ |   |   Inputs: 2[1]                              |  <- Is it valid ?  (Finite scan to check validity)  
+ |   |   Outputs: 6.0->David, 2.0->Alice           |      
+ |   |                            (Signed by Alice)|          
+ |   -----------------------------------------------
+ |
+\ /
 
-|   -----------------------------------------------
-|   |1
-|   |   Input: 
-|   |
-|
-|
-|
-|
-|
-|
-|
-|
-|
+-> Transactions explicitly specify the number of inputs and the number of outputs.
+
+-> Transactions also have a unique identifier - here noted by serial number, by actually implemented via "hash pointer";
+
+-> Transaction 1 -> No input since it is newly created , but an output of 25 coins going to Alice, and since it is a new transaction no new coins are created here.
+
+-> Transaction 2 -> Alice wants to send coins to Bob;
+Inputs : 1[0] -> 25.0 coins
+Outputs : (2) -> Bob (17); (Remainder) -> 8 coins -> payed to change address -> Back to Alice;
+Signed by Alice -> validation of the transaction.
+**** Always completely need to consume the output of the previous transaction.
+
+-> Here it is much easier to look at the transaction and know whether the transaction is valid or not. It requires a finite scan.
+Example: Transaction 4 (By looking at the previous transaction 2[1] -> able to validate the transaction)
+Inputs : 2[1] -> Signed By Alice -> Value = (2nd block, 2nd output) = 8;
+Outputs : 6.0 -> David, 2.0 -> Alice; = total bitcoins = 8
+
+* Joint Payments
+----------------------
+
+ |   -----------------------------------------------
+ |   |1                                            |
+ |   |   Inputs: ∅                                 |   (First transaction)
+ |   |   Outputs: 25.0 -> Alice                    |      
+ |   |                                             |          
+ |   -----------------------------------------------
+T|   |2                                            |
+I|   |   Inputs: 1[0]                              |      
+M|   |   Outputs: 17.0->Bob, 8.0->Alice            |      
+E|   |                            (Signed by Alice)|          
+ |   -----------------------------------------------
+ |   |3                                            |
+ |   |   Inputs: 2[0]                              |      
+ |   |   Outputs: 8.0->Carol, 7.0->Bob             |      
+ |   |                              (Signed by Bob)|          
+ |   -----------------------------------------------
+ |   |4                                            |
+ |   |   Inputs: 2[1]                              |    
+ |   |   Outputs: 6.0->David, 2.0->Alice           | ----     
+ |   |                            (Signed by Alice)|    |  6 -> David     
+ |   -----------------------------------------------    |  2 -> Alice
+ |   |5                                            |    |
+ |   |   Inputs: 4[0], 4[1]                        | <--|   
+ |   |   Outputs: 6.0->Bob                         |  <--- Joint Payment (2 inputs, 1 outputs)
+ |   |        (Signed by David) , (Signed by Alice)|  <--- 2 Signatures                
+ |   -----------------------------------------------
+ |
+\ /

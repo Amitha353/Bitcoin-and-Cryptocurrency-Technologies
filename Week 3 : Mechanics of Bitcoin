@@ -659,8 +659,56 @@ Sanity-checks: (Some nodes may ignore them)
   - Network position matters.
   - Miners may implement other logic!
   
-  
+* Block propagation -> similar to transaction propagation -> flooding algorithm
+--------------------
+-> Nodes compute the hash and validate the block.
+-> Relay a new blocks when you hear it if:
+       - Block meets the hash target. (hash -> begin with lot's of 0's)
+       - Block must have all valid transactions. (Rum all scripts, even if it won't relay).
+       - Block builds on the current longest chain (Avoid forks).
 
+* Block Propagation time
+--------------------------
+Block size (KB) (x-axis) V/s Time (sec) (y-axis)
+- 75% - takes > 30sec (long) -> not an efficient algorithm;
+- block needs to reach all nodes.
 
+* How big is the network?
+-------------------------
+-> Impossible to measure exactly.
+-> Estimates-up to 1M IP addresses/month
+-> Only about 5-10k "full-nodes"
+       - Permanently connected.
+       - Fully-validated.
+-> This number maybe dropping!
 
-                           
+* Fully-validating nodes
+-------------------------
+-> Permantelty connected.
+-> Store entire block chain.
+-> Hear and forward every node/transaction.
+-> Currently, it takes 20GB to store the entire block-chain.
+-> Track the UTXO set
+       - Unspent Transaction Output (Everything else can be stored on disk)
+       - Currently ~12 M UTXOs (Out of 44 M transactions)
+       - Can easily fit into RAM.
+
+* Thin / SPV(Simple Payment Verification) client (not fully validating)
+--------------------------------------------------
+-> Idea :  don't store everything.
+       - Store block headers only.
+       - Request transactions as needed. (To verify incoming payments).
+       - Trust fully-validating nodes.
+       
+       1000x  cost saving! (20GB-23MB)
+       
+Q. If two conflicting transactions A → B and A → C are both broadcast almost simultaneously from different nodes, what determines which one will eventually end up in the block chain?
+
+a. The transaction that reaches the majority of nodes first will win
+b. The transaction that was broadcast first will win
+c. The miner who finds the next block will likely resolve the tie by including one of the transactions in the block - true
+d. Each node has its own version of the block chain containing the transaction that it heard about first
+
+--------------------------------------------------------------------------------------------------------------------------------------
+3.6 Limitation & Improvements
+--------------------------------------------------------------------------------------------------------------------------------------

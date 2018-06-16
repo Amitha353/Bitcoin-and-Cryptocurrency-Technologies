@@ -508,7 +508,53 @@ c. Time-locked transactions    - true
 d. pay-to-script-hash          - false
    
 --------------------------------------------------------------------------------------------------------------------------------------
-3.4
+3.4 Bitcoin blocks
 --------------------------------------------------------------------------------------------------------------------------------------
- 
- 
+
+* Why bundle transaction together into blocks?
+-----------------------------------------------
+1. Single unit of work for miners. (If miners had to work on hashing and adding metadat for each transaction-> a lot of overhead.)
+2. Limit length of hash-chain of blocks. (Faster to verify history) 
+
+* Bitcoin block structure
+--------------------------
+-> 2 different hash-based data structures.
+1. Top -> hash-chain of blocks. Each block has a header and a pointer to a previous transaction.
+2. Hash tree / Merkel tree - of transactions in each block.
+
+    Hash chain of blocks
+ --------------------------------------------------------------------------------------
+|                                                                                     | 
+|          --------------            -------------              --------------        | 
+|         |             |           |             |             |            |        | 
+|         |   --------------        |    ------------           |   --------------    |
+|         |   | prev: H( ) |        |   | prev: H( ) |          |   | prev: H( ) |    |
+|   <------   -------------- <-------   -------------- <---------   --------------    |
+|             |trans: H( ) |            |trans: H( ) |              |trans: H( ) |    |
+|             --------------            ----------|---              --------------    |
+|                                                 |                                   |
+ -------------------------------------------------|------------------------------------
+                                                  |
+                                                  |
+                           -----------------------|-------------------------------------- 
+  Hash tree / Merkel tree  |                     \ /                                     |
+ of transactions in        |                 ---------------                             |
+ each block.               |                 | H( )    H( ) |                            |
+                           |                 ----|-------|---                            | 
+                           |              --------       ---------                       | 
+                           |              |                       |                      | 
+                           |             \ /                     \ /                     |
+                           |         ---------------        --------------               |
+                           |         | H( )   H( ) |        | H( )    H( )|              |
+                           |          ---|------|----        ---|-------|--              |
+                           |             /      |               |       \                |
+                           |            /       |               |        \               |
+                           |           /        |               |         \              |
+                           |         \ /       \ /             \ /        \ /            |
+                           |    transaction    transaction  transaction   transaction    |
+                           |                                                             |    
+                           --------------------------------------------------------------
+                           
+                           
+                           
+                           

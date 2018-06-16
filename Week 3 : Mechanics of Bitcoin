@@ -595,6 +595,18 @@ coinbase -> parameter to add any value.
        "scriptPubKey":"OPDUP OPHASH160 ..."
       }
       ]
+           
+* Website -> blockchain.info [bitcoin - public data structure]
+
+Q. Blocks contain a tree of transactions instead of a flat list because
+
+a. It results in smaller blocks - false
+b. It’s easier to insert or delete new transactions while the block is being assembled - false
+c. It enables efficiently proving that a transaction is included in a block  - true
+
+--------------------------------------------------------------------------------------------------------------------------------------
+3.5 Bitcoin Network
+--------------------------------------------------------------------------------------------------------------------------------------
 
 
 

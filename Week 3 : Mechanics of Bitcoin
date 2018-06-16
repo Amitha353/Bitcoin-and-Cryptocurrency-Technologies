@@ -318,7 +318,138 @@ e. Hashing                             - true
 3.3 Applications of Bitcoin scripts
 --------------------------------------------------------------------------------------------------------------------------------------
 
- 
- 
+1. Escrow Transactions 
+ ---------------------
+-> Online Transactions
+Example:
+- Problem : Alice wants to buy online from Bob. Alice doesn't want to pay until Bob ships. Bob doesn't want to ship until after Alice pays.
+
+- Solution : Introduce a third party and do ("escrow" transaction); 
+
+Alice  <----------------------------------------------------------------> Bob
+               ---------------------------------------------
+              | Pay x to 2-of-3 Alice, Bob, Judy (MULTISIG) |
+              |                               (signed Alice)|
+              -----------------------------------------------
+
+
+  # Alice will not pay directly to Bob, but will instead create a MULTISIG transaction that requires two or three signatures to redeem a coin (Say -> Alice, Bob, , Judy) - Judy is a Judge that comes into place in case of any disputes.
+  # Alice creates the transaction with the desired amount with 2-out of 3 MULTISIG between Alice, Bob and Judy.
+  # Alice signs the transaction redeeming some coins that she owns and this will get published in the Block-chain.
+  # At this point, the coins are held in "escrow" between Alice, Bob and Judy and any two of them can specify where the coins should go.
+  # Bob is now satisified and is safe to send the goods over to Alcie,
+  
+  # In normal case (hope) Alice and Bob are both honest and goods arrive on time and Alice wants to release the amount from escrow so that Bob receives the money.
+  # If the above situtation occurs then Alice and Bob can both sign a transaction, redeeming the funds from escrow and consuming it. Moreover Judy din't have to get involved in the transaction, no dispute.
+  
+       (normal case)
+        ____________________________________________
+       | Pay x to Bob                              |
+       |                         SIGNED(ALICE,BOB) |
+       |___________________________________________|
+  
+                        _________________
+                       /                /|
+                      /________________/ |
+                     |                |  |
+                     |  To :Alice     |  | 
+                     |  From: Bob     | /
+                     |________________|/
+  Alice  <----------------------------------------------------------------> Bob
+               ---------------------------------------------
+              | Pay x to 2-of-3 Alice, Bob, Judy (MULTISIG) |
+              |                               (signed Alice)|
+              -----------------------------------------------
+
+  
+  # In case the transaction fails -> goods are lost, not delivered then Alice doen't want to pay and wants to get back her money.
+  # In this case both Alice and Bob are both not gonna sign a transaction and release the money to Bob, or deny Alice'd fraud claim.
+  # Judy get involved to solve the dispute, she will sign the transaction with the honest party . Here there will be 2-out-3 signatures to release the money from the transaction.
+  - Alice is honest, Judy, Alice sign the transaction and money is refunded to Alice.
+  - Bob is honest, Judy, Bob can sign a transaction and money sent to Bob.
+  
+  
+  (dispute case)
+        ____________________________________________
+       | Pay x to Alice                            |
+Judy   |                         SIGNED(ALICE,JUDY)|
+       |___________________________________________|
+  
+                        _________________
+                       /                /|
+                      /________________/ |
+                     |                |  |
+                     |  To :Alice     |  | 
+                     |  From: Bob     | /
+                     |________________|/
+  Alice  <----------------------------------------------------------------> Bob
+               ---------------------------------------------
+              | Pay x to 2-of-3 Alice, Bob, Judy (MULTISIG) |
+              |                               (signed Alice)|
+              -----------------------------------------------
+-----------------------------------------------------
+  (dispute case)
+        ____________________________________________
+       | Pay x to Bob                              |
+Judy   |                         SIGNED(BOB,JUDY)  |
+       |___________________________________________|
+  
+                        _________________
+                       /                /|
+                      /________________/ |
+                     |                |  |
+                     |  To :Alice     |  | 
+                     |  From: Bob     | /
+                     |________________|/
+  Alice  <----------------------------------------------------------------> Bob
+               ---------------------------------------------
+              | Pay x to 2-of-3 Alice, Bob, Judy (MULTISIG) |
+              |                               (signed Alice)|
+              -----------------------------------------------
+
+2. Green Address
+-----------------
+Problem : Alice wants to pay Bob. Bob can't wait 6 verifications to guard against double-spends, or is offline completely. 
+(To send money to a person using Bitcoin without the recipient being able to access the block-chain - need to introduce another third party which is the bank).
+(Green Address - provides a means to do payments quickly without accessing the block-chain).
+
+-> Alice contacts the Bank and asks them  to help transfer money to Bob.
+-> Bank debits amount from Alice's Bank account and draws a transaction from one of the Banks green address to Bob, and some amount to the bank itself.
+-> Since money is coming from the bank , the bank assures/guarentees there is no double spend and the address (green address) - bank controlled address.
+-> Bob gets the transaction and can choose to accept it based on the banks guarentees and can evetually be uin the block-chain.
+-> This is not a Bitcoin enforced guarantee, but instead it is a real-world guarantee.
+
+-> Two most prominent services that implemented green addresses - Instawallet and Mount Gox both collapsed. Therefore not popular protocol.
+
+           Bank
+  payment / |
+        /   | 
+      /    \ /
+    /   _____________________________________________   (out of network/block-chain)     
+Alice    | Pay x to Bob, y to Bank  (No double spend)  |      Bob
+         |                                SIGNED(BANK) |  
+         |_____________________________________________|
+         
+3. Efficient micro-payments
+-----------------------------
+Problem : Alice wants to pay Bob for each minute of phone service. She doesn't want to incur transaction fee every minute.
+- It won't be optimum to create a Bitcoin transaction for every minute Alice is on call. then the transaction fee incured will be too high for the service. Too many transaction fees -  not optimum.
+
+-> Solution: Create a low value transaction for every minute that Alice talks on phone. There is a problem with this system is that the transactions might all be very low value and the transaction fees might be too high.
+
+-> Required solution : Combine all these small payments into one big payment at the end. It can be done with serial micro-payment.
+
+# Start with a MULTISIG transaction that pays the maximum amount Alice would ever need to spend to a MULTISIG transaction requiring both Alice and Bob to sign to release the coins.
+# After 1 minute of the service, Alice signs the transaction spending those coins signed in the MULTISIG address, sending one coin to Bob and returning the rest to Alice.
+
+
+
+
+
+
+
+
+  
+       
  
  

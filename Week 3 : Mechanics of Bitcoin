@@ -441,15 +441,74 @@ Problem : Alice wants to pay Bob for each minute of phone service. She doesn't w
 
 # Start with a MULTISIG transaction that pays the maximum amount Alice would ever need to spend to a MULTISIG transaction requiring both Alice and Bob to sign to release the coins.
 # After 1 minute of the service, Alice signs the transaction spending those coins signed in the MULTISIG address, sending one coin to Bob and returning the rest to Alice.
+# After 2nd minute, Alice signs another transaction this time paying 2 coins to Bob and rest to herself.
+# Alice is gonna keep sending these transactions to Bob. 
+# These transactions are not getting published in the block-chain.
+# Evetually Alice is done with the service and notifies Bob.
+# Bob then takes the last transaction -> signs it and that gets published in the Block-chain.
+# (Technically all the above transactions are double-spends )
 
+               -----------------------------------------------------------
+              | Input : x Pay 42 to Bob, 58 to Alice                      |
+   all        |                                  SIGNED(ALICE) SIGNED(BOB)|
+   are        -----------------------------------------------------------
+ double        ....
+ spends            
+               -----------------------------------------------------------
+              | Input : x Pay 02 to Bob, 98 to Alice                      |
+              |                                  SIGNED(ALICE)___________ |
+               ------------------------------------------------------------
+              | Input : x Pay 01 to Bob, 99 to Alice                      |
+              |                                  SIGNED(ALICE)___________ |
+               ------------------------------------------------------------
 
+Alice                                                                               Bob
+               -----------------------------------------------------------
+              | Input : y, Pay 100 to Bob/Alice (MULTISIG)                |
+              |                                              SIGNED(ALICE)|
+               ------------------------------------------------------------      
 
+# Issue -> In case Bob doesn't sign the last payment made by Alice, and is happy to let the coins sit in escrow, but Alice will be out of full value that she paid at the beginning.
+*** Solution -> Feature - "Lock Time" 
+    - Even before the micro-payment protocol can begun, Alice and Bob will both sign a transaction which will refunds all of Alice's money back to het, but is locked until sometime in the future.
+    - Even before the first minute service begins, Alice must await the refund transaction from Bob.
+    - If she makes it to time t and Bob hasn't signed the small transaction Alice has sent.
+    - Alice can publish this transaction (refund-agreement with Bob) which refunds all the money back to her. (Safety Valve)
+    
+-> Bitcoin Data structure - 3 parts - Metadata, inputs, outputs.
+* Metadata
+              {
+transaction hash -> "hash" : "5a57fdg93....2443",
+                    "ver":1,
+housekeeping        "vin_sz":2,
+                    "vout_sz":1,
+                    "lock_time":315415, ******
+                    "size":404,
+                     ....
+              }             
+-> If the lock-time has value other than 0, then that tells moners to not publish this transaction until the time soecified in the variable "lock_time".
+"LOCK_TIME" - Block index or real-world timestamps before which transactions can't be published.
 
+4. Multi-player lotteries -> complicated - multi-step protocol, lot of transactions, lock_time, escrow - cheat safety.
+5. Hash pre-image challenges. - brute-force;
+6. Coin-swapping protocols.
 
+Q1 . Alice is paying for a service using Bitcoin micropayments. If she simply disconnects at some point without notifying Bob and stops sending micropayments, what can Bob do?
 
+a. Bob is out of luck. He doesn’t earn any Bitcoins and must pursue legal recourse  - false
+b. Bob can redeem the maximum amount that Alice initially escrowed into a multisig address - false
+c. Bob can redeem the latest micropayment transaction that Alice sent in the last time period before disconnecting, which matches the length of service she received - true
+d. Bob can refuse to sign the refund transaction, so both Alice and Bob will end up losing Bitcoins, which will sit in the multisig escrow forever - false
 
+Q2 . Bitcoin micropayments require the use of: (check all that apply)
 
-  
-       
+a. Multisignature Transactions - true
+b. Proof of burn               - false
+c. Time-locked transactions    - true
+d. pay-to-script-hash          - false
+   
+--------------------------------------------------------------------------------------------------------------------------------------
+3.4
+--------------------------------------------------------------------------------------------------------------------------------------
  
  

@@ -556,5 +556,48 @@ d. pay-to-script-hash          - false
                            --------------------------------------------------------------
                            
                            
-                           
+* A Bitcoin block
+------------------
+-> It has two parts - block header and transaction data (Merkel tree).
+1. Header: 
+       {
+        "hash": "000000000000000001aad2....",
+        "ver":2,
+        "prev_block": "000000000000000003043.....",
+        "time":12355745434,
+        "bits":14555344,
+        "nonce":45323458,
+        "mrkl_root":"434547554...",
+        ...
+       }
+       
+  -> mining puzzle information -> hash, bits, nonce.
+  -> Hash of the block-haeder - must start with a lot of 0's to be valid.
+  -> Header is the only thing that is hashed during the mining. To verify the chain of blocks - all to do is look at the headers. 
+  -> Only transaction data included in the header is -> "mrkl_root".
+       
+2. coinbase transaction - special transaction -> creation of new coins -> almost similar to normal transaction.
+value -> 25BTC (It halves every 4 years) -> In practice it'll be more - includes Transaction fees.
+Previous output hash -> 000000....000000000 -> since it is a new coin no antecendent.
+coinbase -> parameter to add any value.
+
+       "in": [
+       {
+        "prev_out": {
+              "hash":"00000000.....000000", <--- null hash pointer - new coin
+              "n":42156635847
+        },
+        "coinbase":"..."
+       },
+      "out":[
+      {
+       "value":"25.035455654",  <- 25 - blockreward, 0.35.. - transaction fee
+       "scriptPubKey":"OPDUP OPHASH160 ..."
+      }
+      ]
+
+
+
+
+
                            

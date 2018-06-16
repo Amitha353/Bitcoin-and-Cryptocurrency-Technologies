@@ -607,8 +607,59 @@ c. It enables efficiently proving that a transaction is included in a block  - t
 --------------------------------------------------------------------------------------------------------------------------------------
 3.5 Bitcoin Network
 --------------------------------------------------------------------------------------------------------------------------------------
+-> It is a P2P network, where all nodes are equal.
+-> It runs over TCP and has a random topology - random nodes are peered with random other nodes.
+-> New nodes can join at any time. (So you can download the Bitcoin client today -> spin the computer as a node -> participating Bitcoin node - with equal rights and capabilities as the other nodes).
+-> Network is dynamic, forget non-responding nodes after 3 hours.
 
+* Join the Bitcoin P2P network
+-------------------------------
+-> Networks connect to other nodes in a random fashion.
+-> Launch a new node and want to join the network.
+  # start with a simple message to get to one node(seed node) on the network.
+  # Find the seed node and send a special message - asking for all the peers of the seed node.
+  # The contacted seed node replies with peered nodes.
+  # The newly launched node then contacts the seed nodes peers and asking the new seed nodes for their peers.
+  # Eventually a list of peers will be gathered by the newly lauched node - which then chooses which ones to peer with.
+  # Then the new node will be a fully functional node in the Bitcoin network. (Memeber of the blockchain);
+  
+* Transaction propagation (flooding)
+------------------------------------
+-> Network maintains the block-chain, so if any transaction is to be published, the entire network needs to know about it.
+-> There is a simple flooding algorithm that takes care of it.
 
+# Consider node 4, hears about a new transaction (Alice ->Bob);
+# Node 4 communicates the transaction to its peers. Each node maintains a list of all transaction. New transactions are added into the list of the Peer nodes as well.
+# In case peer node as already added the transaction into the list, on listening to the same transaction it will notify the node that it has heared the transaction already (memory pool). (won't loop)
+# Eventually it stops when all the nodes have noted it. Each transaction is uniquely identified by a hash.
+
+* How do nodes decide when they hear about new transaction whether or not they should propagate it?
+-------------------------------------------
+-> The nodes check if the transaction is valid w.r.t the current block chain. 
+
+Sanity-checks: (Some nodes may ignore them)
+-> (default) script matches a whitelist (Avoid unusual scripts).
+-> Haven't seen before conditions (Avoid Infinite loops).
+-> Doesn't conflict with others relayed (Avoid double-spend)
+
+* Nodes may differ on transaction pool
+---------------------------------------
+-> Node 1 - hears a new transaction(Alice -> Charlie), node 1 forwards it to its peers and so on.
+-> Node 4 - hears a new transaction(Alice -> Bob), node 4 forwards it to its neighbours, etc. (node 1 message hasn't reached node 4);
+-> Other nodes in between say node 6 between 1 and 4 has already received message from node 1 and hence refuses to enlist node 4's message.(Conflict) (Race condition).
+
+-> Network is in a divided state.
+-> This is fine, since the transaction has not been published yet - eventually nodes will sort it.
+
+* Race Condition
+-----------------
+-> Transactions or blocks may conflict.
+-> Depends on who mines next and decides which of the two pending transactions should endup being put permanently into the block. Other nodes will see the transaction, then nodes that bear the alternative transaction drop it , since it will account as a double-spend -> invalid.
+  - Default behavior : accept what you hear first.
+  - Network position matters.
+  - Miners may implement other logic!
+  
+  
 
 
 

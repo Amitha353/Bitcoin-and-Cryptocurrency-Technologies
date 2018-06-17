@@ -759,20 +759,50 @@ d. Each node has its own version of the block chain containing the transaction t
 -> Relying on enough nodes switching to new version of the protocol that will enable them to enforce new rules knowing that old nodes won't be able to enforce the new rules because thay haven't heard them yet.
 -> Risk: Old nodes uighting be mining old invalid blocks - because they might be mining valid block but according to the new, strict rules the block is not valid anymore. Evetually the new nodes will reject the block and the old nodes will accept the reject and move on to the next version of the block-chain.(temporary fork)
 
-* Soft fork example : pay to script haah
+* Soft fork example : pay to script hash
 -----------------------
 -> This was not present in the first version of the Bitcoin protocol.
--> Old
 
+ Pay-to-Script-Hash script
+-----------------------------
+ * Rather than the sender having to send a script as an address they just send a hash of the script.
+ * Eventaully added to BITCOIN.
+              
+              STEP 1                                    STEP 2
+       (redemption script has right hash)    (redemption script-desearalized - actual signture check)
+            ----------------------------         ----------------------------
+              
+Recipient   <signature>                          <signature>
+            <<pubkey> OP_CHECKSIG>                   
+                 
+            -----------------------------        ----------------------------
+              
+             OP_HASH160
+ Sender      <hash of redemption script>            <pubkey>       
+             OP_EQUAL                              OP_CHECKSIG
+             
+             -----------------------------       ----------------------------
 
+-> Old node view of the pay to hash script - It's hashing the data value and checking to see if it's equal to the specified value in the output script.
+-> Old nodes never do the second step of the verification step in the pay to hash script. (signature check);
 
+* Soft fork possiblities
+-------------------------
+What can be added with soft fork so the Pay to Hash script is successful?
 
+-> New signature schemes.
+-> Extra per-block metadata (new cryptographic scheme) - add this into the coinbase parameter and UTXO merkel tree data in each block can be pushed into the paraemter.
+       - Shove in the coinbase parameter.
+       - Commit to UTXO tree in each block.
 
+Other changes might require Hard-fork
 
-
-
-
-
-
-
-
+Hard forks
+-----------
+1. New op codes.
+2. Change size limits.
+3. Changes to mining rate.
+4. Many small bug fixes. (In multisig instruction - it pops an extra value off the stack and that would require a hard fork.)
+"Currently seem very unlikely to happen."
+"Seem possible in alternative currencies -> altcoins."
+--------------------------------------------------------------------------------------------------------------------------------------

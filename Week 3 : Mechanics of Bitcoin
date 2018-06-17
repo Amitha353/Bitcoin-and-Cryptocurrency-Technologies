@@ -712,3 +712,67 @@ d. Each node has its own version of the block chain containing the transaction t
 --------------------------------------------------------------------------------------------------------------------------------------
 3.6 Limitation & Improvements
 --------------------------------------------------------------------------------------------------------------------------------------
+
+* Hard-coded limits in Bitcoin
+-----------------
+1. 10min average creation time pwer block.
+2. 1M bytes per block.
+3. 20,000 signature operations per block.
+4. 100 M satoshis per bitcoin. (Satoshi -> smallest unit of the bitcoin currency recorded on the block-chain);
+5. 21M total bitcoins maximum.
+6. 50,25,12.5 ... bitcoin mining rewards.
+
+* Throughput limit in Bitcoin
+------------------------------
+(Throughput -> The amount of items that pass through the system/process).
+# 1 M bytes/block (10 minutes)
+# > 250 bytes/transaction
+# 7 transactions/sec
+
+* Compare to:
+# VISA : 2000 - 10000 transactions/sec;
+# PayPal : 50 - 100 transactions/sec;
+
+* Cryptographic limits in Bitcoin
+------------------------------------
+# Only 1 signature algorithm - elliptic curve DSA - (ECDSA/P256).
+# Hard-coded hash functions.
+
+# Crypto primitives might break by 2040.
+
+* "Hard-forking" changes to Bitcoin
+-------------------------------------
+-> Incase there is a need to upgrade the block-chain.
+-> It could be possible that not all the nodes are upgraded on time this could lead to issues.
+-> The upgarded nodes will still continue to process new blocks while the old nodes will be rejecting the new blocks.
+-> Unfortunately, the old nodes will never catch up.
+-> It's called "hard-fork" cause the block-chain will split based on which version of the protocol they are running on and will never join again.
+
+* "Soft forks"
+---------------
+-> Observation : we can add new features which can only limit the set of valid transactions.
+-> Need majority of nodes to enforce new rules.
+-> Old nodes will approve.
+-> Risk : Old nodes might mine new-invalid blocks.
+
+-> New nodes in the network will be enforcing some new tighter set of rules.
+-> Relying on enough nodes switching to new version of the protocol that will enable them to enforce new rules knowing that old nodes won't be able to enforce the new rules because thay haven't heard them yet.
+-> Risk: Old nodes uighting be mining old invalid blocks - because they might be mining valid block but according to the new, strict rules the block is not valid anymore. Evetually the new nodes will reject the block and the old nodes will accept the reject and move on to the next version of the block-chain.(temporary fork)
+
+* Soft fork example : pay to script haah
+-----------------------
+-> This was not present in the first version of the Bitcoin protocol.
+-> Old
+
+
+
+
+
+
+
+
+
+
+
+
+

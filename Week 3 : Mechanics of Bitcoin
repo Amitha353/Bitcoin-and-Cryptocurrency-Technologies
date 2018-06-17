@@ -805,4 +805,12 @@ Hard forks
 4. Many small bug fixes. (In multisig instruction - it pops an extra value off the stack and that would require a hard fork.)
 "Currently seem very unlikely to happen."
 "Seem possible in alternative currencies -> altcoins."
+
+Q. Which of the following requires a hard fork? (check all that apply)
+
+a. Disabling the OP_SHA1 instruction
+b. A requirement that each transaction have its outputs sorted by value in ascending (or non-decreasing) order
+c. Increasing the maximum permitted size of blocks  -> correct
+d. Decreasing the maximum permitted size of blocks
+e. Adding a new OP_SHA3 script instruction          -> correct
 --------------------------------------------------------------------------------------------------------------------------------------

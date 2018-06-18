@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------------------------------------------------------------------
+5.1 : The task of Bitcoin Miners
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+* Mining Bitcoins in 6 easy steps
+----------------------------------
+(How to become a Miner)
+
+1. Join the network, (become a Bitcoin node), listen for transactions.
+    - Validate all proposed transactions.
+2. Listen for new blocks, maintain block chain.
+    - When a new block is proposed, validate it.
+3. Assemble a new valid block.
+4. Find the nonce to make your block valid. (Hard - computationally).
+5. Hope everybody accepts your new block.
+6. Profit! (>25 BTC / block -> $15,000).
+
+* Finding a valid block
+----------------------
+-> Two main hash-based data structures.
+  1. block-chain - each block's header points to the previous block header in the chain.
+  2. Merkel tree within each block - binary tree of all the transactions included within the block.
+

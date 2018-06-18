@@ -19,5 +19,18 @@
 ----------------------
 -> Two main hash-based data structures.
   1. block-chain - each block's header points to the previous block header in the chain.
-  2. Merkel tree within each block - binary tree of all the transactions included within the block.
+  2. Merkel tree within each block - hash-based binary tree of all the transactions included within that block.
 
+# Miners assembly all the transactions from the pending pool into the tree.
+# Create a block with the right header that points to the previous block.
+# Then need to start searching over the nonce field to try to have the hash of the block headers start with the required number of zeroes.
+# Can start with a nonce of all 0's (32-bit) - get an incorrect hash; Keep trying of other nonces (nonce 1 -> hash, etc);
+# Can try every single possiblity for the 32-bit nonce, you may not get the right hash, need to make further changes.
+
+# Parameter in the coinbase transaction - where the miners are minting new coins and claiming it.
+# There is an "extra nonce" parameter in the coin-base, after exhausting all possible nonces in the block-header, then the extra-nonce is used.
+# The extra nonces in the coinbase transaction will be incremented and the hash of it will be computed, and will start searching the block-header.
+   **** Changing a single parameter in the coinbase transaction, will require the entire merkel tree of transaction to change.
+   - Changing the extra nonce in the coinbase transaction is expensive than changing the nonce in the header, hence use the outer-loop. 
+    - outer loop - changes nonce in the coin-base parameter
+    - inner loop - changes nonce in the block header.

@@ -37,9 +37,17 @@
  # Difficult computation, but eventually will find the right combination between the extra nonce in the coinbase transaction and the nonce in the header.
  # Will find a block with a hash with sufficient 0's to make it valid -> published and announce and profit.
  
- 
-    
-    
+     -------------------                                --------------------
+     |                 |                                |                  |
+     |  ---------------|----                            |   ---------------|----
+     |  | prev:      H( )  |                            |   | prev:      H( )  |
+     |  --------------------                            |   --------------------
+     |  | mrkl_root: H( )  |                            |   | mrkl_root: H( )  |
+-----|  -------------------- <--------------------------|   --------------------
+        | nonce: 0x7a83    |                                | nonce: 0x7a83    |
+        --------------------                                --------------------
+        | hash: 0x0000     |                                | hash: 0x0000     |
+        --------------------                                --------------------
 
 
 

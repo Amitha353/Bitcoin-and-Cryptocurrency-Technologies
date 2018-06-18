@@ -34,3 +34,17 @@
    - Changing the extra nonce in the coinbase transaction is expensive than changing the nonce in the header, hence use the outer-loop. 
     - outer loop - changes nonce in the coin-base parameter
     - inner loop - changes nonce in the block header.
+ # Difficult computation, but eventually will find the right combination between the extra nonce in the coinbase transaction and the nonce in the header.
+ # Will find a block with a hash with sufficient 0's to make it valid -> published and announce and profit.
+ 
+ 
+    
+    
+
+
+
+
+
+
+
+

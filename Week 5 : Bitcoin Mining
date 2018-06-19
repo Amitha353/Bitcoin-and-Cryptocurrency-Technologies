@@ -191,7 +191,7 @@ while (1) {
 -> Implemented in OpenCL
      - Later: hacks for specific cards.
 
-# Advantages of GPU Mining
+* Advantages of GPU Mining
 ---------
 1. Easily available, easy to set up.
 2. parallel ALUs (Arithmetic Logical Units)
@@ -207,10 +207,15 @@ while (1) {
     - success rate - how often does the computation actually have errors.
 # Worth overclocking by 50% with 30% errors!
 
+* Disadvantages of GPU mining
+-------------------------------
+1. poor utilization of hardware.
+2. poor cooling.
+3. large power draw.
+4. few boards to hold multiple GPUs.
 
-
-
-
+Throughput on a good card = 20 - 200 MHz ~ 2^27
+~ 173 years on average to find a block w / 100 cards!
 
 
 

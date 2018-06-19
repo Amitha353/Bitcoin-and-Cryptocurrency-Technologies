@@ -181,6 +181,28 @@ while (1) {
 # Throughput of a high-end PC = 10-20 MHz ~ 2^24;
 # It would take 139,461 years on an average to find a block.
 
+* GPU mining
+-------------
+-> Second generation of mining
+-> GPU designed for high-performance graphics.
+    - high parallelism.
+    - high throughput.
+-> First used for Bitcoin ca. October 2010.
+-> Implemented in OpenCL
+     - Later: hacks for specific cards.
+
+# Advantages of GPU Mining
+---------
+1. Easily available, easy to set up.
+2. parallel ALUs (Arithmetic Logical Units)
+3. bit-specific instructions (useful for SHA-256)
+4. can drive many GPU's from 1 CPU.
+5. can overclock! (GPU's can be made to run faster);
+
+
+
+
+
 
 
 

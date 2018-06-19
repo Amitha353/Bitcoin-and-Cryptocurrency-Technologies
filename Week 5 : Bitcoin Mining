@@ -165,4 +165,28 @@ SHA-256 in more depth
                                                                                             |    ----
                                                                                           ( W(j) |-|-| K(j))  
                                                                                                  ----- 
-                                                                                             
+
+* CPU Minig
+-------------
+-> First generation of mining when Bitcoin was proposed was all done on general purpose CPUs.
+-> It searched over nonces in a simple linear manner, computed SHA-256 in software and checked if the results was a valid block.
+-> The SHA-256 is to be computed twice.
+
+while (1) {
+    HDR[kNoncePos]++;
+    IF (SHA256(SHA256(HDR))  <  (65535 << 208) / DIFFICULTY)
+        return;
+}
+
+# Throughput of a high-end PC = 10-20 MHz ~ 2^24;
+# It would take 139,461 years on an average to find a block.
+
+
+
+
+
+
+
+
+
+

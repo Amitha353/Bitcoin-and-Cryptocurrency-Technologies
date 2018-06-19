@@ -217,6 +217,31 @@ while (1) {
 Throughput on a good card = 20 - 200 MHz ~ 2^27
 ~ 173 years on average to find a block w / 100 cards!
 
+* FPGA mining
+-------------------
+-> Field Programmable Gate Area.
+-> First used for Bitcoin ca. June 2011.
+-> Implemented in Verilog.
+
+* FPGA mining Advantages
+---------------------------
+-> Higher performance than GPUs.
+        - excellent performance on bitwise operations.
+-> Better cooling.
+-> Extensive customization, optimization. (bit fidling);
+
+* FPGA mining Disadvantages
+-----------------------------
+-> Higher power drawn than GPUs designed for.
+        - frequent malfunctions, errors.
+-> poor optimization of 32-bit adds.
+-> fewer hobbyists with sufficient expertise.
+-> More expensive than GPUs.
+-> marginal performance/cost advantage over GPUs.
+
+# Throughput on a good card = 100-1000 MHz ~ 2^30
+# 25 years on average to find a block w/100 boards!
+
 
 
 

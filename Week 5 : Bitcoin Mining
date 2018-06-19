@@ -1,6 +1,6 @@
--------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
 5.1 : The task of Bitcoin Miners
--------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
 
 * Mining Bitcoins in 6 easy steps
 ----------------------------------
@@ -96,9 +96,19 @@ next_difficulty = previous_difficulty *         (2 weeks)
 -> Over time mining difficulty keeps increasing (not steady, exponentail increase, it's based on how many miners enter into the market).
 -> On an average a block is to be found every 10 miinutes. At the beginning of two weeks the difficulty in practice to get a block is about 9 minutes, but eventually towards the end of the two-week period the time to get the new block will be about 8 minutes.
 
+Q. Which of the following are true about Bitcoin miners?
 
-            
-            
+a. The target hash has become so small that the block header nonce alone isn’t generally large enough to allow miners so search enough of the hash output space to find a valid block - correct;
+
+b. Bitcoin miners can more efficiently mine for blocks by specifically targeting parts of the nonce search space that have more puzzle solutions
+
+c. Over a 2 week period, the average time to mine a block is always 10 minutes
+
+d. The mining difficulty is recomputed roughly every 2 weeks to keep the proof-of-work puzzle difficult - correct;  
+
+----------------------------------------------------------------------------------------------------------------------------------------
+5.2 Mining Hardware
+----------------------------------------------------------------------------------------------------------------------------------------
 
 
 

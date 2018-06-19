@@ -110,8 +110,14 @@ d. The mining difficulty is recomputed roughly every 2 weeks to keep the proof-o
 5.2 Mining Hardware
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-
-
+* SHA- 256
+-----------
+-> It is a general purpose crypotographich hash function.
+        - Part of SHA-2 family : SHA-224, SHA-384, SHA-512;
+->  Published in 2001      
+-> Designed by the NSA
+-> Remains unbroken cryptographically. (Weaknesses known);
+-> SHA-3 (replacement) under standardization.
 
 
 

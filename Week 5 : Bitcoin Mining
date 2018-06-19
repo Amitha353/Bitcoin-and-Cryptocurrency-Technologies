@@ -199,7 +199,13 @@ while (1) {
 4. can drive many GPU's from 1 CPU.
 5. can overclock! (GPU's can be made to run faster);
 
-
+* "Goodput" (Measure of Mining success)
+----------------------------------------
+# Observation : some errors are okay (may miss a valid block);
+# Goodput : throughput x success rate; 
+    - throughput - how quickly you are finding blocks.
+    - success rate - how often does the computation actually have errors.
+# Worth overclocking by 50% with 30% errors!
 
 
 

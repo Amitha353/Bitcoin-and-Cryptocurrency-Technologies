@@ -243,7 +243,7 @@ Throughput on a good card = 20 - 200 MHz ~ 2^27
 # 25 years on average to find a block w/100 boards!
 
 * Bitcoin ASICs (Application Specific Integrated Circuits)
-------------------------------------------------------------
+-----------------------------------------------------------------------------------
 -> special purpose
         - approaching known limits on feature sizes.
         - less than 10x performance improvement expected.
@@ -259,8 +259,12 @@ Throughput on a good card = 20 - 200 MHz ~ 2^27
 
 ~ 14 months on an average to find a block.
 
-
-
+* Market dynamics (2013/2014)
+------------------------------
+-> Most boards obsolete within 3-6 months
+-> Shipped delays are delays are devastating to customers.
+-> Most companies require pre-orders.
+-> Most individual customers should have lost.
 
 
 

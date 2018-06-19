@@ -119,6 +119,30 @@ d. The mining difficulty is recomputed roughly every 2 weeks to keep the proof-o
 -> Remains unbroken cryptographically. (Weaknesses known);
 -> SHA-3 (replacement) under standardization.
 
+SHA-256 in more depth
+-----------------------
+# There is a 256-bit state in SHA-256 that split uo into eight 32-bit words.
+# Optimized for 32-bit platforms.
+# Each round some of those words are taken and there are four different operations performed on them. The words are at their bit-level
+ and AND and other logic operations are performed on them.
+# Then the number of words in the state are taken  - some with these operatins performed on them and added together with
+    "mod 32" in a pipeline.
+# Then the result of all these additions is wired over to the first word of the state and the entire state shifts over.
+
+# All the above steps occur in just one round of SHA compression function.
+# A complete computation of the SHA-256 takes about 80 times.
+# In each iteration there are slightly different constants applied at one step.
+
+-> certain design ideas date back to classic linear feedback shift registers - approach to cryptographic design.
+
+# This is the work of the Miners, and they are supposed to do it as fast as possible.
+
+-> To do this we need to deal with:
+    1. 32-bit words
+    2. 32-bit additions
+    3. Bit-wise logic
+
+
 
 
 

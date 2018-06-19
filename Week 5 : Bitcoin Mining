@@ -74,3 +74,37 @@
                                     ------------------
 
 
+* Mining difficulty "target" (2014-08-07)
+---------------------------------------------
+-> The hash of any valid block needs to below the value shown below.
+-> It's a 256-bit hash output value. (Using SHA 256 to hash function)
+-> Atleast first 64-bit are 0's
+-> Current difficulty = 2 ^66.2 ~ 84 quintillion.
+
+* Setting the minning difficulty
+-----------------------------------
+-> Every two weeks compute: It's based on how efficient the miners were over the previous two weeks.
+
+next_difficulty = previous_difficulty *         (2 weeks)
+                                        ------------------------------        
+                                         (time to mine last 2016 blocks)
+                                                                    / \
+                                                                     |
+                                                                     |
+                                        Expected number of blocks in 2 weeks at 10 minutes/block
+            
+-> Over time mining difficulty keeps increasing (not steady, exponentail increase, it's based on how many miners enter into the market).
+-> On an average a block is to be found every 10 miinutes. At the beginning of two weeks the difficulty in practice to get a block is about 9 minutes, but eventually towards the end of the two-week period the time to get the new block will be about 8 minutes.
+
+
+            
+            
+
+
+
+
+
+
+
+
+

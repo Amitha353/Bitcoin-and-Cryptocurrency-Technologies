@@ -242,6 +242,23 @@ Throughput on a good card = 20 - 200 MHz ~ 2^27
 # Throughput on a good card = 100-1000 MHz ~ 2^30
 # 25 years on average to find a block w/100 boards!
 
+* Bitcoin ASICs (Application Specific Integrated Circuits)
+------------------------------------------------------------
+-> special purpose
+        - approaching known limits on feature sizes.
+        - less than 10x performance improvement expected.
+-> Designed to be run constantly for life.
+-> Requires significant expertise, long lead-times.
+-> Perhaps the fastest chip developed ever.
+
+* Case study: TerraMiner IV
+-------------------------------
+# Shipped in Jan 2014
+# 2 TH/s
+# Cost: US $6000
+
+~ 14 months on an average to find a block.
+
 
 
 

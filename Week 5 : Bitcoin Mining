@@ -461,7 +461,11 @@ Idea: prove work done with "near-valid blocks" (shares);
             --------------------
             | hash :           |
             --------------------
-            
+  -> Now the block header will be sent to all the participants in the pool, and the partcipants need to hash the lock;
+  -> Miners start hahsing, slowly start finding almost valid blocks;
+  -> This continues when one of them finds a valid block - published, and the manager gets the revenue.
+  ->  All the participants send all the shares they find to manager.
+  -> The manager then distributes the revenue based on the number of almost valid blocks found by the participant. The one who gets the block is not given anymore credit.
             
             
 

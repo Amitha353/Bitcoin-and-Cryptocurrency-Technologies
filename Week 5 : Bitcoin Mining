@@ -328,10 +328,13 @@ I. Estimating energy usage : top-down
 -> If the miners took that $25 that they earn every second and turned that into electricity investment, then they would get (Upper bound)
     900 MJ/s = 900 MW;
     
-II. Estimating    
+II. Estimating  energy usage: bottom-up
+-----------------------------------------
+-> Best claimed efficieny : 1GHz/W. (mining rigs)
+-> Network hash rate: 150,000,000 Ghz.
+-> (excluding cooling, embodied energy);
 
-
-
+# Lower bound on electricity = 150,000,000 GHz / 1 GHz/W = 150 MHz W = 150MW
 
     
 

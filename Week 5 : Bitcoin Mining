@@ -580,9 +580,15 @@ Forking attack
                                 |                   |
                                 ---------------------
                                 
+-> Certainly possible if α < 0.5                              .
+    - May be possible with less
+    - Avoid block collisions
+-> Attack is detectable.
+-> Might be reversed.
+-> Might crach exchange rate.
+
                                 
-                                
-                                
+
 
 
 

@@ -336,8 +336,13 @@ II. Estimating  energy usage: bottom-up
 
 # Lower bound on electricity = 150,000,000 GHz / 1 GHz/W = 150 MHz W = 150MW
 
-    
-
+* How much is a MW?
+--------------------
+-> Three Gorges Dam (China) = 10,000 MW;
+-> Typical hydro plant = 1,000 MW;
+-> Nuclear power plant (Japan) = 7,000 MW;
+-> Typical nuclear plant = 4,000 MW;
+-> Major coal-fired plant ~ 2,000 MW;
 
 
 

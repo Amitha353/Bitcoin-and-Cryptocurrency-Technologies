@@ -441,5 +441,37 @@ y   |     |           \
 
 # How do we know how much work members perform?
 
+* Mining shares
+-----------------
+Idea: prove work done with "near-valid blocks" (shares);
+-> It might be hard to find a block with first 66-bits 0's -> valid block;
+-> almost valid block : many leading 0's; (40-bit, 50 bit, etc);
+-> No way to fake.
+
+* Mining Pool
+-----------------
+-> In each round, the pool manager - which will be collecting transactions and assembling a block will tell all of the participants, here is the next block that we all are going to work on.
+-> They'll assemble the block , in the mrkl_root they'll put in the coinbase transaction -> which created new coins and assigns ownership to the pool itself.
+            --------------------
+            | prev:     H( )   |
+            --------------------        ---------------
+            | mrkl_root:  H( )-|------> | coinbase:    |
+            --------------------        |  25 -> pool  |
+            | nonce :          |        ----------------
+            --------------------
+            | hash :           |
+            --------------------
+            
+            
+            
+
+
+
+
+
+
+
+
+
 
 

@@ -294,8 +294,17 @@ d. Mining Bitcoin on a modern CPU will yield negligible mining rewards
 ----------------------------------------------------------------------------------------------------------------------------------------
 5.3 Energy Consumption & Ecology
 ----------------------------------------------------------------------------------------------------------------------------------------
+* Thermodynamics limits :
+--------------------------
+-> (1960's) Rolf Landauer's principle: Any non-reversible computation must consume a minimum amount energy.
+    Specifically, each bit changed requires (kT ln 2)joules.
+-> Energuy is never destroyed, transformed from one form to another.
+-> Computation -> electricity -> heat;
+-> SHA-256 - non-reversible computation. (Energy consumption is inevitable);
+-> Todays energy consumption is far above(1000's) time more than that generalized by Landauer.
 
-
+*
+    
 
 
 

@@ -316,7 +316,23 @@ d. Mining Bitcoin on a modern CPU will yield negligible mining rewards
 3. Cooling : required to protect equipment.  
     -> costs more with increased scale! (not optimized in a large scale);
     
+I. Estimating energy usage : top-down
+------------------------------------
+(How much energy is the Bitcoin using?) - approximation;
+
+-> Each block worth approximately US$15,000 (25 BTC that's found every 10 minutes).
+-> Approximately $25/s generated.
+-> Industrial electricity (US): $0.03/MJ
+    - $0.10/kWh
     
+-> If the miners took that $25 that they earn every second and turned that into electricity investment, then they would get (Upper bound)
+    900 MJ/s = 900 MW;
+    
+II. Estimating    
+
+
+
+
     
 
 

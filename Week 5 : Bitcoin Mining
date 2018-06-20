@@ -467,7 +467,19 @@ Idea: prove work done with "near-valid blocks" (shares);
   ->  All the participants send all the shares they find to manager.
   -> The manager then distributes the revenue based on the number of almost valid blocks found by the participant. The one who gets the block is not given anymore credit.
             
-            
+* Mining pool variations
+-------------------------
+1. Pay per share: flat reward per share
+    - typically minus a significant fee
+    - miners get payed even if they don't find valid blocks.
+2. Proportional: typically since last block.
+    - lower risk for pool manager.
+    - More work to verify. (Miners are payed based on the work they do/ shares);
+3. "Luke-jr" approach : no management fee.
+    - miners can only get paid out in BTC. (New entrant don't make money for a while and then they even out.)
+    - Pool owner keeps spread
+    
+    
 
 
 

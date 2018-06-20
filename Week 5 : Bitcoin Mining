@@ -303,7 +303,20 @@ d. Mining Bitcoin on a modern CPU will yield negligible mining rewards
 -> SHA-256 - non-reversible computation. (Energy consumption is inevitable);
 -> Todays energy consumption is far above(1000's) time more than that generalized by Landauer.
 
-*
+* Energy consumption aspects of Bitcoin mining
+-----------------------------------------------
+# 3 steps
+1. Embodied energy : used to manufacture mining chips and other equipment.
+(Includes physical mining - digging out rare metals, coppers -> IC's, etc; Manufacture into Bitcoin mining ASIC);
+    -> Should decrease over time. (since sufficient chip will be there, more resources online, etc);
+    -> Returns to scale. (optimized on large scale)
+2. Electricity : used to perform computation. (plug into wall - draws electricity - and perform computation).
+    -> Should increase over time.
+    -> Return to scale. (optimized on large scale)
+3. Cooling : required to protect equipment.  
+    -> costs more with increased scale! (not optimized in a large scale);
+    
+    
     
 
 

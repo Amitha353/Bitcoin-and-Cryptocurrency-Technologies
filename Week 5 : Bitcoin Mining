@@ -479,10 +479,20 @@ Idea: prove work done with "near-valid blocks" (shares);
     - miners can only get paid out in BTC. (New entrant don't make money for a while and then they even out.)
     - Pool owner keeps spread
     
-    
+* Mining Pool protocols
+--------------------------
+-> API for fetching blocks, submitting shares
+        - Stratum.
+        - Getwork
+        - Getblocktemplate
+-> Proposed for standardization with BIP (Bitcoin Protocol);
+-> Increasingly important; some hardware support;
 
-
-
+* Mining pool history
+-----------------------
+-> First pools appear in late-2010; (GPU era)
+-> By 2014: around 90% of the mining pool-based;
+-> June 2014 : GHash.io exceeds 50% - Bitcoin network;
 
 
 

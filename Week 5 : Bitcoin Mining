@@ -380,8 +380,41 @@ b. Everyone mines at the maximum claimed efficiency  -  true;
 c. Miners mine up to the point that all of the money they earn is used to pay for electricity
 d. The energy efficiency of mining hardware decreases with age
 
+----------------------------------------------------------------------------------------------------------------------------------------
+5.4 Mining Pools
+----------------------------------------------------------------------------------------------------------------------------------------
 
+* Economics of being a small miner
+----------------------------------
+(TerraMiner IV)
+-> Cost: US $6,000
+-> Expected time to find a block : 14 months;
+-> Expected revenue : $ 1000/ month ($15000/ 14 months);
 
+Mining uncertainty
+--------------------
+-> Unsure when you'll find the next block - random process;
+
+    |     14
+p   |   months
+r   |\    |
+o d | \   |
+b e |  \  |
+a n |   \ |
+b s |    \|
+i i |     |
+l t |     |  \ 
+i y |     |    \
+t   |     |       \ 
+y   |     |           \
+    |     |               \    
+    |     |                      \
+    ------|--------------------------\\\\\\\\\----------------------
+                   Time to find first block
+                   
+                   
+                   
+       
 
 
 

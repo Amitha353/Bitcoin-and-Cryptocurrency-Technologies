@@ -494,6 +494,30 @@ Idea: prove work done with "near-valid blocks" (shares);
 -> By 2014: around 90% of the mining pool-based;
 -> June 2014 : GHash.io exceeds 50% - Bitcoin network;
 
+* Are mining pools a good thing?
+---------------------------------
+# Pros:
+    - Make mining more predictable.
+    - Allow small miners to participate.
+    - More miners using updated validation softwares.
+# Cons:
+    - Leads to centralization.
+    - Discourages miners running full nodes.
+
+# Can we  prevent pools?
+
+Q. Mining pools...
+
+a. let members earn more rewards, on average, than they would by mining alone
+b. typically make all their members search for blocks with the same coinbase address (the address that receives mining rewards) - true;
+c. evenly divide up block rewards between all members of the pool
+d. can undermine the security of Bitcoin’s consensus algorithm, but this isn’t a problem in practice since the majority of miners aren’t part of pools
+
+----------------------------------------------------------------------------------------------------------------------------------------
+5.5 Mining Incentives and Strategies
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 

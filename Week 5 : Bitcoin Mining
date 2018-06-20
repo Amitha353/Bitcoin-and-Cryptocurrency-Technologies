@@ -516,7 +516,19 @@ d. can undermine the security of Bitcoinâ€™s consensus algorithm, but this isnâ€
 ----------------------------------------------------------------------------------------------------------------------------------------
 5.5 Mining Incentives and Strategies
 ----------------------------------------------------------------------------------------------------------------------------------------
-
+* Game theoretic analysis of mining
+-----------------------------------
+# Several strategic decisions:
+------------------------------
+-> Which transactions to include in a block?
+    - Default : any above minimum transaction fee.
+-> Which block to mine on top of?
+    - Default : longest valid chain.
+-> How to choose between colliding blocks?
+    - Default : first block heard.
+-> When to announce new blocks?
+    - Default : Immediately after finding them.
+    
 
 
 

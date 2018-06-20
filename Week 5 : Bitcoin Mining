@@ -365,7 +365,28 @@ II. Estimating  energy usage: bottom-up
 -> Will Bitcoin require guarding power outlets?
 -> Can we make a currency with no proof-of-work?
     
-    
+Q1.  Which of the following are assumptions made about the UPPER bound for the energy used for mining Bitcoins?
+
+a. Everyone mines where it is cold (cooling doesn’t consume energy)
+b. Everyone mines at the maximum claimed efficiency
+c. Miners mine up to the point that all of the money they earn is used to pay for electricity  -  true;
+d. The energy efficiency of mining hardware decreases with age
+e. Miners all pay the same for electricity  -  true;
+
+Q2. Which of the following are assumptions made about the LOWER bound for the energy used for mining Bitcoins?
+
+a. Everyone mines where it is cold (cooling doesn’t consume energy)  -  true;
+b. Everyone mines at the maximum claimed efficiency  -  true;
+c. Miners mine up to the point that all of the money they earn is used to pay for electricity
+d. The energy efficiency of mining hardware decreases with age
+
+
+
+
+
+
+
+
     
 
 

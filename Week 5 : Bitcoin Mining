@@ -697,6 +697,18 @@ Feather-forking :  what is it good for?
 -> Currently, block rewards are > 99% of the miners revenue. But:
 -> eventually since the mining (25 BTC) halves every four years the rewards will reduce dramatically and the sole means of income -> transaction fees.
 
+# Will miners cooperate to enforce fees?
+
+* Summary
+-----------
+-> Miners are free to implement any strategy.
+-> Very little non-default behavior in the wild.
+-> No complete game-theoretic model exists.
+
+
+
+
+
 
 
 

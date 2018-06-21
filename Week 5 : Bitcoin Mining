@@ -652,8 +652,11 @@ Forking attack
 # With a 50% chance of wining races, improved strategy for α > 0.25.
 -> Not observed in practice.
 
-                             
-                             
+* Punitive forking
+---------------------
+-> Suppose you want to blacklist transactions from address X.
+    - Freeze an individual's money forever.
+-> Extreme strategy : Announce that you will refuse to mine on any chain with transaction from X.    
 
 
 

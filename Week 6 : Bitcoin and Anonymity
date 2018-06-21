@@ -1,3 +1,7 @@
 ----------------------------------------------------------------------------------------------------------------------------------------
 6.1 Anonymity Basics
 ----------------------------------------------------------------------------------------------------------------------------------------
+
+-> Anonymous = without a name.
+-> Bitcoin addresses are public key hashes rather than real identities.
+-> computer scientist call this "pseudonymity".

@@ -50,7 +50,10 @@ Pseudonymity vs anonymity in forums
 -> Legitimate worry.
 -> Bottleneck: moving large flows into and out of Bitcoin ("cashing out") - hard. (BTC -> money ($))
 
-
+* Anonymous e-cash : history
+------------------------------
+- David Chaum, 1982
+- Blind signatures - Two-party protocol to creatse digital signature without signer knowuing the input.
 
 
 

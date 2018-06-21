@@ -657,7 +657,7 @@ Forking attack
 -> Suppose you want to blacklist transactions from address X.
     - Freeze an individual's money forever.
 -> Extreme strategy : Announce that you will refuse to mine on any chain with transaction from X.    
-| With α < 0.5, you'll soon fall behind the network  - at this oint that transaction will be part of the longest valid chain, you'll be mining on an orphaned fork (waste).|
+| With α < 0.5, you'll soon fall behind the network  - at this point that transaction(will you plan to refuse to mine) will be part of the longest valid chain, you'll be mining on an orphaned fork (waste).|
 
 
 * Feather-forking strategy
@@ -673,8 +673,7 @@ Forking attack
 -> For other miners, including a transaction from X induces an α^2 chance of losing a block.
 -> Might be safer to join in on the blacklist.
 -> Can enforce a blacklist with α < 0.5;
-
-
+# "Success depends on convincing other miners you'll fork." (The miners might be aware the feather-fork operation will simply black-list ot orphan the block originating from address x and henc ewill not receive any mining reward hence willnot mine these X originating blocks instead will black-list them).
 
 
 

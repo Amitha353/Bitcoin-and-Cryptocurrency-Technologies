@@ -11,3 +11,17 @@
 -> Anonymity = pseudonymity + unlinkability;
 
 -> unlinkability - Different interactions of the same user with the system should not be linked with each other.
+
+Pseudonymity vs anonymity in forums
+------------------------------------
+-> Reddit - pick a long-term pseudonym. (Pseudonymity)
+-> 4Chan - make posts with no attribution at all. (Anonymity)
+
+# With Pseudonomity profile -> easy to link back together to your real identity.
+
+* Why is unlinkability needed?
+------------------------------
+1. Many Bitcoin services require real identity.
+2. Linked profiles can be deanonymized by a variety of side channels.
+
+* 

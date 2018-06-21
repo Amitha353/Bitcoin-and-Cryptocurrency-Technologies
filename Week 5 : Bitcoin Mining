@@ -605,10 +605,44 @@ Forking attack
 -> Since 2010, each version of the Bitcoin client gets shipped to a specific checkpoint and will refuse to accept versions of the block chain that don't date back to that version. (Could be centralized);
 
     
+* Block-withholding attack / selfish mining
+------------------------------------------------
+-> Strategy : Don't announce blocks right away. Try to get ahead!
+-> Do mining and hopefully get two blocks in a row before the rest of the network finds even one.
+-> Keep these blocks to yourself as a secret.
+-> The other miners are still putting in effort to extend the current longest chain.
+-> When the rest of the network actually finds a block they will publish it and everybody accepts it.
+-> Immediately, you could add the two new blocks found and that would be the new longest chain. The one found by the network will be an orphaned block.
 
 
-
-
+---------------------
+|                   |
+---------------------
+          |          
+         \ /         
+---------------------
+|                   |
+---------------------
+          |          
+         \ /         
+---------------------
+|                   |
+---------------------
+          |                 (Blocks found by you - kept and secret - later published - new long block-chain)
+         \ /         
+---------------------           ---------------------
+|                   | <------  |                   |        
+---------------------           ---------------------
+          |   (block extended            |                   
+         \ /   by network)              \ /
+---------------------           ---------------------
+|                   |           |                   |
+---------------------           ---------------------
+                             
+                             
+                             
+                             
+                             
 
 
 

@@ -5,3 +5,9 @@
 -> Anonymous = without a name.
 -> Bitcoin addresses are public key hashes rather than real identities.
 -> computer scientist call this "pseudonymity".
+
+* Anonymity in computer science
+---------------------------------
+-> Anonymity = pseudonymity + unlinkability;
+
+-> unlinkability - Different interactions of the same user with the system should not be linked with each other.

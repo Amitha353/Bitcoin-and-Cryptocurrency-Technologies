@@ -692,4 +692,12 @@ Feather-forking :  what is it good for?
 
 -> Transactions of smaller size will have a higher priority - higher transaction fee.
 
+* Transactions fees will matter more
+-------------------------------------
+-> Currently, block rewards are > 99% of the miners revenue. But:
+-> eventually since the mining (25 BTC) halves every four years the rewards will reduce dramatically and the sole means of income -> transaction fees.
+
+
+
+
 

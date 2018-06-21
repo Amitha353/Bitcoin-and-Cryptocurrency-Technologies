@@ -639,8 +639,19 @@ Forking attack
 |                   |           |                   |
 ---------------------           ---------------------
                              
-                             
-                             
+-> What happens if a block is announced when you are ahead by 1?
+- The race is on, need to compete so that the network hears about the block.
+
+* Block-withholding attacks
+----------------------------
+(When is it a good time to perform a block-withholding attack?)
+
+# Improved strategy for any α if you can win every race
+    - Ideal neywrok position.
+    - Bribery?
+# With a 50% chance of wining races, improved strategy for α > 0.25.
+-> Not observed in practice.
+
                              
                              
 

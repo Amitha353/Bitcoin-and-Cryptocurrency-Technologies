@@ -652,8 +652,8 @@ Forking attack
 # With a 50% chance of wining races, improved strategy for α > 0.25.
 -> Not observed in practice.
 
-* Punitive forking
----------------------
+* Punitive(severe/harsh) forking
+--------------------------------------
 -> Suppose you want to blacklist transactions from address X.
     - Freeze an individual's money forever.
 -> Extreme strategy : Announce that you will refuse to mine on any chain with transaction from X.    
@@ -666,7 +666,16 @@ Forking attack
     - announce that you will refuse to mine directly on any block with transactions from X.
         - but you'll concede after n confirming block. (blacklisting will not continue forever.)   
 
--> Chance of pruning an offending block is α^2; 
+-> Chance of pruning/trim an offending block is α^2; 
+
+* Response to feather forking
+-----------------------------
+-> For other miners, including a transaction from X induces an α^2 chance of losing a block.
+-> Might be safer to join in on the blacklist.
+-> Can enforce a blacklist with α < 0.5;
+
+
+
 
 
 

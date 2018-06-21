@@ -547,7 +547,7 @@ Forking attack
 -> Perform a double spend
 -> Have a valid state of the block, and the miner will send the money to victim Bob -  this could be valid since it build on the longest chain
 -> Forking miner is gonna work on an earlier block (6 block earier < confirmation) - and transfer the money to an alternative address. This may not be valid as it doesn't build on the longest valid block-chain.
--> But, if you bear the majority of the Hash power (α < 0.5) - then the alternative chain will be longer that what it was previously. It then becomes the valid transaction.
+-> But, if you bear the majority of the Hash power (α > 0.5) - then the alternative chain will be longer that what it was previously. It then becomes the valid transaction.
                                 
                                 
                                 (Double-spend) (new-valid-block-chain)        
@@ -580,14 +580,23 @@ Forking attack
                                 |                   |
                                 ---------------------
                                 
--> Certainly possible if α < 0.5                              .
+-> Certainly possible if α > 0.5                              .
     - May be possible with less
     - Avoid block collisions
 -> Attack is detectable.
 -> Might be reversed.
 -> Might crach exchange rate.
 
-                                
+* Forking attack via bribery
+-----------------------------
+-> Idea : building α > 0.5 is expensive. Why not rent it instead / bribe others?
+
+-> Payment techniques:
+    # Out-of-band bribery
+    # Run a mining pool at a loss.
+    # Insert large "tips" in a block chain.
+    
+    
 
 
 

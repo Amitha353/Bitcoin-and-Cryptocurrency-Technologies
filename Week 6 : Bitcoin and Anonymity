@@ -39,6 +39,21 @@ Pseudonymity vs anonymity in forums
 -> To calculate anonymity set:
   - define adversary model.
   - reason carefully about: what the adversary knows, doesn't know, and cannot know.
-  
+
+* Why anonymous cryptocurrencies?
+------------------------------------
+-> Block chain based currencies are totally publicly, and permanently traceable.
+-> Without anonymity, privacy is much worse than traditional banking!
+
+* What about money laundering?
+-------------------------------
+-> Legitimate worry.
+-> Bottleneck: moving large flows into and out of Bitcoin ("cashing out") - hard. (BTC -> money ($))
+
+
+
+
+
+
   
   

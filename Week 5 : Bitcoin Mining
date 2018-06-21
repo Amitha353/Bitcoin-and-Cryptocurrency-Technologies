@@ -595,7 +595,15 @@ Forking attack
     # Out-of-band bribery
     # Run a mining pool at a loss.
     # Insert large "tips" in a block chain.
-    
+-> This a open problem.
+
+* Checkpointing
+-----------------
+-> Defence against forking.
+-> Added a simple security safeguard that locks-in block chain up to this point.
+-> Reduce address message to save bandwidth since there are plenty of nodes to connect to.
+-> Since 2010, each version of the Bitcoin client gets shipped to a specific checkpoint and will refuse to accept versions of the block chain that don't date back to that version. (Could be centralized);
+
     
 
 

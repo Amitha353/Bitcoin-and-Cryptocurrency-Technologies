@@ -705,11 +705,10 @@ Feather-forking :  what is it good for?
 -> Very little non-default behavior in the wild.
 -> No complete game-theoretic model exists.
 
+Q. Which of the following are true about potential mining strategies Bitcoin miners can employ?
 
+a. Miners who control more mining power have more potentially profitable strategies available  - true
+b. Block withholding, forking, and other attacks have been frequently carried out in practice
+c. Some alternative strategies might be motivated by goals other than earning more bitcoins  - true
 
-
-
-
-
-
-
+----------------------------------------------------------------------------------------------------------------------------------------

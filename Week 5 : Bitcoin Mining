@@ -675,6 +675,12 @@ Forking attack
 -> Can enforce a blacklist with α < 0.5;
 # "Success depends on convincing other miners you'll fork." (The miners might be aware the feather-fork operation will simply black-list ot orphan the block originating from address x and henc ewill not receive any mining reward hence willnot mine these X originating blocks instead will black-list them).
 
+Feather-forking :  what is it good for?
+------------------------------------------
+-> Freezing individual bitcoin owners
+    - ransom/extortion.
+    - Law enforcement?
+-> Enforcing a minimum transaction fee...
 
 
 

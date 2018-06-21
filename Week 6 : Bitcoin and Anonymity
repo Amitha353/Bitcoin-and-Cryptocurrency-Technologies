@@ -24,4 +24,21 @@ Pseudonymity vs anonymity in forums
 1. Many Bitcoin services require real identity.
 2. Linked profiles can be deanonymized by a variety of side channels.
 
-* 
+* Defining unlinkability in Bitcoin
+--------------------------------------
+-> Hard to link different address to same users.
+-> Hard to link different transactions of the same user.
+-> Harder to link sender of a payment to its recipient.
+
+* Quantifying anonymity
+------------------------
+-> Complete unlinkability (among "all" addresses/transactions) is hard.
+
+-> Anonymity set : measurement parameter - the set of all transactions that are hidden. The crowd that one attempts to blend into.
+
+-> To calculate anonymity set:
+  - define adversary model.
+  - reason carefully about: what the adversary knows, doesn't know, and cannot know.
+  
+  
+  

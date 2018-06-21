@@ -682,6 +682,14 @@ Feather-forking :  what is it good for?
     - Law enforcement?
 -> Enforcing a minimum transaction fee...
 
+* Look at Transaction fees
+-------------------------------
+-> Default policy:
+    priority = sum(input_value * input_age) / size_in_bytes
+    
+-> Accepts without fees if:
+    priority > 0.576;
 
+-> Transactions of smaller size will have a higher priority - higher transaction fee.
 
 

@@ -283,8 +283,8 @@ Q. Which of the following observations would suggest that addresses A and B may 
 * Remaining problem : trusting mixes
 ----------------------------------------
 1. Stay in business , build up reputation.
-2. Users can test for themselves.
-3. Cryptographic "warranties".
+2. Users can test for themselves. (users can have numerous small chunk size transactions with the mix - eventually if any of their transactions are lost they they will not trust the mix service (steal) - although the mixes have no way of knowing the user identity);
+3. Cryptographic "warranties". ()
 
 
 

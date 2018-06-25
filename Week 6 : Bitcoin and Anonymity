@@ -243,7 +243,9 @@ Q. Which of the following observations would suggest that addresses A and B may 
     -> then users will keep bitcoins in the wallet service longer than they would have kept in mixing services.
     -> It provides bigger anonymity set w.r.t everyone else. (The wallet service will know the identity, but anybody looking into the block-chain will have no idea);
     
+"Online wallets - provide the anoanymity - as that of traditional banking system."
 
+* Consider a user for whom the trust requirements and anonymity properties for online wallets are unacceptable.
 
 
 

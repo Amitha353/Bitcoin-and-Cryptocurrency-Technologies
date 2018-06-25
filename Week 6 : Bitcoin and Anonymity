@@ -83,7 +83,10 @@ Pseudonymity vs anonymity in forums
 --------------
 Depends on trusting the bank.
 (Anonymous e-cash: Model is different from Bitcoin) 
-  
+
+Anonymous e-cash through blind signatures
+-------------------------------------------
+# Bank model
 ------------------    ---------------
 | User | Balance |    | Spent coins |
 ------------------    ---------------
@@ -96,6 +99,12 @@ Depends on trusting the bank.
 |   B   |   5    |    |             |
 ------------------    ---------------
 
+# User A Withdraw anonymous e-cash
+-----------------------------------
+        
+User A  ------Withdraw anonymous coin----------------------->     Bank
+        --------Serial Number(unknown to bank)-------------->
+        <------Signed Serial Number(unknown to bank)---------
 
 
 

@@ -105,10 +105,19 @@ Anonymous e-cash through blind signatures
 User A  ------Withdraw anonymous coin----------------------->     Bank
         --------Serial Number(unknown to bank)-------------->
         <------Signed Serial Number(unknown to bank)---------
+                {3574132415345454}
 
+# User A wants to send the anonymous coin to user B
+------------------------------------------------------
 
+User A
+  |
+  |
+  |
+ \ /
+User B  ----- Deposit coin #3574132415345454 (plain text)-------->    Bank
+                {3574132415345454} (signed serial number)
+        <---------------------OK----------------------------------                
 
-
-
-
-
+# Acount balance
+-------------------

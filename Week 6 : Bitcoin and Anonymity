@@ -194,5 +194,21 @@ Q. Unlinkability in Bitcoin could mean
   - Most flows pass through one of these - in a traceable way. (Each individual will in some manner be linked to major service providers);
 2. Address - identity links in forums. (Users can post addresses in the links, and when one address is captured then through link address and change address - all transactions of the users can be found).  
   
+# Block-chain - > Application Layer;
+# Peer-to-Peer netwrok -> Network Layer;
+
+* Network-layer de-anonymization
+-------------------------------------
+-> Dan Kaminsky (Blackhat 2011 talk);
+-> "The first node to inform you of a transaction is probably the source itself." (link between transactions and IP address -> close personal identity);
+
+
+
+
+
+
+
+
+
   
   

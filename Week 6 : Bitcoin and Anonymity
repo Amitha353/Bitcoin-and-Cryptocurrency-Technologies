@@ -154,16 +154,30 @@ Q. Unlinkability in Bitcoin could mean
 -> In order to makle sure that the transactions are unlinkable:
   - Best practice - always receive a fresh address (transactions are always new addresses so no way to track coins).
   - But is the above approach still unlinkable?
-  [* Say Alice has bitcoins at different transaction addresses - 5 , 3 ,2 ; 
-    Alice wants to buy a tea pot of 8 biyt coins
-    She has to combine her coins to make the purchase - the transaction addresses are combines - linking addresses];
+  [* Say Alice has bitcoins at different transaction addresses - 5 , 3 , 6; 
+    - Alice wants to buy a tea pot of 8 bit coins
+    - She has to combine her coins to make the purchase - the transaction addresses are combines - linking addresses
+    
+    - The adversary can observe the transaction addresses and link it to the user];
     
  * Linking Addresses
  -----------------------
  -> Shared spending - it is an evidence of joint control.
  -> Addresses can be linked transitively.
  
- 
+* Change Addresses
+---------------------
+ [* Say Alice has bitcoins at different transaction addresses - 5 , 3 , 6; 
+    - Alice wants to buy a tea pot of 8.5 bit coins
+    - She has to combine her coins to make the purchase, but here denominations don't exactly match up the pot cost.
+    - So she is gonna make a change address. 
+    - She combines 3, 6 and pays 8.5 for the tea pot and 0.5 to herself.
+    
+    - Here the adversary is not sure which is the address to user and that of the mechant].
+    
+    
+    
+    
  
 
 

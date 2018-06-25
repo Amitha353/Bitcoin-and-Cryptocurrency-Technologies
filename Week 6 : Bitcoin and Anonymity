@@ -178,6 +178,7 @@ Q. Unlinkability in Bitcoin could mean
 #### Trick - each address can be used as a change address only once. (Alice send 0.5 back to herself and hence uses the same transaction address as the change address  - this can occur only once.);
  # could have  alot of false positives.   
     
- 
+* In 2013 , a Bitcoin theft did occur - by using the principles of linking address and change addresses they were able to trace huge service providers and the block-chain the steal the bitcoins.
+
 
 

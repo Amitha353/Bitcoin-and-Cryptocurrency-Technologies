@@ -72,9 +72,12 @@ Pseudonymity vs anonymity in forums
 8. Tha bank gets the message to deposit the coin and also receives the "plain text" and "signature". 
   - It verifies the signature is valid.
   - It also verifies the serial number that it received is not in the list of "spent coins". (double spend attack check); 
+  - It then puts the serial number in the spent coins table so that no doble-spends can occur.
+  - It then adds the amount to next user's account and sends a message to the next user.
+  (Since the bank din't see the serial number initially, the bank doesn't know who is the owner of the coin);
 7. On verification of the next coin the next user will allow the completion of the transaction.
 
-
+**** Bank cannot link the two users.
 
 
   

@@ -180,5 +180,16 @@ Q. Unlinkability in Bitcoin could mean
     
 * In 2013 , a Bitcoin theft did occur - by using the principles of linking address and change addresses they were able to trace huge service providers and the block-chain the steal the bitcoins.
 
-
-
+-> Research paper -> "A Fistful of Bitcoins: Characterizing Payments Among Men with No Names" 
+  - They tried to identify the identities on the block-chain , retrace the Bitcoin theft.
+  - They were not able to do by looking at their websites since each time to make a transaction a new address is posted, and unless it is a valid transaction it doesn't end up in the block-chain.
+  - So the only way the authors were able to reveal the bitcoin service providers or users was through actually interacting with the service providers.
+  - They purchased about 344 bitcoins(transactions);
+  - Was they were interacting with the websites, then through the link address and changes address principles they were able to identify the service providers.
+  
+  
+  
+  
+  
+  
+  

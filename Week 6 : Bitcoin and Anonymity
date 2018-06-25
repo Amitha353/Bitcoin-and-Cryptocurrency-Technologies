@@ -207,6 +207,14 @@ Q. Unlinkability in Bitcoin could mean
 -----------
 -> Caveat : Tor is intended for low-latency activities such as web browsing. (response immediately);
 -> Bitcoins - high latency (takes time for transactions to propagate through network and to get confirmed in the blockchain);
+-> Mix nets - might provide better anonymity.
+-> BUT Tor is deployed and works for now.
+
+Q. Which of the following observations would suggest that addresses A and B may be controlled by the same user/entity?
+
+1. There is a transaction with A as an input address and B as an output address
+2. There is a transaction with both A and B as input addresses  -  Correct.
+3. There is a transaction with both A and B as output addresses
 
 
 

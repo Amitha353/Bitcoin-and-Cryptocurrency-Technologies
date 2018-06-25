@@ -187,9 +187,12 @@ Q. Unlinkability in Bitcoin could mean
   - They purchased about 344 bitcoins(transactions);
   - Was they were interacting with the websites, then through the link address and changes address principles they were able to identify the service providers.
   
-  
-  
-  
+* From services to users
+-------------------------
+(How to identify individual users in the Bitcoin network?) 
+1. High centralization in service providers.
+  - Most flows pass through one of these - in a traceable way. (Each individual will in some manner be linked to major service providers);
+2. Address - identity links in forums. (Users can post addresses in the links, and when one address is captured then through link address and change address - all transactions of the users can be found).  
   
   
   

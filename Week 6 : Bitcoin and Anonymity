@@ -216,8 +216,19 @@ Q. Which of the following observations would suggest that addresses A and B may 
 2. There is a transaction with both A and B as input addresses  -  Correct.
 3. There is a transaction with both A and B as output addresses
 
-
-
+----------------------------------------------------------------------------------------------------------------------------------------
+6.3 Mixing
+----------------------------------------------------------------------------------------------------------------------------------------
+-> To protect anonymity, use intermediary.
+  - Users send transactions to intrermediary service.
+  - The intermediary doesn't keep track of the user and the transaction. 
+  - When the user withdraws an amount it is drawn from a random address from the intermediary.
+  - So there is no link from the input transaction address to the output transaction address, and no one can identify it from an external public chain on something else.
+  
+  User Input ----xx --> Intermediary --> yy---- Output.
+  
+  
+  
 
 
 

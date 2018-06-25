@@ -85,7 +85,8 @@ Depends on trusting the bank.
 (Anonymous e-cash: Model is different from Bitcoin) 
 
 Anonymous e-cash through blind signatures
--------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 # Bank model
 ------------------    ---------------
 | User | Balance |    | Spent coins |
@@ -136,7 +137,33 @@ User B  ----- Deposit coin #3574132415345454 (plain text)-------->    Bank
 |   B   |   6    |    |             |
 ------------------    ---------------
 
+* Anonymity and Decentralized : in conflict
+---------------------------------------------
+-> Interactive protocols with bank are hard to decentralize.
+-> Decentralization often achieved via public traceability to enforce security.
 
+Q. Unlinkability in Bitcoin could mean
+1. It's hard to link different addresses owned by the same user   -   true. 
+2. It's hard to link different transactions made by the same user   -   true.
+3. It's hard to link different transactions having the same output address.
 
+----------------------------------------------------------------------------------------------------------------------------------------
+6.2 How to de-anonymize Bitcoin
+----------------------------------------------------------------------------------------------------------------------------------------
+-> Bitcoin is pseudonymous and hence all your transactions many get linked together.
+-> In order to makle sure that the transactions are unlinkable:
+  - Best practice - always receive a fresh address (transactions are always new addresses so no way to track coins).
+  - But is the above approach still unlinkable?
+  [* Say Alice has bitcoins at different transaction addresses - 5 , 3 ,2 ; 
+    Alice wants to buy a tea pot of 8 biyt coins
+    She has to combine her coins to make the purchase - the transaction addresses are combines - linking addresses];
+    
+ * Linking Addresses
+ -----------------------
+ -> Shared spending - it is an evidence of joint control.
+ -> Addresses can be linked transitively.
+ 
+ 
+ 
 
 

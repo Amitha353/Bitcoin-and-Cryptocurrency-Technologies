@@ -271,7 +271,10 @@ Q. Which of the following observations would suggest that addresses A and B may 
 2. Uniform transactions.
     - In particular: all mix transactions must have the same value! (chunk size);
 
-                    
+3. Client side must be automated.
+    - Built in desktop wallet softwares - so that the software automatically knows how to interact with the mixes in order to preserve the user's identity.
 
-  
+4. 
+
+
   

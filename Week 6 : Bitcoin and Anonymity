@@ -279,4 +279,14 @@ Q. Which of the following observations would suggest that addresses A and B may 
     0.1% mixing fee = mix will swallow chunk with 0.1% chance.
 
 **** "Current mixes follow none of these principles."
-  
+
+* Remaining problem : trusting mixes
+----------------------------------------
+1. Stay in business , build up reputation.
+2. Users can test for themselves.
+3. Cryptographic "warranties".
+
+
+
+
+

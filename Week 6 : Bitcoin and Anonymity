@@ -266,7 +266,10 @@ Q. Which of the following observations would suggest that addresses A and B may 
                     |    X---|------+-------|---x    |            |   x    |
                     |        |              |        |            |        |
                     ----------              ----------            ----------
-                    
+-> A series of address changes a user viewing the block-chain will not be able to figure out transaction / link identity.
+
+
+
                     
 
   

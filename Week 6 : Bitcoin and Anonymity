@@ -227,8 +227,13 @@ Q. Which of the following observations would suggest that addresses A and B may 
   
   User Input ----xx --> Intermediary --> yy---- Output.
   
-  
-  
+-> Like online wallets - they store money until we need them.  
+
+* Dedicated mixing services
+----------------------------
+1. Promise not to keep records.
+2. Don't ask for your identity.
+
 
 
 

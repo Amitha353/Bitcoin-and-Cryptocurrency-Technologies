@@ -246,8 +246,28 @@ Q. Which of the following observations would suggest that addresses A and B may 
 "Online wallets - provide the anoanymity - as that of traditional banking system."
 
 * Consider a user for whom the trust requirements and anonymity properties for online wallets are unacceptable.
+------------------------------------------------------------------------
+-> Mixing -> mix,mixer, laundry;
 
-
+* Principles for mixing services
+---------------------------------
+1. Use a series of mixes
+  - Mixes should implement a standard API to make this easy.
+  
+                      Mix 1                   Mix 2               Mix 3
+                    ----------              --------              --------
+                    |        |
+ User A  x----------|----X   | 
+                    |        |
+                    |        |
+                    |    X   |
+                    |        |
+                    |        | 
+                    |    X   |
+                    |        |
+                    ----------
+                    
+                    
 
   
   

@@ -255,17 +255,17 @@ Q. Which of the following observations would suggest that addresses A and B may 
   - Mixes should implement a standard API to make this easy.
   
                       Mix 1                   Mix 2               Mix 3
-                    ----------              --------              --------
-                    |        |
- User A  x----------|----X   | 
-                    |        |
-                    |        |
-                    |    X   |
-                    |        |
-                    |        | 
-                    |    X   |
-                    |        |
-                    ----------
+                    ----------              --------              ----------
+                    |        |              |        |            |        |
+ User A  x----------|----X   |              |   X    |            |   x    |
+                    |        |              |        |            |        |
+                    |        |              |        |            |        |
+                    |    X   |              |   x    |            |   x    |
+                    |        |              |        |            |        |
+                    |        |              |        |            |        |
+                    |    X---|------+-------|---x    |            |    x   |
+                    |        |              |        |            |        |
+                    ----------              ----------            ----------
                     
                     
 

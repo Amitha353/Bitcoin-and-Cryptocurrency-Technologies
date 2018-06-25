@@ -234,6 +234,15 @@ Q. Which of the following observations would suggest that addresses A and B may 
 1. Promise not to keep records.
 2. Don't ask for your identity.
 
+* Online Wallets
+-------------------
+-> Reputable, often regulated businesses.
+
+1. Typically require identity keep records -> no anonymity w.r.t wallet service.
+2. If Users trust the online wallet service with their bitcoins
+    -> then users will keep bitcoins in the wallet service longer than they would have kept in mixing services.
+    -> It provides bigger anonymity set w.r.t everyone else. (The wallet service will know the identity, but anybody looking into the block-chain will have no idea);
+    
 
 
 

@@ -53,10 +53,17 @@ Pseudonymity vs anonymity in forums
 * Anonymous e-cash : history
 ------------------------------
 - David Chaum, 1982
-- Blind signatures - Two-party protocol to create digital signature without signer knowuing the input.
+- Blind signatures - Two-party protocol to create digital signature without signer knowing the input.
 
-
-
+# Consider a Bank with a protocol for Anonymous e-cash through blind signatures
+--------------------------------------------------------------------------------
+1. Consider there is a Bank and it stores various things in its database. It stores two tables.
+  -> Table 1 : Mapping between usera and their account balance.
+  -> Table 2 : Spent coins.
+2. Suppose a user wants to withdraw an anonymous coins from the system.
+  - User wishes to withdraw an anonymous coin of standard denomination.
+3. In response to the User's request the bank is gonna deduct the amount required my the user in the "Spent coins" table.
+4. 
 
   
   

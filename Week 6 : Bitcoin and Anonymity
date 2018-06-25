@@ -68,7 +68,11 @@ Pseudonymity vs anonymity in forums
   - At the end the user receives a signature of the serial number, but the banks is unaware of the users's serial number.
   - This signed number represents an anonymous token. 
 5. In can the current user wants to make payment to another user, then current user sends to the next user the "signed token" and the "plain text value of the token/serial number".
-6. The receiving user
+6. The receiving user will immediately contact the bank and try to deposit the anonymous coin. (Inorder to verify - no double spends, etc)
+7. On verification of the next coin the next user will allow the completion of the transaction.
+
+
+
 
   
   

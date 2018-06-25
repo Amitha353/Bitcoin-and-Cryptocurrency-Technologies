@@ -200,9 +200,13 @@ Q. Unlinkability in Bitcoin could mean
 * Network-layer de-anonymization
 -------------------------------------
 -> Dan Kaminsky (Blackhat 2011 talk);
--> "The first node to inform you of a transaction is probably the source itself." (link between transactions and IP address -> close personal identity);
+-> "The first node to inform you of a transaction is probably the source itself." (link between transactions and IP address -> close personal identity); (When a transaction is made, the source node send the message to the other nodes);
+-> This issue of communicating anonymously can be solved : use Tor
 
-
+* use Tor
+-----------
+-> Caveat : Tor is intended for low-latency activities such as web browsing. (response immediately);
+-> Bitcoins - high latency (takes time for transactions to propagate through network and to get confirmed in the blockchain);
 
 
 

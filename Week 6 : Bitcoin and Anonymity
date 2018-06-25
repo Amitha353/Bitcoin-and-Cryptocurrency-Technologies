@@ -268,7 +268,8 @@ Q. Which of the following observations would suggest that addresses A and B may 
                     ----------              ----------            ----------
 -> A series of address changes a user viewing the block-chain will not be able to figure out transaction / link identity.
 
-
+2. Uniform transactions.
+    - In particular: all mix transactions must have the same value! (chunk size);
 
                     
 

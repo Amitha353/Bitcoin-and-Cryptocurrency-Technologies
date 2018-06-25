@@ -286,7 +286,19 @@ Q. Which of the following observations would suggest that addresses A and B may 
 2. Users can test for themselves. (users can have numerous small chunk size transactions with the mix - eventually if any of their transactions are lost they they will not trust the mix service (steal) - although the mixes have no way of knowing the user identity);
 3. Cryptographic "warranties". (mix provides promises, incase the mix fails to keep that promise, then trust issue);
 
+* Currently no reputable dedicated mix
+----------------------------------------
+Caution : Mixing services may themselves be operating with anonymity. As such, if the mixing output fails to be delievered or access to funds is denied there is no recourse. Use at your own discretion. 
+                - Bitcoin Wiki
 
+Q.  Which of these techniques can improve the anonymity provided by mixing services? (Check all that apply)
 
+1. Using a series of mixes - true;
+2. Using the same "chunk" size for all mixing transactions  - true;
+3. Charging a constant percentage of the transaction value as a mixing fee
+
+----------------------------------------------------------------------------------------------------------------------------------------
+6.4 Decentralized Mixing
+----------------------------------------------------------------------------------------------------------------------------------------
 
 

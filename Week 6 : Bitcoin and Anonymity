@@ -69,6 +69,9 @@ Pseudonymity vs anonymity in forums
   - This signed number represents an anonymous token. 
 5. In can the current user wants to make payment to another user, then current user sends to the next user the "signed token" and the "plain text value of the token/serial number".
 6. The receiving user will immediately contact the bank and try to deposit the anonymous coin. (Inorder to verify - no double spends, etc)
+8. Tha bank gets the message to deposit the coin and also receives the "plain text" and "signature". 
+  - It verifies the signature is valid.
+  - It also verifies the serial number that it received is not in the list of "spent coins". (double spend attack check); 
 7. On verification of the next coin the next user will allow the completion of the transaction.
 
 

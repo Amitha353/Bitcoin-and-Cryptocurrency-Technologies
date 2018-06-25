@@ -174,9 +174,9 @@ Q. Unlinkability in Bitcoin could mean
     - She combines 3, 6 and pays 8.5 for the tea pot and 0.5 to herself.
     
     - Here the adversary is not sure which is the address to user and that of the mechant].
-    
-    
-    
+
+#### Trick - each address can be used as a change address only once. (Alice send 0.5 back to herself and hence uses the same transaction address as the change address  - this can occur only once.);
+ # could have  alot of false positives.   
     
  
 

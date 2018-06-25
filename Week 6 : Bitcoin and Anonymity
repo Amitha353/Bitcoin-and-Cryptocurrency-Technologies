@@ -63,7 +63,12 @@ Pseudonymity vs anonymity in forums
 2. Suppose a user wants to withdraw an anonymous coins from the system.
   - User wishes to withdraw an anonymous coin of standard denomination.
 3. In response to the User's request the bank is gonna deduct the amount required my the user in the "Spent coins" table.
-4. 
+4. Then the bank and the user are gonna execute a "two party" protocol. (Blind) signature protocol.
+  - The user picks a random serial number of a coin.
+  - At the end the user receives a signature of the serial number, but the banks is unaware of the users's serial number.
+  - This signed number represents an anonymous token. 
+5. In can the current user wants to make payment to another user, then current user sends to the next user the "signed token" and the "plain text value of the token/serial number".
+6. The receiving user
 
   
   

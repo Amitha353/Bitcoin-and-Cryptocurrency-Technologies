@@ -458,6 +458,13 @@ Q. Which of these is NOT an advantage of CoinJoin over centralized mixes?
 -> A way to prove a statement without revealing any other information.
 e.g I know an input that hashes to some hash in the following set.
 
+* Minting zerocoins
+-----------------------
+-> Zerocoins come in standard denominations. (Let's assume 1 basecoin.)
+-> Anyone can make a Zerocoin. They don't have value until put into the block-chain.
+-> They have value once put on the blockchain. That costs one basecoin.
+-> Putting the Zerocoin on the blockchain is as expensive as the zerocoins value.
+
 
 
 

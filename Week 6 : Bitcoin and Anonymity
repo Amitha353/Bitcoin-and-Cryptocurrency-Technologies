@@ -448,6 +448,20 @@ Q. Which of these is NOT an advantage of CoinJoin over centralized mixes?
 -> Miners acn verify this proof.
 -> Gives you the right to redeem a new Basecoin. (like poker chips).
 
+* Two challenges
+------------------
+1. How to contruct the proof (For miners to verify)?
+2. How to make sure thet each proof can only be spent once? (no double spends).
+
+* Zero-knowledge proofs
+------------------------
+-> A way to prove a statement without revealing any other information.
+e.g I know an input that hashes to some hash in the following set.
+
+
+
+
+
 
 
 

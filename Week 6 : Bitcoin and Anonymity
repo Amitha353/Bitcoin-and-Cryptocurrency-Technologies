@@ -499,7 +499,23 @@ e.g I know an input that hashes to some hash in the following set.
 
 * Zerocoin is anonymous
 ------------------------
--> Since r is secret, no one can figure out which zerocoin corresponds to which serial number.
+-> Since r is secret, no one can figure out which zerocoin corresponds to which serial number. H(S, r);
+
+* Zerocoin is "efficient"
+---------------------------
+- Not linear, logarithmic - logN;
+-> I know r such that
+H(S, r) = h(1)   OR
+H(S, r) = h(2)   OR
+H(S, r) = h(3)   OR
+    .
+    .
+    .
+H(S, r) = h(N)   OR    
+-> Very long - lenth proportional to the length of Zerocoins on the blockchain.
+
+
+
 
 
 

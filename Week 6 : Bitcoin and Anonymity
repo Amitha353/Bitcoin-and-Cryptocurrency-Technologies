@@ -497,6 +497,10 @@ e.g I know an input that hashes to some hash in the following set.
     "I know a number r such that H(S,r) is one of the zerocoins in the blockchain."
 -> Pick arbitrary zerocoin in block chain and use it as input to the new transaction.
 
+* Zerocoin is anonymous
+------------------------
+-> Since r is secret, no one can figure out which zerocoin corresponds to which serial number.
+
 
 
 

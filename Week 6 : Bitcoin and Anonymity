@@ -417,6 +417,6 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
 -----------------------------
 -> Instead of a single payment transaction.
 -> Receiver provides multiple output addresses.
--> Sender avoids combining different inputs.
+-> Sender avoids combining different inputs. (Can make a variety of transactions)
 
 

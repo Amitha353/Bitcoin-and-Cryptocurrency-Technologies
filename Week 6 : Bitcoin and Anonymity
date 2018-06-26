@@ -522,7 +522,12 @@ H(S, r) = h(N)   OR
   1. Different crypto for proofs (More efficient);
   2. Proposal to run system without Basecoin.
   
-  
+* Zerocash: untraceable e-cash
+---------------------------------
+-> All transactions are zerocoins.
+-> Splitting and mergining supported.
+-> Put transaction value inside the envelope (H(S, r));
+-> Ledger merely records the existence of the transactions.
 
 
 

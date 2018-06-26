@@ -489,3 +489,16 @@ e.g I know an input that hashes to some hash in the following set.
   ------------           -------------           -------------
  |            |         |             |         |             |   
   ------------           -------------           -------------
+
+* To spend a zerocoin S:
+---------------------------
+-> Reveal S - serial number (miners will verify S hasn't been spent before).
+-> Create zero-knowledge proof that: 
+    "I know a number r such that H(S,r) is one of the zerocoins in the blockchain."
+-> Pick arbitrary zerocoin in block chain and use it as input to the new transaction.
+
+
+
+
+
+

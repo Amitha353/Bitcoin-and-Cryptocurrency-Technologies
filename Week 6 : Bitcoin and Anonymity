@@ -315,7 +315,9 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
 -> The main proposal for a decentralized mixing is called Coinjoin.
 -> Proposed by Greg Maxwell,  Bitcoin core developer.
 -> Multiple users can interact in a single interaction , via different input addresses and output addresses.
--> A adversary lokking at the block chain will not able to tell which traction corresponds to which user.
+-> An adversary looking at the block chain will not able to tell which transaction corresponds to which user.
+-> This is 1 mixing round.
+- > Mixing principle from the centralized mixing networks apply on top of the basic protocol.
 
                 --------------------------  
                |                          |
@@ -333,6 +335,35 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
                |                          |
                |                          |        
                ----------------------------
+
+* Principles for mixing services
+---------------------------------
+1. Use a series of mixes
+  - Mixes should implement a standard API to make this easy.
+  
+                      Mix 1                   Mix 2               Mix 3
+                    ----------              --------              ----------
+                    |        |              |        |            |        |
+ User A  x----------|----X   |              |   X----|------+-----|---x    |
+                    |        |              |        |            |        |
+                    |        |              |        |            |        |
+                    |    X   |              |   x    |            |   x----|-----------User A
+                    |        |              |        |            |        |
+                    |        |              |        |            |        |
+                    |    X---|------+-------|---x    |            |   x    |
+                    |        |              |        |            |        |
+                    ----------              ----------            ----------
+-> A series of address changes a user viewing the block-chain will not be able to figure out transaction / link identity.
+
+2. Uniform transactions.
+    - In particular: all mix transactions must have the same value! (chunk size);
+
+3. Client side must be automated.
+    - Built in desktop wallet softwares - so that the software automatically knows how to interact with the mixes in order to preserve the user's identity.
+
+4. Fees must be all-or-nothing (Mixing services are a business and hence must be paid - 1/1000 hashes);
+- Probabilistic fees:
+    0.1% mixing fee = mix will swallow chunk with 0.1% chance.
 
 
           

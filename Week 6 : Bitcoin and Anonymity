@@ -301,4 +301,18 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
 6.4 Decentralized Mixing
 ----------------------------------------------------------------------------------------------------------------------------------------
 
+* Why decentralized Mixing?
+-----------------------------
+1. No bootstrapping problem - cause there is no dedicated mixed service. 
+  - There is a community of peers who all want to do mixing and without a cental service that collects your funds.
+2. Theft impossible
+  - Enforce through technical means. No body is explicitly sending Bitcoins to another user.
+3. Possibly better anonymity.
+4. More philosophically alligned with Bitcoin.
+
+
+
+
+
+
 

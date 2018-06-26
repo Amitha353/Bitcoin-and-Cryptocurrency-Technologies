@@ -304,7 +304,7 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
 * Why decentralized Mixing?
 -----------------------------
 1. No bootstrapping problem - cause there is no dedicated mixed service. 
-  - There is a community of peers who all want to do mixing and without a cental service that collects your funds.
+  - There is a community of peers who all want to do mixing and without a cental service that collects your funds. (Internal interest fromthe bitcoin community);
 2. Theft impossible
   - Enforce through technical means. No body is explicitly sending Bitcoins to another user.
 3. Possibly better anonymity.
@@ -365,6 +365,15 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
 - Probabilistic fees:
     0.1% mixing fee = mix will swallow chunk with 0.1% chance.
 
+* Coinjoin Algorithm
+---------------------
+1. Find peers who want to mix.
+2. Exchange input/output addresses.
+3. Construct transaction.
+4. Send it around, collect signatures. (Before signing , each peers checks if her output is present). 
+  (Incase any of the peers don't sign the transaction, then it collapses);
+5. Broadcast the transaction.
+   (Any number of valid peers can broadcast the transaction).
 
           
 

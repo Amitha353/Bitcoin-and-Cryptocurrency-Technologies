@@ -403,6 +403,7 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
           - Allows to irreversibly destroy some Bitcoins that you own by sending it to an unspendable address.
       c. Server kicks out malicious participants.
       d. Cryptographic "blame" protocol -> (Coin shuffle : Practical Decentralized Coin Mixing for Bitcoin 2014);
-   
+    
+      [c, d points basically attempt to identiify the malicious node and eradicate them from the network.]
    
     

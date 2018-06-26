@@ -442,6 +442,13 @@ Q. Which of these is NOT an advantage of CoinJoin over centralized mixes?
 -> Basecoins can be converted into Zerocoins and back.
 -> When converted there is a break in the link between original and new basecoin.
 
+* Zerocoin
+------------
+-> A Zerocoin is a cryptographic proof that you owned a Basecoin and made it unspendable.
+-> Miners acn verify this proof.
+-> Gives you the right to redeem a new Basecoin. (like poker chips).
+
+
 
 
 

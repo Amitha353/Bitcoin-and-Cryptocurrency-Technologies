@@ -529,6 +529,15 @@ H(S, r) = h(N)   OR
 -> Put transaction value inside the envelope (H(S, r));
 -> Ledger merely records the existence of the transactions.
 
+* Zerocash : the catch
+-----------------------
+-> Random, secret inputs are required to generate public parameters.
+-> Theses secret inputs must then be securely destroyed.
+-> No one can know them (secret) (anyone who is aware - can break the sytem - create zerocoins for themselves);
+
+
+
+
 
 
 

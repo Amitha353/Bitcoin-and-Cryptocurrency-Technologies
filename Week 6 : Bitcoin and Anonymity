@@ -397,8 +397,10 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
    - Better solutions : special-purpose anonymous routing mechanism. (decryption mixnets);
   3. Denial of service
     # Proposed solutions:
-      a. Proof of work.
-      b. Proof of burn.
+      a. Proof of work. 
+          - Repurposing the algorithm to require each of the peer nodes to do a little bit of computation before they can join a Coinjoin protocol. If the adversary is gonna duisrupt the coinjoin then they will be burning out a lot of computation power - expensive.
+      b. Proof of burn. (Fidelity Bonds in Bitcoin)
+          - Allows to irreversibly destroy some Bitcoins that you own by sending it to an unspendable address.
       c. Server kicks out malicious participants.
       d. Cryptographic "blame" protocol -> (Coin shuffle : Practical Decentralized Coin Mixing for Bitcoin 2014);
    

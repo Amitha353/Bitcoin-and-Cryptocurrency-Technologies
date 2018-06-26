@@ -411,4 +411,12 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
 -> Example: Alice receives 43.12312 BTC / week as income . Always immediately transfers 5% to retirement account.
 -> Irrespective of the input and output address pattern the transaction, value of it itself stands out and the pattern / transaction is identifiable.
 
+* Means to solve the above problem (High-flow detection)
+---------------------------------------------------------
+# Heuristic : merge avoidance
+-----------------------------
+-> Instead of a single payment transaction.
+-> Receiver provides multiple output addresses.
+-> Sender avoids combining different inputs.
+
 

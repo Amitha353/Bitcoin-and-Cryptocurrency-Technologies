@@ -514,8 +514,15 @@ H(S, r) = h(3)   OR
 H(S, r) = h(N)   OR    
 -> Very long - lenth proportional to the length of Zerocoins on the blockchain.
 
-
-
+* Zerocash
+--------------
+-> It uses a cryptographic tool called Snarks.
+-> Zerocoin without Basecoin.
+-> Upshot
+  1. Different crypto for proofs (More efficient);
+  2. Proposal to run system without Basecoin.
+  
+  
 
 
 

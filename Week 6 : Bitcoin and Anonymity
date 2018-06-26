@@ -428,8 +428,12 @@ Q. Which of these is NOT an advantage of CoinJoin over centralized mixes?
 ----------------------------------------------------------------------------------------------------------------------------------------
 6.5 Zerocoin and Zerocash
 ----------------------------------------------------------------------------------------------------------------------------------------
-
-
+ 
+* Zerocoin : protocol-level mixing
+----------------------------------
+-> Mixing capabilities baked into protocol.
+-> Advantage : cryptographic guarantee of mixing. (Don't need to trust a single mix or even a set of mixes or set of peers or etc, to esure anonymity);
+-> Disadvantage: not currently compatible with Bitcoin.
 
 
 

@@ -310,6 +310,10 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
 3. Possibly better anonymity.
 4. More philosophically alligned with Bitcoin.
 
+* Coinjoin
+------------
+-> The main proposal for a decentralized mixing is called Coinjoin.
+-> Proposed by Greg Maxwell,  Bitcoin core developer.
 
 
 

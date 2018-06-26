@@ -535,8 +535,18 @@ H(S, r) = h(N)   OR
 -> Theses secret inputs must then be securely destroyed.
 -> No one can know them (secret) (anyone who is aware - can break the sytem - create zerocoins for themselves);
 
+* 5 Levels of Anonymity
+------------------------
 
-
+  System        Type                  Anonymity attacks                   Deployability
+  --------------------------------------------------------------------------------------
+  Bitcoin       Pseudonymous          Tx graph analysis                     Default
+  Single Mix    Mix                   Tx graph analysis, bad mix            Usable today
+  Mix chain     Mix                   Side channels, bad mixes, peers       Bit-coin compatible
+  Zerocoin      Cryptographic mix     Side channels (possible)              Altcoin
+  Zerocash      Untraceable           None                                  Altcoin, tricky setup
+  
+  
 
 
 

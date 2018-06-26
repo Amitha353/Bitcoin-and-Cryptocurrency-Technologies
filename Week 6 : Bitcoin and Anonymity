@@ -394,7 +394,13 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
       b. disconnect and reconnect over Tor. (Break the linkage between the input and the output)
       c. Exchange outputs.
    
-   - Better solutions : special-purpose anonymous routing mechanism.
+   - Better solutions : special-purpose anonymous routing mechanism. (decryption mixnets);
+  3. Denial of service
+    # Proposed solutions:
+      a. Proof of work.
+      b. Proof of burn.
+      c. Server kicks out malicious participants.
+      d. Cryptographic "blame" protocol -> (Coin shuffle : Practical Decentralized Coin Mixing for Bitcoin 2014);
    
    
     

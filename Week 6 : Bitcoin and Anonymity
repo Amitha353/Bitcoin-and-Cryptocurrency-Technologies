@@ -546,8 +546,14 @@ H(S, r) = h(N)   OR
   Zerocoin      Cryptographic mix     Side channels (possible)              Altcoin
   Zerocash      Untraceable           None                                  Altcoin, tricky setup
   
-  
+ # Tx graph analysis - unlinkability test - linking address and change address.
+ 
+Q. What is “zero knowledge” about a zero-knowledge proof?
 
+1. It takes no outside knowledge to verify the correctness of the proof
+2. It is a proof that doesn’t reveal any knowledge other than the statement’s truth  -  correct.
+3. It is a proof that requires no knowledge to create
+4. It is a proof that you have no knowledge of something
 
 
 

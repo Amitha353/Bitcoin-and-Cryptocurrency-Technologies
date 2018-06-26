@@ -419,4 +419,21 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
 -> Receiver provides multiple output addresses.
 -> Sender avoids combining different inputs. (Can make a variety of transactions)
 
+Q. Which of these is NOT an advantage of CoinJoin over centralized mixes?
+
+1. Theft by mixes is impossible
+2. Built-in protection against denial-of-service attacks  - correct
+3. Potentially better anonymity because centralized mines can e compromised by adversaries
+
+----------------------------------------------------------------------------------------------------------------------------------------
+6.5 Zerocoin and Zerocash
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
 

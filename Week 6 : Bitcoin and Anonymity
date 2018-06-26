@@ -370,11 +370,19 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
 1. Find peers who want to mix.
 2. Exchange input/output addresses.
 3. Construct transaction.
-4. Send it around, collect signatures. (Before signing , each peers checks if her output is present). 
+4. Send it around, collect signatures. (Before signing , each peers checks if her output is present).  (Security property);
   (Incase any of the peers don't sign the transaction, then it collapses);
 5. Broadcast the transaction.
    (Any number of valid peers can broadcast the transaction).
 
-          
-
+* Coinjoin : Remaining problems
+---------------------------------
+1. How to find peers?
+2. Peers know your input-output mapping.
+  (Big problem - than centralized mixes) - one of the peer could be an attacker creating Sybil transactions which infiltrate into the network.
+3. Denial of Service.
+  - After the input and output pairs are established for the coinjoin, it could be possible that one of the peer disappears or fails to sign the transaction then the transaction is invalid.
+  - It could also be possible that after the transaction is signed and befire it is broadcast to the network, one of the peer could consume it , in which case it will be treated as a double-spend.
+  
+  
   

@@ -314,9 +314,27 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
 ------------
 -> The main proposal for a decentralized mixing is called Coinjoin.
 -> Proposed by Greg Maxwell,  Bitcoin core developer.
+-> Multiple users can interact in a single interaction , via different input addresses and output addresses.
+-> A adversary lokking at the block chain will not able to tell which traction corresponds to which user.
+
+                --------------------------  
+               |                          |
+               |                          |
+  A *----------|----                  ----|----------* C
+               |                          |
+               |                          |
+               |          Single          |
+  B *----------|----     Transaction  ----|----------* A       
+               |                          |
+               |                          |
+               |                          |    
+  C *----------|----                  ----|----------* B
+               |                          |
+               |                          |
+               |                          |        
+               ----------------------------
 
 
+          
 
-
-
-
+  

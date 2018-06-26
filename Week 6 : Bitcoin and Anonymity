@@ -382,7 +382,19 @@ Q.  Which of these techniques can improve the anonymity provided by mixing servi
   (Big problem - than centralized mixes) - one of the peer could be an attacker creating Sybil transactions which infiltrate into the network.
 3. Denial of Service.
   - After the input and output pairs are established for the coinjoin, it could be possible that one of the peer disappears or fails to sign the transaction then the transaction is invalid.
-  - It could also be possible that after the transaction is signed and befire it is broadcast to the network, one of the peer could consume it , in which case it will be treated as a double-spend.
+  - It could also be possible that after the transaction is signed and befire it is broadcast to the network, one of the peer could consume it , in which case it will be treated as a double-spend attempt and hence rejected by the Bitcoin network.
   
-  
-  
+  * Solutions to above problems
+  ------------------------------
+  1. Finding Peers - Use an untrusted server. Different users can connect and the server need not involve in running the protocol.
+    - A peer-to-peer protocol needs to run to find the coinjoin on top of the bitcoin protocol.
+  2. Peer anonymity
+    # Strawman solutions:
+      a. Exchange inputs
+      b. disconnect and reconnect over Tor. (Break the linkage between the input and the output)
+      c. Exchange outputs.
+   
+   - Better solutions : special-purpose anonymous routing mechanism.
+   
+   
+    

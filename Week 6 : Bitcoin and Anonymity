@@ -465,11 +465,18 @@ e.g I know an input that hashes to some hash in the following set.
 -> They have value once put on the blockchain. That costs one basecoin.
 -> Putting the Zerocoin on the blockchain is as expensive as the zerocoins value.
 
+* Minting a Zerocoin: "commitment"
+----------------------------------
+-> Generate a serial number S (eventually made public);
+-> Generate a random secret r (never public, ensures unlinkability);
+-> Compute the Hash H(S, r);
 
+-> Put the H(S, r) commitment on the block-chain - at this point it is real, has value.
 
-
-
-
+-> To put H(S,r) on the bloc chain
+  - Create Mint Tx with 1 basecoin input (burning a basecoin and making it unspendable);
+  (Spend the basecoin to mint the Zerocoin)
+  
 
 
 

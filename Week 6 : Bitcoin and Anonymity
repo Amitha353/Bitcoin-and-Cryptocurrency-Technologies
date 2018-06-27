@@ -555,6 +555,13 @@ Q. What is “zero knowledge” about a zero-knowledge proof?
 3. It is a proof that requires no knowledge to create
 4. It is a proof that you have no knowledge of something
 
+----------------------------------------------------------------------------------------------------------------------------------------
+6.6 Tor and the Silk Road
+----------------------------------------------------------------------------------------------------------------------------------------
+* Anonymous communications
+----------------------------
+-> Bunch of senders and bunch of recipients, and messages are routed from senders through recipients through the anonyous network.
+
 
 
 

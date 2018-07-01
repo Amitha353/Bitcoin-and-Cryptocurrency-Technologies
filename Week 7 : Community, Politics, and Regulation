@@ -12,4 +12,30 @@ Agree on:
   - how P2P nodes should behave
   - protocols and data formats needed for Bitcoin to operate.
   
+II. Consensus about History :
+-----------------------------
+Agree on contents of the blockchain:
+  - which transactions have occured.
+  - which coin exists and who owns them.
   
+III. Consensus that Coins are Valuable:
+----------------------------------------
+ -> General agreement that coins have value.
+
+* All three form of consensus are interwined with each other
+
+
+    ---------------------------
+    |  Consensus about Rules  | <   -  -  -   -   -   -   -  -   -   -   -  -   - 
+    ---------------------------                                                 |
+             / \
+              |                                                                \ /  
+              |                                                            ------------------------------------
+              |                                                            | Consensus that Coins are Valuable |
+              |                                                            ------------------------------------
+             \ /                                                                / \
+    ---------------------------                                                  |
+    | Consensus about History |<--------------------------------------------------
+    ---------------------------
+    
+    

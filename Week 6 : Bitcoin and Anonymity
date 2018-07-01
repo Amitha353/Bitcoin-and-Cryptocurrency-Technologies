@@ -568,6 +568,20 @@ Q. What is “zero knowledge” about a zero-knowledge proof?
     -> Some of the recepient nodes the links between the nodes and the networks could also be controlled by the attacker.
     -> A few of the internal nodes on the anonymous communication network could also be controlled by the attacker.
     
-    
+ Tor
+ ------
+ -> Tor helps to achieve anonymity(pseudonomity + unlinkability) in the network.
+How Tor Works
+-------------
+# Alice wants to communicate with Bob, she pre-selects a path through a set of routers (3 routers - fixed number) - Tor routers.
+# Security property : Safish if atleast one router is honest - anonymity can be achieved.
+
+-> Key challenge -> Hiding routing information. (each routing information wou;ld have timestamp, destination and source ip address,
+therefore the addresses and the information are encrypted);
+
+
+
+
+
 
 

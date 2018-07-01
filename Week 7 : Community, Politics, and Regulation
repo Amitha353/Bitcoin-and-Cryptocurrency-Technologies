@@ -46,6 +46,16 @@ III. Consensus that Coins are Valuable:
 -> open source (MIT licence)
 -> The most widely used Bitcoin software
 -> Those who don't use it follow its leads on the rules. (ppl who use alternative software try to mimic the rule defining parts of the Bitcoin core software);
+# "Bitcoin core is the de facto rule book of Bicoin."
+
+* Bitcoin Improvements Proposals (BIPs)
+-----------------------------------------
+-> "formal" proposals for changes to Bicoin includes technical spec and rationale.
+-> published in a numbered series.
+-> Each BIP has a champion/author to evangelize / coordinate - discussions and make the proporsal prominent.
+-> Also : Informational BIPs, process-oriented BIPs;
+
+
 
 
 

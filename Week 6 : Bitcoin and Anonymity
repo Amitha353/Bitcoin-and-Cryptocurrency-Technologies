@@ -589,5 +589,12 @@ therefore the addresses and the information are encrypted);
 # Alice doesn't need to have long-term public key, when she picks a path of these routers she finds their public keys executes the key  
 exchange protocols, and obtains these shared symmetric keys.
 
+# When she sends the message to R1, it's gonna be triply encrypted. 
+# When router 1 peels out the 1st layer of encryption, it's gonna find the IP address of the router two and the encrypted message is forwarded to router two.
+# Then router 2 peels of the second layer of encryption and forwrds the messga eto the third router.
+# The third router then peels the third encrypted layer and the message is now unencrypted consisting of plain text message and Bob's IP address.
+# The router then forwards the message to Bobs IP address.
+
+-> Side Effects : Contents encrypted from Alice to exit node but, unencrypted from exit node to Bob;
 
 

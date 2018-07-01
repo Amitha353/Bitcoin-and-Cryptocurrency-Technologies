@@ -568,8 +568,8 @@ Q. What is “zero knowledge” about a zero-knowledge proof?
     -> Some of the recepient nodes the links between the nodes and the networks could also be controlled by the attacker.
     -> A few of the internal nodes on the anonymous communication network could also be controlled by the attacker.
     
- Tor
- ------
+Tor
+--------
  -> Tor helps to achieve anonymity(pseudonomity + unlinkability) in the network.
 How Tor Works
 -------------
@@ -595,6 +595,31 @@ exchange protocols, and obtains these shared symmetric keys.
 # The third router then peels the third encrypted layer and the message is now unencrypted consisting of plain text message and Bob's IP address.
 # The router then forwards the message to Bobs IP address.
 
--> Side Effects : Contents encrypted from Alice to exit node but, unencrypted from exit node to Bob;
+-> Side Effects : Contents encrypted from Alice to exit node but, unencrypted from exit node to Bob.
+
+* Silk Road
+-----------------
+-> It's a Hidden service that provided anonymity.
+
+# What if the server wants to hide its address?
+  -> Connect to "rendezvous point" through Tor.
+  
+  -> Publish name -> rendezvous point mapping.
+    - Not normal DNS (Domain Name System);
+    - It 's mapped to onion addresses
+        - http://3rtgerhgrhtr4klok454542gh.onion/
+    - On a Tor enabled browser.
+    
+  -> Client connects to rendezvous point.
+
+# Communication : Tor hidden service
+# Payment : Bitcoin
+# Security : Had a reputation
+# Anonymous Shipping : The buyers provided an anonymous PO Box example to ship goods to.
+
+
+
+
+
 
 

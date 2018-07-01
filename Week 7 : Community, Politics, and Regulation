@@ -115,8 +115,23 @@ Q. Which of the following is true about a fork of Bitcoin’s rules which result
 ---------------------------------------------------------------------------------------------------------------------------------------- 
 7.3 Stakeholders : Who's in charge?
 ----------------------------------------------------------------------------------------------------------------------------------------
-                                                                
 
+* Who has the power in the Bitcoin ecosystem?
+----------------------------------------------
+# Suppose there is a negotiation about rule-setting. Who controls the outcome?
+-> Depends on who wins the fight if they fail to agree.
+
+1. Claim: Bitcoin core developers have the power
+-------------------------------------------------
+  -> They write the rulebook.
+  -> Almost everybody uses their code, follows their rules.
+
+2. Claim: Miners have the power
+--------------------------------
+  -> Miners write the history.
+  -> History will be consistent with miners' consensus rules.
+  
+  
 
 
 

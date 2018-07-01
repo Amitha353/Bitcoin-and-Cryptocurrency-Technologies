@@ -579,9 +579,15 @@ How Tor Works
 -> Key challenge -> Hiding routing information. (each routing information wou;ld have timestamp, destination and source ip address,
 therefore the addresses and the information are encrypted);
 
-
-
-
+* Solution: Layered Encryption
+--------------------------------
+# Alice and router 1 share a symmetric key;
+# Alice and router 2 share another symmetric key;
+# Alice and router 3 share another symmetric key;
+# The symmetric keys are not stored for long on any of the nodes, they are established as necessary using key exchange.
+# Only persistent keys are the long-term public keys to the routers.
+# Alice doesn't need to have long-term public key, when she picks a path of these routers she finds their public keys executes the key  
+exchange protocols, and obtains these shared symmetric keys.
 
 
 

@@ -1,3 +1,15 @@
 ----------------------------------------------------------------------------------------------------------------------------------------
 7.1 Consensus in Bitcoin
 ----------------------------------------------------------------------------------------------------------------------------------------
+-> Bitcoin relies on the formation of consensus among people.
+-> There are three kind of consensus that are required for Bitcoins to operate.
+
+I. Consensus about Rules :
+---------------------------
+Agree on:
+  - what makes a transaction valid.
+  - what makes a block valid.
+  - how P2P nodes should behave
+  - protocols and data formats needed for Bitcoin to operate.
+  
+  

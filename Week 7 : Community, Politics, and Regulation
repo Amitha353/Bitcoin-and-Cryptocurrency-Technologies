@@ -76,8 +76,28 @@ III. Consensus that Coins are Valuable:
 * Right to fork is more empowering then right to exit:
   -> Community retains more power.
   
+* If there's a (hard) fork in the rules:
+-----------------------------------------                              
+                                                                              "A-coin"
+                                                                 -------    -------    -------    -------  Valid under A rules 
+                                        -------------------------|     |<---|     |<---|     |<---|     |  Invalid under B rules
+                                        |                        |     |    |     |    |     |    |     | 
+                                        |                        -------    -------    -------    -------   
+                                        |
+       "Bitcoin"                       \ /
+    -------    -------    -------    -------
+<---|     |<---|     |<---|     |<---|     |
+    |     |    |     |    |     |    |     | 
+    -------    -------    -------    ------- 
+                                       / \
+                                        |                         -------    -------    -------    -------  Valid under B rules    
+                                        --------------------------|     |<---|     |<---|     |<---|     |  Invalid under A rules
+                                                                  |     |    |     |    |     |    |     | 
+                                                                  -------    -------    -------    ------- 
+                                                                              "B-coin"
+-> At this point the "currency forked".
 
 
 
 
-    
+                                                                

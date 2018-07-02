@@ -213,10 +213,15 @@ Q. According to the lecture, what’s one way that governments have tried to enf
 7.6 Anti Money-Laundering (AML)
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-* Goal of AML:
+* Goal of AML :
 ---------------
  Stop large amounts of money from crossing borders, or moving from underground to legitimate economy without detection.
  
- 
+* KYC (Know Your Customer) :
+--------------------------------
+-> To fight against AML
+  1. Identify and authenticate clients.
+  2. Evaluate risk of a client.
+  3. Watch for anomalous behavior.
  
  

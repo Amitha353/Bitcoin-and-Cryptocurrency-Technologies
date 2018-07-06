@@ -34,6 +34,18 @@
 * Sign Operation -> sig := sign(sk, message); (sk : secret signing key | pk: public verification key | sig (signature)); random Algo
 * Verify Operation -> isValid := verify(pk, message, sig); deterministic Algo;
 
+#### GoofyCoin -> simplest cryptocurrency engine;
+* Goofy creates new coins - digital signature of Goofy and anybody can verify it;
+* Coins owner can spend it, recepient can pass it to someone else, but double spend can occur;
+
+#### ScroogeCoin 
+* Publishes a history of all transaction - block-chain digitally signed by Scrooge;
+* 2 kinds of transactions : Createcoin transaction and Paycoin transaction;
+##### Rules PayCoins transactions:
+1. consumed coins are valid - (the coins were created in previous transactions);
+2. consumed coins were not already consumed in some previous transactions (double spend attack);
+3. total values of the coins out of the transaction is same as the total coins that went into the transaction.
+4. the transaction is signed by all the owners of the consmed coins.
 ------------------------------------------------------
 ------------------------------------------------------
 ## 2. Bitcoin achieves Decentralization

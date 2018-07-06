@@ -487,7 +487,7 @@ housekeeping        "vin_sz":2,
                      ....
               }             
 -> If the lock-time has value other than 0, then that tells moners to not publish this transaction until the time soecified in the variable "lock_time".
-"LOCK_TIME" - Block index or real-world timestamps before which transactions can't be published.
+"LOCK_TIME" - Bindex or real-world timestamps before which transactions can't be published.lock 
 
 4. Multi-player lotteries -> complicated - multi-step protocol, lot of transactions, lock_time, escrow - cheat safety.
 5. Hash pre-image challenges. - brute-force;

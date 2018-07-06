@@ -52,6 +52,16 @@
 
 #### Distributed consensus :
 * Achieve overall system reliability in the presence of a number of faulty processes which requires processes to agree on some data value that is needed during computation. Examples whether to commit a transaction to a database, etc;
+
+#### "peer to peers" system : 
+* They are computer systems/ hardwares which are connected to each other via the Internet.
+
+#### How consensus works in Bitcoin : 
+* All nodes have a sequences of blocks of transactions they've reached consensus on.
+* Each node has a set of outstanding transactions it's heard about.
+* Could have a sequence of blocks that everybody has agreed upon. (Block - A sequence of transactions);
+
+###### Consensus could be hard : Nodes may crash, be malicious, network could be imperfect(crash, latency), etc;
 ------------------------------------------------------
 ------------------------------------------------------
 ## 3. Bitcoin Mechanism

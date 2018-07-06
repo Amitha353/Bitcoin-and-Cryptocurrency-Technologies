@@ -146,7 +146,23 @@ Design goals
  
 #### Bitcoin script instructions
 * Small -> 256 opcodes total (15 disable, 75 reserved)
-* Operations - Arithmetic, If/then, Logic/data handling, Crypto!( Hashes, Signature Vwerifications, Multi-signature verification -> Instruction -> OP_CHECKMULTISIG - Built-in support for joint signatures)
+* Operations - Arithmetic, If/then, Logic/data handling, Crypto!( Hashes, Signature Vwerifications, Multi-signature verification -> Instruction -> OP_CHECKMULTISIG - Built-in support for joint signatures).
+
+#### Applications of Bitcoin scripts :
+1. Escrow Transactions - A third party is introduces to resolve any impending conflicts on a executing transaction. It requires 2-of-3 signatures to be a valid transaction. A third party/judge is introduced to resolve the conflict.
+2. Green Address - It provides a means to do payment without accessing the block-chain. Instawallet and Mount Gox;
+3. Efficient micro-payments - Each transaction is associated with a transaction fee. Instead for small transactiona group of them can be bundled and transaction can occur.
+
+##### "locktime" in Bitcoin transaction metadata - If the lock-time has value other than 0, then that tells moners to not publish this transaction until the time soecified in the variable "lock_time".
+*"LOCK_TIME" - Bindex or real-world timestamps before which transactions can't be published.lock 
+
+#### Bitcoin Blocks:
+* Single unit of work for miners, limit the length of hash-chain of blocks;
+* Bitcoin block structure - 2 different hash-based data structures:
+1. Header - Top -> hash-chain of blocks. Each block has a header and a pointer to a previous transaction. 
+       - hash, ver, prev_block, time, bits, nonce, mrkl_root, etc;
+2. Coinbase Transaction - Hash tree / Merkel tree - of transactions in each block. 
+       - in(pre_out - hash, n coinbase); output(value, scriptPubKey);
 ------------------------------------------------------
 ------------------------------------------------------
 ## 4. Store and Use Bitcoin

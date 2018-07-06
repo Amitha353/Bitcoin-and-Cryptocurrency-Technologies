@@ -196,16 +196,79 @@ Design goals
                                                                                  | <--- Separate Keys/Addresses
 * Cold storage -> Offline (Archival but safer) - (money in the safe);    <-------| 
 
+* In practice -> hot storage is online and cold storage is offline and hence they cannot connect to each other.
+-> But the hot storage know the address at which the cold storage accepts payment, therefore the hot storage can send coins across to the cold storage, even while cold storage is offline.
+-> Next time the cold storage connects it will receive the information from a block-chain about those transfers.
 
-    Hot Storage                 |           Cold Storage
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                |                 
-      (online)                  |             (Offline)
-                                | 
-   Hot secret key(s)          Payments     Cold secret key(s)
-                    <~~~~~~~~~~~~~~~~~~~~~~~~>
-   cold address(es)             |           Hot address(es)
-                                |
+#### Splitting and Sharing Keys :
+* Storing the Key at a certain place alone - could cause a single point of failure problem. Inorder to avoid this situation, the key needs to be shared or split.
+##### Secret sharing
+* Idea: split secret into N pieces, such that:
+*   given K pieces, can reconstruct the secret
+*   given fewer than K pieces, don't learn anything
+
+#### Multi-sig :
+-> Lets you keep shares apart, approve transaction without reconstructing key at any point.
+-> It enables to store large-bodies of cold-stored coins in a way that is relatively secure and that requires action from multiple people before anything drastic can happen.
+
+#### Payment Services :
+* customer wants : to pay with Bitcoin
+* Merchant wants:  - to receive dollars;  - simple deployment;  - low risk (tech risk, security risk, exchange rate risk);
+    The merchant will first go to a payment services website and fill out a form.
+    On click of the Generate Bitcoin Code , a HTML will be created, that the merchant can drop into their website.
+    Then when a customer wants to make payment, on pushing that button a payment will be made.
+ ##### End Result
+  * customer : pays Bitcoins.
+  * merchant : gets dollars, minus a small percentage.
+  * payment service: gets Bitcoins, pays dollars, absorbs risk : security, exchange rate, - needs exchange Bitcoins for dollars, in volume (Participate in the market). 
+ 
+#### Transaction Fees : 
+ * Whenever a transaction is put into a blockchain, then that transaction might pay a transaction fee.
+ * Transaction fee = value of inputs - value of outputs. fees goes to miners who records the transactions.
+ 
+#### Current consensus fees
+* No fee if:
+    - tx less than 1000 bytes in size and
+    - all outputs are 0.01 BTC or larger, and
+    - priority is large enough.
+
+ * Priority = (sum of inputAge*inputValue) / (trans size) ;  Otherwise fee is 0.0001 BTC per 1000 bytes.
+ * Approx transaction Size : 148 N(inputs) + 34 N(outputs) + 10
+ 
+ #### Currency Exchange Markets :
+ * Markets on which you can trade Bitcoins against fiat currencies.
+ 
+ #### Simple Model of transaction-demand :
+ 
+ T = total transaction value mediated via BTC ($ / sec);
+ D = duration that BTC is needed by a transaction (sec); (held out of sirculation; Payer buys BTc from market and receiver sells them back to the market);
+ S = supply of BTC (not including BTC help as long-term investments) (BTC);
+ P = Price of BTC ($ / BTC);
+      
+                   S
+ ###### Supply  = ~~~~ = Bitcoins become available per second
+                   D
+                                                                                    
+-> Demand
+------------
+T
+--- = Bitcoins needed per second
+P
+                                
+-> Equilibrium
+----------------
+      T * D
+ P = ---------
+        S
+        
+-> Supply > Demand
+--------------------
+# Price goes down, hence demand increases.
+
+-> Demand > Supply
+-------------------
+# Price goes up, hence demand decreases.
+
 
 ------------------------------------------------------
 ------------------------------------------------------

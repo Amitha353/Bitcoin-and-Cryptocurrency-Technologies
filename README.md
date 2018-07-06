@@ -30,9 +30,9 @@
 
 #### Digital Signatures : (i) Only you can sign, but anyone can verify; (ii) Signature is tied to a particular document;
 ##### 3 Operations performed - API digital signature
-a. Generate keys -> provide the input keysize and this generates two keys sk and pk. (sk, pk) := generateKeys(keysize); randomized Algo
-b. Sign Operation -> sig := sign(sk, message); (sk : secret signing key | pk: public verification key | sig (signature)); random Algo
-c. Verify Operation -> isValid := verify(pk, message, sig); deterministic Algo;
+* Generate keys -> provide the input keysize and this generates two keys sk and pk. (sk, pk) := generateKeys(keysize); randomized Algo
+* Sign Operation -> sig := sign(sk, message); (sk : secret signing key | pk: public verification key | sig (signature)); random Algo
+* Verify Operation -> isValid := verify(pk, message, sig); deterministic Algo;
 
 ------------------------------------------------------
 ------------------------------------------------------

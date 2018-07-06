@@ -91,6 +91,15 @@ To create a block , find nonce s.t.
 * PoW property 2 : parametrizable cost - Nodes on the peer-to-peer network will automatically re-calculate the target; Goal : average time between blocks = 10 minutes; Mean time to find a block = 10 minutes / fraction of hash power;
 * PoW propert 3 : trivial to verify -> gets rid of the centalization property - Nonce must be published as part of block; Other miners simply verify that
     H(nonce || prev_hash || tx || ... || tx) < target
+    
+### Terminology
+--------------
+1. Identities - No identities needed, any user can create a pseudonymous key pair at any moment , and any number of them.
+2. Transactions - Messages that are broadcast to the Bitcoin peer-to-peer network - instructions to transfer a coin rfom one address to another.
+3. P2P network - propagates all new transactions/blocks to all the Bitcoin peer nodes.
+4. Block-chain & Consensus -  security . transaction in the block-chain only after confirmations (>6) - part of the consensus chain;
+ Orphan block - blocks not a part of the consensus chain - due to double spend, network latency, invalid bliock, etc;
+5. Hash Puzzles and Mining - Miners are special type of nodes that compete for creating new blocks and are rewarded for their efforts in terms of Bitcoins.    
 ------------------------------------------------------
 ------------------------------------------------------
 ## 3. Bitcoin Mechanism

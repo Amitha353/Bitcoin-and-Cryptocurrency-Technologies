@@ -196,14 +196,14 @@ Design goals
                                                                                  | <--- Separate Keys/Addresses
 * Cold storage -> Offline (Archival but safer) - (money in the safe);    <-------| 
 
-------------------------------------------------------------
+
     Hot Storage                 |           Cold Storage
--------------------------------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                 |                 
       (online)                  |             (Offline)
                                 | 
    Hot secret key(s)          Payments     Cold secret key(s)
-                    <-----------|---------------->
+                    <~~~~~~~~~~~~~~~~~~~~~~~~>
    cold address(es)             |           Hot address(es)
                                 |
 

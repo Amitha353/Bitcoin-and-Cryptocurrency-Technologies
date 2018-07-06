@@ -244,9 +244,9 @@ Design goals
  * S = supply of BTC (not including BTC help as long-term investments) (BTC);
  * P = Price of BTC ($ / BTC);
       
-####### Supply = S / D; (Bitcoin become available per second);                                                      
-####### Demand = T / P; (Bitcoins needed per second);
-####### Equilibrium   = P = ( T * D) / S;                        
+###### Supply = S / D; (Bitcoin become available per second);                                                      
+###### Demand = T / P; (Bitcoins needed per second);
+###### Equilibrium   = P = ( T * D) / S;                        
   
 * Supply > Demand - Price goes down, hence demand increases.
 * Demand > Supply - Price goes up, hence demand decreases.

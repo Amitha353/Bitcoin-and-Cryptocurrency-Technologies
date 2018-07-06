@@ -124,6 +124,29 @@ To create a block , find nonce s.t.
 2. Input : previous transactions, signatures;
 3. Output : calue, script - public key, verify and checksig operations.
 
+#### Bitcoin Script  
+##### Bitcoin scripting language ("Script")
+Design goals
+ 1. Built for Bitcoin (inspired by Forth)
+ 2. Simple, compact
+ 3. Support for cryptography (hash functions, compute signatures, verify signatures, etc)
+ 4. Stack-based language
+ 5. Limits on time / memory
+ 6. No looping
+ 
+ ##### Bitcoin script execution example
+ <sig> <pubkey> OP_DUP OP_HASH160 <pubKeyHash?> OP_EQUALVERIFY OP_CHECKSIG
+ 
+ 1. If data is seen it's pushed onto the stack.
+ 2. Here - write data into the memory (stack);
+ 3. OP_DUP -> take value on top of the stack, pop off, and write two copies back to stack. 
+ 4. OP_HASH160 -> Take the value on top of stack and compute cryptographic hash of it.
+ 5. OP_EQUALVERIFY -> Check if the two values at the top of stack equal.
+ 6. OP_CHECKSIG -> Verify the signatures
+ 
+#### Bitcoin script instructions
+* Small -> 256 opcodes total (15 disable, 75 reserved)
+* Operations - Arithmetic, If/then, Logic/data handling, Crypto!( Hashes, Signature Vwerifications, Multi-signature verification -> Instruction -> OP_CHECKMULTISIG - Built-in support for joint signatures)
 ------------------------------------------------------
 ------------------------------------------------------
 ## 4. Store and Use Bitcoin

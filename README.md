@@ -163,6 +163,28 @@ Design goals
        - hash, ver, prev_block, time, bits, nonce, mrkl_root, etc;
 2. Coinbase Transaction - Hash tree / Merkel tree - of transactions in each block. 
        - in(pre_out - hash, n coinbase); output(value, scriptPubKey);
+
+#### Bitcoin Network :
+* It is a P2P network, where all nodes are equal. It runs over TCP and has a random topology - random nodes are peered with random other nodes. New nodes can join at any time. Network is dynamic, forget non-responding nodes after 3 hours.
+
+#### Join the Bitcoin P2P network - Launch a new node and want to join the network :
+* start with a simple message to get to one node(seed node) on the network.
+* Find the seed node and send a special message - asking for all the peers of the seed node.
+* The contacted seed node replies with peered nodes.
+* The newly launched node then contacts the seed nodes peers and asking the new seed nodes for their peers.
+* Eventually a list of peers will be gathered by the newly lauched node - which then chooses which ones to peer with.
+* Then the new node will be a fully functional node in the Bitcoin network. (Memeber of the blockchain);
+  
+#### Transaction propagation (flooding) :
+* Network maintains the block-chain, so if any transaction is to be published, the entire network needs to know about it.
+* There is a simple flooding algorithm that takes care of it.
+
+#### Fully-validating nodes :
+* Permantelty connected, Store entire block chain, Hear and forward every node/transaction, Track the UTXO;
+
+#### Thin / SPV(Simple Payment Verification) client (not fully validating) :
+* Don't store everything, Store block headers only. Request transactions as needed. (To verify incoming payments). Trust fully-validating nodes. Inexpensive;
+       
 ------------------------------------------------------
 ------------------------------------------------------
 ## 4. Store and Use Bitcoin

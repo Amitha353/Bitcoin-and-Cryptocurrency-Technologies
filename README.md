@@ -100,9 +100,24 @@ To create a block , find nonce s.t.
 4. Block-chain & Consensus -  security . transaction in the block-chain only after confirmations (>6) - part of the consensus chain;
  Orphan block - blocks not a part of the consensus chain - due to double spend, network latency, invalid bliock, etc;
 5. Hash Puzzles and Mining - Miners are special type of nodes that compete for creating new blocks and are rewarded for their efforts in terms of Bitcoins.    
+
+#### Bitcoin consensus gives us:
+1. Append-only ledger - datastructure that we can only write to and once data is there , it's forever.
+2. Decentralized consensus - decentralized protocol for establishing the value of that ledger.
+3. Miners to validate transactions. (no double spends);
 ------------------------------------------------------
 ------------------------------------------------------
 ## 3. Bitcoin Mechanism
+
+* Bitcoin Transactions -> Transaction-based ledger
+#### A transaction-based ledger (Bitcoin) :
+* Transactions explicitly specify the number of inputs and the number of outputs.
+* Transactions have unique identifier - "hash pointer".
+* Mandatory to consume the output of the previous transaction.
+* Requires a finite scan to verify if the transaction is valid.
+
+#### Join Payment :
+* A transaction can be signed by two members and output to a particular address. It must be signed by both the inpute members. - Joint Payment (2 inputs, 1 outputs) - Joint Payment (2 inputs, 1 outputs)
 ------------------------------------------------------
 ------------------------------------------------------
 ## 4. Store and Use Bitcoin

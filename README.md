@@ -24,9 +24,16 @@
 #### Hash Pointer - Data structure - pointer to where information is stored and where a cryptographic hash of the information can be stored.
 * Regular pointer gives a way to retrieve the information, while hash pointer gives a means to retrieve the information as well as verify if the information has changed.
 
-#### Merkel tree:
+#### Merkel tree: Binary tree with Hash Pointers - Ralph Merkel
 * Each of these blocks are hashed using some hash function. Then each pair of nodes are recursively hashed until we reach the root node, which is a hash of all nodes below it.
 * This takes (log n) items to be shown and therefore (log n) time to verify;
+
+#### Digital Signatures : (i) Only you can sign, but anyone can verify; (ii) Signature is tied to a particular document;
+##### 3 Operations performed - API digital signature
+a. Generate keys -> provide the input keysize and this generates two keys sk and pk. (sk, pk) := generateKeys(keysize); randomized Algo
+b. Sign Operation -> sig := sign(sk, message); (sk : secret signing key | pk: public verification key | sig (signature)); random Algo
+c. Verify Operation -> isValid := verify(pk, message, sig); deterministic Algo;
+
 ------------------------------------------------------
 ------------------------------------------------------
 ## 2. Bitcoin achieves Decentralization

@@ -12,6 +12,26 @@
 * Hash functions need to be cryptographically secure (Security properties):
 ##### 1. Collision-free - If x != y , then we can assume H(x) != H(Y);
 ##### 2. Hiding- Given H(x), infeasible to find x.For common value x, Take x and concatenate it with a value r.
+     (com, key) := commit(msg)
+     match := verify(com, key, msg)
+##### 3. Puzzle-friendly - For every possible output value y, if k is chosen from a distribution with high min-entropy(widely spread out distribution), then it is infeasible to find x such that H(k | x) = y; 
+
+#### SHA-256 hash function
+ * c is a compressor;
+    Theorem - If c is collision-free, then SHA-256 is collision-free;
+    
+               (512 bits)          (512 bits)         (512 bits)       
+                 Message             Message             Message
+                 Block - I           Block - II   ...    Block - n
+                    |                   |                  |
+                    |                   |                  |
+                   \ /                 \ /                \ / 
+                  -----  256-bits   -------              ------
+    IV --------> |  C  | ---------->|  C  | ------------>|  C  |------>  Hash 
+    (256)         -----             -------              -------         (256)
+    bits  
+    
+    256     256+512       256        256+512  256                        256  
 
 ------------------------------------------------------
 ------------------------------------------------------

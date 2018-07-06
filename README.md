@@ -21,8 +21,12 @@
 * Since the message is not necessarily gonna be a multiple of the block-size some padding needs to be appended.
 * The padding consist of - 64 bit field at end - before that 1 bit - followed by some 0 bits(until 512 msg block - rest chopped off;
 
-##### Hash Pointer - Data structure - pointer to where information is stored and where a cryptographic hash of the information can be stored.
+#### Hash Pointer - Data structure - pointer to where information is stored and where a cryptographic hash of the information can be stored.
 * Regular pointer gives a way to retrieve the information, while hash pointer gives a means to retrieve the information as well as verify if the information has changed.
+
+#### Merkel tree:
+* Each of these blocks are hashed using some hash function. Then each pair of nodes are recursively hashed until we reach the root node, which is a hash of all nodes below it.
+* This takes (log n) items to be shown and therefore (log n) time to verify;
 ------------------------------------------------------
 ------------------------------------------------------
 ## 2. Bitcoin achieves Decentralization

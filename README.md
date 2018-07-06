@@ -9,12 +9,12 @@
 ------------------------------------------------------
 ## 1. Crypto and Cryptocurrencies
 * Cryptographic Hash function - mathematical function and takes three attributes: takes any string as input; fixed-size output(256 bits); efficiently computable;
-* Hash functions need to be cryptographically secure (Security properties):
-##### 1. Collision-free - If x != y , then we can assume H(x) != H(Y);
-##### 2. Hiding- Given H(x), infeasible to find x.For common value x, Take x and concatenate it with a value r.
+#### Hash functions need to be cryptographically secure (Security properties):
+ 1. Collision-free - If x != y , then we can assume H(x) != H(Y);
+ 2. Hiding- Given H(x), infeasible to find x.For common value x, Take x and concatenate it with a value r.
      (com, key) := commit(msg)
      match := verify(com, key, msg)
-##### 3. Puzzle-friendly - For every possible output value y, if k is chosen from a distribution with high min-entropy(widely spread out distribution), then it is infeasible to find x such that H(k | x) = y; 
+ 3. Puzzle-friendly - For every possible output value y, if k is chosen from a distribution with high min-entropy(widely spread out distribution), then it is infeasible to find x such that H(k | x) = y; 
 
 #### SHA-256 hash function
 * Takes the message (256 bits) being hashed and breaks it into blocks of 512 bits long;

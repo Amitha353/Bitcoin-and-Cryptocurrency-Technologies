@@ -190,6 +190,23 @@ Design goals
 #### Simple Local Storage :
 * Wallet software : Keeps track of coins, provides nice user interface.
 * Encoding Address : Payments are made via exchanging address. The address needs to be encoded or conveyed to make a transaction possible. Addresses exchanged as : Encoded as text string; QR (Quick Response) code;
+
+#### Hot & Cold Storage :
+* Hot storage -> Online (Conveninet but risky) - (money in your wallet); <-------|
+                                                                                 | <--- Separate Keys/Addresses
+* Cold storage -> Offline (Archival but safer) - (money in the safe);    <-------| 
+
+------------------------------------------------------------
+    Hot Storage                 |           Cold Storage
+-------------------------------------------------------------
+                                |                 
+      (online)                  |             (Offline)
+                                | 
+   Hot secret key(s)          Payments     Cold secret key(s)
+                    <-----------|---------------->
+   cold address(es)             |           Hot address(es)
+                                |
+
 ------------------------------------------------------
 ------------------------------------------------------
 ## 5. Bitcoin Mining

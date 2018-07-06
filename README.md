@@ -49,6 +49,9 @@
 ------------------------------------------------------
 ------------------------------------------------------
 ## 2. Bitcoin achieves Decentralization
+
+#### Distributed consensus :
+* Achieve overall system reliability in the presence of a number of faulty processes which requires processes to agree on some data value that is needed during computation. Examples whether to commit a transaction to a database, etc;
 ------------------------------------------------------
 ------------------------------------------------------
 ## 3. Bitcoin Mechanism

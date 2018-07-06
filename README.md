@@ -239,36 +239,17 @@ Design goals
  * Markets on which you can trade Bitcoins against fiat currencies.
  
  #### Simple Model of transaction-demand :
- 
- T = total transaction value mediated via BTC ($ / sec);
- D = duration that BTC is needed by a transaction (sec); (held out of sirculation; Payer buys BTc from market and receiver sells them back to the market);
- S = supply of BTC (not including BTC help as long-term investments) (BTC);
- P = Price of BTC ($ / BTC);
+ * T = total transaction value mediated via BTC ($ / sec);
+ * D = duration that BTC is needed by a transaction (sec); (held out of sirculation; Payer buys BTc from market and receiver sells them back to the market);
+ * S = supply of BTC (not including BTC help as long-term investments) (BTC);
+ * P = Price of BTC ($ / BTC);
       
-                   S
- ###### Supply  = ~~~~ = Bitcoins become available per second
-                   D
-                                                                                    
--> Demand
-------------
-T
---- = Bitcoins needed per second
-P
-                                
--> Equilibrium
-----------------
-      T * D
- P = ---------
-        S
-        
--> Supply > Demand
---------------------
-# Price goes down, hence demand increases.
-
--> Demand > Supply
--------------------
-# Price goes up, hence demand decreases.
-
+####### Supply = S / D; (Bitcoin become available per second);                                                      
+####### Demand = T / P; (Bitcoins needed per second);
+####### Equilibrium   = P = ( T * D) / S;                        
+  
+* Supply > Demand - Price goes down, hence demand increases.
+* Demand > Supply - Price goes up, hence demand decreases.
 
 ------------------------------------------------------
 ------------------------------------------------------

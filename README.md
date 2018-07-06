@@ -118,6 +118,12 @@ To create a block , find nonce s.t.
 
 #### Join Payment :
 * A transaction can be signed by two members and output to a particular address. It must be signed by both the inpute members. - Joint Payment (2 inputs, 1 outputs) - Joint Payment (2 inputs, 1 outputs)
+
+#### Real Bitcoin Transaction: 3 parts
+1. Metadata : transaction hash, housekeeping (version, locktime, size, etc);
+2. Input : previous transactions, signatures;
+3. Output : calue, script - public key, verify and checksig operations.
+
 ------------------------------------------------------
 ------------------------------------------------------
 ## 4. Store and Use Bitcoin

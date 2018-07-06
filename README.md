@@ -17,22 +17,12 @@
 ##### 3. Puzzle-friendly - For every possible output value y, if k is chosen from a distribution with high min-entropy(widely spread out distribution), then it is infeasible to find x such that H(k | x) = y; 
 
 #### SHA-256 hash function
- * c is a compressor;
-    Theorem - If c is collision-free, then SHA-256 is collision-free;
-    
-               (512 bits)          (512 bits)         (512 bits)       
-                 Message             Message             Message
-                 Block - I           Block - II   ...    Block - n
-                    |                   |                  |
-                    |                   |                  |
-                   \ /                 \ /                \ / 
-                  -----  256-bits   -------              ------
-    IV --------> |  C  | ---------->|  C  | ------------>|  C  |------>  Hash 
-    (256)         -----             -------              -------         (256)
-    bits  
-    
-    256     256+512       256        256+512  256                        256  
+* Takes the message (256 bits) being hashed and breaks it into blocks of 512 bits long;
+* Since the message is not necessarily gonna be a multiple of the block-size some padding needs to be appended.
+* The padding consist of - 64 bit field at end - before that 1 bit - followed by some 0 bits(until 512 msg block - rest chopped off;
 
+##### Hash Pointer - Data structure - pointer to where information is stored and where a cryptographic hash of the information can be stored.
+* Regular pointer gives a way to retrieve the information, while hash pointer gives a means to retrieve the information as well as verify if the information has changed.
 ------------------------------------------------------
 ------------------------------------------------------
 ## 2. Bitcoin achieves Decentralization

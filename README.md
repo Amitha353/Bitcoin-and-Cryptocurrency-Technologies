@@ -62,6 +62,35 @@
 * Could have a sequence of blocks that everybody has agreed upon. (Block - A sequence of transactions);
 
 ###### Consensus could be hard : Nodes may crash, be malicious, network could be imperfect(crash, latency), etc;
+#### Bitcoin nodes have no identities :
+* Identity is hard in a  P2P (peer-to-peer) system (decentralized) (no central authority to assign and verify node creation)
+* Pseudonymity is a goal of Bitcoin.
+
+#### Consensus Algorithm:
+1. New transactions are broadcast to all nodes.
+2. Each node collects new transactions into a block.
+3. In each round a random node gets to broadcast its block.
+4. Other nodes accept the block only if all the transactions in it are valid (unspent, valid crypto signatures, double spend);
+5. Nodes express their acceptance of the block by including the hash in the next block they create.
+
+#### Incentives: 
+* Incentive 1 : Block reward - Include a special coin-create transaction in the block; Choose a recipient address of this transaction;(12.5 BTC)
+* Incentive 2 : Transaction fee - transaction creator can make output value more than the input value, where the remainder is payed as transaction fee.
+
+#### Proof of Work:
+* Instead of picking a node, in a decentralized network can allow nodes to compete using their computing power and make it hard to create new identities.
+
+#### Hash puzzles:
+* Each block has a "nonce", "previous hash" -> points to the previous block, list of transactions.
+* For a node to successfully create a block it must create a hash output that matches that target size and this demands high computation power and is not very easy. 
+To create a block , find nonce s.t.
+###### H(nonce || prev_hash || tx || ... || tx) is very small
+
+#### 3 properties of POW:
+* PoW property 1 :  difficult to compute - about 10^20 hashes/block; (target space - 1 / 10^20 of the output space);
+* PoW property 2 : parametrizable cost - Nodes on the peer-to-peer network will automatically re-calculate the target; Goal : average time between blocks = 10 minutes; Mean time to find a block = 10 minutes / fraction of hash power;
+* PoW propert 3 : trivial to verify -> gets rid of the centalization property - Nonce must be published as part of block; Other miners simply verify that
+    H(nonce || prev_hash || tx || ... || tx) < target
 ------------------------------------------------------
 ------------------------------------------------------
 ## 3. Bitcoin Mechanism

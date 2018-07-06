@@ -184,10 +184,12 @@ Design goals
 
 #### Thin / SPV(Simple Payment Verification) client (not fully validating) :
 * Don't store everything, Store block headers only. Request transactions as needed. (To verify incoming payments). Trust fully-validating nodes. Inexpensive;
-       
 ------------------------------------------------------
 ------------------------------------------------------
 ## 4. Store and Use Bitcoin
+#### Simple Local Storage :
+* Wallet software : Keeps track of coins, provides nice user interface.
+* Encoding Address : Payments are made via exchanging address. The address needs to be encoded or conveyed to make a transaction possible. Addresses exchanged as : Encoded as text string; QR (Quick Response) code;
 ------------------------------------------------------
 ------------------------------------------------------
 ## 5. Bitcoin Mining

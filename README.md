@@ -387,6 +387,17 @@ Idea: prove work done with "near-valid blocks" (shares);
   
 Tx graph analysis - unlinkability test - linking address and change address.
 
+#### Anonymous communications
+* Bunch of senders and bunch of recipients, and messages are routed from senders through recipients through the anonyous network.
+* There might be an attacker, in the threat model , the attacker controls many things - nodes, edges/links, internal nodes;
+
+#### Tor
+* Tor helps to achieve anonymity(pseudonomity + unlinkability) in the network.
+* Alice wants to communicate with Bob, she pre-selects a path through a set of routers (3 routers - fixed number) - Tor routers.
+* Security property : Safish if atleast one router is honest - anonymity can be achieved.
+* Key challenge -> Hiding routing information. (each routing information would have timestamp, destination and source ip address,
+therefore the addresses and the information are encrypted);
+
 ------------------------------------------------------
 ------------------------------------------------------
 ## 7. Community, Politics and Regulations

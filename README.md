@@ -8,6 +8,7 @@
 * Community, Politics and Regulations
 ------------------------------------------------------
 ## 1. Crypto and Cryptocurrencies
+------------------------------------------------------
 * Cryptographic Hash function - mathematical function and takes three attributes: takes any string as input; fixed-size output(256 bits); efficiently computable;
 #### Hash functions need to be cryptographically secure (Security properties):
  1. Collision-free - If x != y , then we can assume H(x) != H(Y);
@@ -49,7 +50,7 @@
 
 ------------------------------------------------------
 ## 2. Bitcoin achieves Decentralization
-
+------------------------------------------------------
 #### Distributed consensus :
 * Achieve overall system reliability in the presence of a number of faulty processes which requires processes to agree on some data value that is needed during computation. Examples whether to commit a transaction to a database, etc;
 
@@ -108,7 +109,7 @@ To create a block , find nonce s.t.
 
 ------------------------------------------------------
 ## 3. Bitcoin Mechanism
-
+------------------------------------------------------
 * Bitcoin Transactions -> Transaction-based ledger
 #### A transaction-based ledger (Bitcoin) :
 * Transactions explicitly specify the number of inputs and the number of outputs.
@@ -187,6 +188,7 @@ Design goals
 
 ------------------------------------------------------
 ## 4. Store and Use Bitcoin
+------------------------------------------------------
 #### Simple Local Storage :
 * Wallet software : Keeps track of coins, provides nice user interface.
 * Encoding Address : Payments are made via exchanging address. The address needs to be encoded or conveyed to make a transaction possible. Addresses exchanged as : Encoded as text string; QR (Quick Response) code;
@@ -253,7 +255,7 @@ Design goals
 
 ------------------------------------------------------
 ## 5. Bitcoin Mining
-
+------------------------------------------------------
 #### Mining Bitcoins in 6 easy steps - (How to become a Miner)
 1. Join the network, (become a Bitcoin node), listen for transactions.
     - Validate all proposed transactions.
@@ -340,6 +342,7 @@ Idea: prove work done with "near-valid blocks" (shares);
    
 ------------------------------------------------------
 ## 6. Bitcoin Anonymity
+------------------------------------------------------
 * Anonymity = pseudonymity + unlinkability;
 * unlinkability - Different interactions of the same user with the system should not be linked with each other.
 
@@ -423,7 +426,3 @@ Agree on contents of the blockchain: which transactions have occured. which coin
  
 #### Regulation : When markets fail and produce bad outcomes, regulations can address the failure.
 ----------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-

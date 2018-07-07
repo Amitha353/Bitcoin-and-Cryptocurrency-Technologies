@@ -280,8 +280,28 @@ Design goals
 * On an average a block is to be found every 10 minutes(10 - 9 -8 minutes);
 
 #### Mining Hardware :
+##### SHA- 256 : 
+* It is a general purpose crypotographich hash function. Part of SHA-2 family : SHA-224, SHA-384, SHA-512;
+* Published in 2001, Designed by the NSA, Remains unbroken cryptographically. (Weaknesses known);
+* SHA-3 (replacement) under standardization.
 
-------------------------------------------------------
+##### CPU Minig : First generation of mining
+* It searched over nonces in a simple linear manner, computed SHA-256 twice in software and checked if the results was a valid block.
+Throughput of a high-end PC = 10-20 MHz ~ 2^24; 139,461 years on an average to find a block.
+
+##### GPU Mining : Second generation of mining
+* GPU designed for high-performance graphics. high parallelism. high throughput. Implemented in OpenCL(Open Computing Language) , Later: hacks for specific cards.
+* Throughput on a good card = 20 - 200 MHz ~ 2^27, ~ 173 years on average to find a block w / 100 cards!
+
+##### FPGA mining : Field Programmable Gate Area
+* Implemented in Verilog. Higher performance than GPUs - excellent performance on bitwise operations. Better cooling. Extensive customization, optimization. (bit fidling).
+* Throughput on a good card = 100-1000 MHz ~ 2^30; 25 years on average to find a block w/100 boards!
+
+##### Bitcoin ASICs (Application Specific Integrated Circuits)
+* Designed to be run constantly for life. Requires significant expertise, long lead-times. Perhaps the fastest chip developed ever.
+* Throughput = 2 TH/s , ~ 14 months on an average to find a block. 
+ 
+
 ------------------------------------------------------
 ## 6. Bitcoin Anonymity
 ------------------------------------------------------

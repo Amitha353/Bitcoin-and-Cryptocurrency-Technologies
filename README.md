@@ -307,14 +307,39 @@ Throughput of a high-end PC = 10-20 MHz ~ 2^24; 139,461 years on an average to f
 #### Energy consumption aspects of Bitcoin mining - 3 steps
 1. Embodied energy : used to manufacture mining chips and other equipment.
 (Includes physical mining - digging out rare metals, coppers -> IC's, etc; Manufacture into Bitcoin mining ASIC);
-    -> Should decrease over time. (since sufficient chip will be there, more resources online, etc);
-    -> Returns to scale. (optimized on large scale)
+ *Should decrease over time. (since sufficient chip will be there, more resources online, etc); Returns to scale. (optimized on large scale)
+ 
 2. Electricity : used to perform computation. (plug into wall - draws electricity - and perform computation).
-    -> Should increase over time.
-    -> Return to scale. (optimized on large scale)
+*Should increase over time. Return to scale. (optimized on large scale);
+
 3. Cooling : required to protect equipment.  
-    -> costs more with increased scale! (not optimized in a large scale);
+*costs more with increased scale! (not optimized in a large scale);
+
+##### I. Estimating energy usage : top-down
+* Each block worth approximately US$15,000 (25 BTC that's found every 10 minutes). Approximately $25/s generated. Industrial electricity (US): $0.03/MJ- $0.10/kWh;
+ * Lower bound = $25/s * 1/$0.03 ~ 900 MJ/s;
+ 
+##### II. Estimating  energy usage: bottom-up
+* Best claimed efficieny : 1GHz/W. (mining rigs);Network hash rate: 150,000,000 Ghz.
+* Lower bound on electricity = 150,000,000 GHz / 1 GHz/W = 150 MHz W = 150MW;
+
+#### Mining Pools :
+* Goal : pool participants all attempt to mine a block with the same coinbase recipient. send money to key owned by pool managers;
+* Distribute revenues to members based on how much work they have performed. minus the cut for pool manager.
+
+#### Mining shares:
+Idea: prove work done with "near-valid blocks" (shares);
+* It might be hard to find a block with first 66-bits 0's -> valid block; almost valid block : many leading 0's; (40-bit, 50 bit, etc); No way to fake.
+
+#### Mining pool variations:
+1. Pay per share: flat reward per share
+  * typically minus a significant fee. miners get payed even if they don't find valid blocks.
+2. Proportional: typically since last block.
+   * lower risk for pool manager. More work to verify. (Miners are payed based on the work they do/ shares);
+3. "Luke-jr" approach : no management fee.
+   * miners can only get paid out in BTC. (New entrant don't make money for a while and then they even out.) Pool owner keeps spread;
     
+
 ------------------------------------------------------
 ## 6. Bitcoin Anonymity
 ------------------------------------------------------

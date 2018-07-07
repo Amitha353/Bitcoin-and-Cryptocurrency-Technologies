@@ -254,6 +254,33 @@ Design goals
 ------------------------------------------------------
 ------------------------------------------------------
 ## 5. Bitcoin Mining
+
+#### Mining Bitcoins in 6 easy steps - (How to become a Miner)
+1. Join the network, (become a Bitcoin node), listen for transactions.
+    - Validate all proposed transactions.
+2. Listen for new blocks, maintain block chain.
+    - When a new block is proposed, validate it.
+3. Assemble a new valid block.
+4. Find the nonce to make your block valid. (Hard - computationally).
+5. Hope everybody accepts your new block.
+6. Profit! (>25 BTC / block -> $15,000).
+
+#### Mining difficulty "target" (2014-08-07)
+* The hash of any valid block needs to below the value shown below.
+* It's a 256-bit hash output value. (Using SHA 256 to hash function)
+* Atleast first 64-bit are 0's
+* Current difficulty = 2 ^66.2 ~ 84 quintillion.
+
+#### Setting the minning difficulty
+* Every two weeks compute: It's based on how efficient the miners were over the previous two weeks.
+
+###### next_difficulty = previous_difficulty * ((2 weeks) / (time to mine last 2016 blocks))
+* Time to mine last 2016 blocks -> Expected number of blocks in 2 weeks at 10 minutes/block
+* Over time mining difficulty keeps exponentail increase.
+* On an average a block is to be found every 10 minutes(10 - 9 -8 minutes);
+
+#### Mining Hardware :
+
 ------------------------------------------------------
 ------------------------------------------------------
 ## 6. Bitcoin Anonymity

@@ -338,10 +338,54 @@ Idea: prove work done with "near-valid blocks" (shares);
    * lower risk for pool manager. More work to verify. (Miners are payed based on the work they do/ shares);
 3. "Luke-jr" approach : no management fee.
    * miners can only get paid out in BTC. (New entrant don't make money for a while and then they even out.) Pool owner keeps spread;
-    
-
+   
 ------------------------------------------------------
 ## 6. Bitcoin Anonymity
+* Anonymity = pseudonymity + unlinkability;
+* unlinkability - Different interactions of the same user with the system should not be linked with each other.
+
+#### Mixing :
+* To protect anonymity, use intermediary. Users send transactions to intrermediary service.
+* The intermediary doesn't keep track of the user and the transaction. 
+* When the user withdraws an amount it is drawn from a random address from the intermediary. So there is no link from the input transaction address to the output transaction address, and no one can identify it from an external public chain on something else.
+
+#### Coinjoin :
+* The main proposal for a decentralized mixing is called Coinjoin. Proposed by Greg Maxwell,  Bitcoin core developer.
+* Multiple users can interact in a single interaction , via different input addresses and output addresses.
+* An adversary looking at the block chain will not able to tell which transaction corresponds to which user.
+
+#### Coinjoin Algorithm :
+1. Find peers who want to mix.
+2. Exchange input/output addresses.
+3. Construct transaction.
+4. Send it around, collect signatures. (Before signing , each peers checks if her output is present).  (Security property);
+  (Incase any of the peers don't sign the transaction, then it collapses);
+5. Broadcast the transaction.
+   (Any number of valid peers can broadcast the transaction).
+
+#### Zerocoin and Zerocash :
+##### Zerocoin : Extension of Basecoin (Bitcoin-like Altcoin.);
+* A Zerocoin is a cryptographic proof that you owned a Basecoin and made it unspendable.
+* Miners can verify this proof. Gives you the right to redeem a new Basecoin. (like poker chips).
+
+##### Zerocash
+ * It uses a cryptographic tool called Snarks.
+ * Zerocoin without Basecoin.
+ * Upshot -  1. Different crypto for proofs (More efficient); 2. Proposal to run system without Basecoin.
+ * All transactions are zerocoins. Splitting and mergining supported. Put transaction value inside the envelope (H(S, r)); Ledger merely records the existence of the transactions.
+
+### 5 Levels of Anonymity :
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  System        Type                  Anonymity attacks                   Deployability
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Bitcoin       Pseudonymous          Tx graph analysis                     Default
+  Single Mix    Mix                   Tx graph analysis, bad mix            Usable today
+  Mix chain     Mix                   Side channels, bad mixes, peers       Bit-coin compatible
+  Zerocoin      Cryptographic mix     Side channels (possible)              Altcoin
+  Zerocash      Untraceable           None                                  Altcoin, tricky setup
+  
+Tx graph analysis - unlinkability test - linking address and change address.
+
 ------------------------------------------------------
 ------------------------------------------------------
 ## 7. Community, Politics and Regulations

@@ -376,14 +376,14 @@ Idea: prove work done with "near-valid blocks" (shares);
 
 ### 5 Levels of Anonymity :
  
----------------------------------------------------------------------------------------------
-# System        Type                  Anonymity attacks                   Deployability
----------------------------------------------------------------------------------------------
-  Bitcoin       Pseudonymous          Tx graph analysis                     Default
-  Single Mix    Mix                   Tx graph analysis, bad mix            Usable today
-  Mix chain     Mix                   Side channels, bad mixes, peers       Bit-coin compatible
-  Zerocoin      Cryptographic mix     Side channels (possible)              Altcoin
-  Zerocash      Untraceable           None                                  Altcoin, tricky setup
+  | System       | Type                 | Anonymity attacks                  | Deployability          |
+   --------------  ---------------------  ----------------------------------- ------------------------
+  | Bitcoin      | Pseudonymous         | Tx graph analysis                  | Default                |
+  | Single Mix   | Mix                  | Tx graph analysis, bad mix         | Usable today           |
+  | Mix chain    | Mix                  | Side channels, bad mixes, peers    | Bit-coin compatible    |   
+  | Zerocoin     | Cryptographic mix    | Side channels (possible)           | Altcoin                |     
+  | Zerocash     | Untraceable          | None                               | Altcoin, tricky setup  |
+  -----------------------------------------------------------------------------------------------------
   
 Tx graph analysis - unlinkability test - linking address and change address.
 

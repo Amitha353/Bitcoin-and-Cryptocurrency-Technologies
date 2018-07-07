@@ -46,7 +46,7 @@
 2. consumed coins were not already consumed in some previous transactions (double spend attack);
 3. total values of the coins out of the transaction is same as the total coins that went into the transaction.
 4. the transaction is signed by all the owners of the consmed coins.
-------------------------------------------------------
+
 ------------------------------------------------------
 ## 2. Bitcoin achieves Decentralization
 
@@ -105,7 +105,7 @@ To create a block , find nonce s.t.
 1. Append-only ledger - datastructure that we can only write to and once data is there , it's forever.
 2. Decentralized consensus - decentralized protocol for establishing the value of that ledger.
 3. Miners to validate transactions. (no double spends);
-------------------------------------------------------
+
 ------------------------------------------------------
 ## 3. Bitcoin Mechanism
 
@@ -184,7 +184,7 @@ Design goals
 
 #### Thin / SPV(Simple Payment Verification) client (not fully validating) :
 * Don't store everything, Store block headers only. Request transactions as needed. (To verify incoming payments). Trust fully-validating nodes. Inexpensive;
-------------------------------------------------------
+
 ------------------------------------------------------
 ## 4. Store and Use Bitcoin
 #### Simple Local Storage :
@@ -251,7 +251,6 @@ Design goals
 * Supply > Demand - Price goes down, hence demand increases.
 * Demand > Supply - Price goes up, hence demand decreases.
 
-------------------------------------------------------
 ------------------------------------------------------
 ## 5. Bitcoin Mining
 
@@ -399,7 +398,32 @@ Tx graph analysis - unlinkability test - linking address and change address.
 therefore the addresses and the information are encrypted);
 
 ------------------------------------------------------
-------------------------------------------------------
 ## 7. Community, Politics and Regulations
 ------------------------------------------------------
+#### Consensus in Bitcoin :
+* Bitcoin relies on the formation of consensus among people. There are three kind of consensus that are required for Bitcoins to operate.
+##### I. Consensus about Rules :
+Agree on: what makes a transaction valid. what makes a block valid. how P2P nodes should behave. protocols and data formats needed for Bitcoin to operate.
+##### II. Consensus about History :
+Agree on contents of the blockchain: which transactions have occured. which coin exists and who owns them.
+##### III. Consensus that Coins are Valuable:
+ General agreement that coins have value.
+
+#### Bitcoin Core Software :
+* open source (MIT licence); The most widely used Bitcoin software;
+* "Bitcoin core is the de facto rule book of Bicoin."
+* Bitcoin Improvements Proposals (BIPs)
+
+#### Stakeholders : Who's in charge?
+1. Claim: Bitcoin core developers have the power - They write the rulebook. Almost everybody uses their code, follows their rules.
+2. Claim: Miners have the power - Miners write the history. History will be consistent with miners' consensus rules.
+3. Claim: Investors have the power - Investors determine whether Bitcoins have value. In case of hard-fork, investors decide which branch wins.
+4. Claim: Merchants and their customers have the power - They generate the primary demand for Bitcoin. - They drive the long-term price for Bitcoin. - Investors are just guessing where merchants and customers will go.
+5. Claim: Payment services have the power - They are the ones that really handle transactions. (give dollars);- So they drive primary demand. - Merchants, customers, and investors will follow them.
  
+#### Regulation : When markets fail and produce bad outcomes, regulations can address the failure.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+

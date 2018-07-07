@@ -377,7 +377,7 @@ Idea: prove work done with "near-valid blocks" (shares);
 ### 5 Levels of Anonymity :
  
   System        Type                  Anonymity attacks                   Deployability
- ..............................................................................................
+# ..............................................................................................
   Bitcoin       Pseudonymous          Tx graph analysis                     Default
   Single Mix    Mix                   Tx graph analysis, bad mix            Usable today
   Mix chain     Mix                   Side channels, bad mixes, peers       Bit-coin compatible

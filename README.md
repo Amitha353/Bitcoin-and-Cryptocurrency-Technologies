@@ -301,7 +301,20 @@ Throughput of a high-end PC = 10-20 MHz ~ 2^24; 139,461 years on an average to f
 * Designed to be run constantly for life. Requires significant expertise, long lead-times. Perhaps the fastest chip developed ever.
 * Throughput = 2 TH/s , ~ 14 months on an average to find a block. 
  
+#### Profressional Mining Centers :
+* Prerequisite : Cheap power, Good Network, Cool Climate;
 
+#### Energy consumption aspects of Bitcoin mining - 3 steps
+1. Embodied energy : used to manufacture mining chips and other equipment.
+(Includes physical mining - digging out rare metals, coppers -> IC's, etc; Manufacture into Bitcoin mining ASIC);
+    -> Should decrease over time. (since sufficient chip will be there, more resources online, etc);
+    -> Returns to scale. (optimized on large scale)
+2. Electricity : used to perform computation. (plug into wall - draws electricity - and perform computation).
+    -> Should increase over time.
+    -> Return to scale. (optimized on large scale)
+3. Cooling : required to protect equipment.  
+    -> costs more with increased scale! (not optimized in a large scale);
+    
 ------------------------------------------------------
 ## 6. Bitcoin Anonymity
 ------------------------------------------------------

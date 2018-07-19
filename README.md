@@ -4,7 +4,7 @@
 |---|---|
 | Crypto and Cryptocurrencies | [Week 1](https://github.com/Amitha353/Bitcoin-and-Cryptocurrency-Technologies/blob/master/Week%201%20:%20%20Crypto%20and%20Cryptocurrencies) |
 | Bitcoin achieves Decentralization | [Week 2](https://github.com/Amitha353/Bitcoin-and-Cryptocurrency-Technologies/blob/master/Week%202%20:%20%20How%20Bitcoin%20Achieves%20Decentralization) |
-| Bitcoin Mechanism | [Week 3] (https://github.com/Amitha353/Bitcoin-and-Cryptocurrency-Technologies/blob/master/Week%203%20:%20Mechanics%20of%20Bitcoin) |
+| Bitcoin Mechanism | [Week 3](https://github.com/Amitha353/Bitcoin-and-Cryptocurrency-Technologies/blob/master/Week%203%20:%20Mechanics%20of%20Bitcoin) |
 | Store and Use Bitcoin | [Week 4](https://github.com/Amitha353/Bitcoin-and-Cryptocurrency-Technologies/blob/master/Week%204%20:%20How%20to%20store%20and%20Use%20Bitcoins(Secret%20Keys)) |
 | Bitcoin Mining | [Week 5](https://github.com/Amitha353/Bitcoin-and-Cryptocurrency-Technologies/blob/master/Week%205%20:%20Bitcoin%20Mining) |
 | Bitcoin Anonymity | [Week 6](https://github.com/Amitha353/Bitcoin-and-Cryptocurrency-Technologies/blob/master/Week%206%20:%20Bitcoin%20and%20Anonymity) |
